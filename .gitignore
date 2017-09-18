@@ -1,0 +1,10 @@
+/backend_doc/
+.idea
+config/
+/local_data/
+vendor/
+bower_components/
+*.log
+.cache
+settings/settings_production.py
+settings/settings_test.py
