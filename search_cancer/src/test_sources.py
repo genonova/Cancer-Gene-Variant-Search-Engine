@@ -11,15 +11,16 @@ class TestCIViC:
         gene = GeneReference('BRAF')
         assert CIViC.search_gene(gene)
         gene = GeneReference('ENSG00000157764')
+
+        # from util_variant import MyVariantUtil
+        # print MyVariantUtil.query(gene.ref_seq)
+        print gene.transform_ref_seq(GeneReference.REF_TYPE_GENE)
+
         assert CIViC.search_gene(gene)
 
     def test_search_variant(self):
         variant = GeneVariant('chr1:g.11856378G>A')
         assert CIViC.search_variant(variant)
-
-    def test_search_transcript(self):
-        transcript = GeneReference('NM_004333.4')
-        assert CIViC.search_transcript(transcript)
 
 
 from source_cosmic import COSMIC
@@ -79,6 +80,16 @@ class TestGnomAD:
     def test_get_gene_url(self):
         gene = GeneReference('BRAF')
         assert GnomAD.get_gene_url(gene) == GnomAD.GENE_ROUTE + 'ENSG00000157764'
+
+from source_gene_cards import GeneCards
+
+class TestGeneCards:
+    def setup_method(self):
+        pass
+
+    def test_get_gene_url(self):
+        gene = GeneReference('ENSG00000157764')
+        assert GeneCards.get_gene_url(gene) == GeneCards.GENE_ROUTE + 'BRAF'
 
 from source_hgnc import HGNC
 

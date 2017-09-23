@@ -2,10 +2,11 @@ from source_cosmic import COSMIC
 from source_gnomad import GnomAD
 from source_civic import CIViC
 from source_hgnc import HGNC
+from source_gene_cards import GeneCards
 
-from util_variant import GeneVariant, GeneReference, MyVariantUtil
+from util_variant import GeneVariant, GeneReference
 
-gene_sources = [COSMIC, GnomAD, CIViC, HGNC]
+gene_sources = [COSMIC, GnomAD, CIViC, HGNC, GeneCards]
 
 import time
 
@@ -17,7 +18,7 @@ def search_variant(variant_str):
     time_elapsed = (time.clock() - time_start)
     print 'All ids takes time ' + str(time_elapsed)
     time_start = time.clock()
-    mv_res = MyVariantUtil.myvariant_query(variant_str)
+    mv_res = variant.get_myvariant_res()
     time_elapsed = (time.clock() - time_start)
     print 'One MV search takes time ' + str(time_elapsed)
     res = {
@@ -45,17 +46,18 @@ def search_gene(gene_str):
     gene = GeneReference(gene_str)
     res = {
         'ids': gene.get_all_ids(),
-        'myvariant': MyVariantUtil.myvariant_query(gene_str)
+        'myvariant': gene.get_myvariant_res()
     }  # for test
     for source in gene_sources:
         res[source.__name__.lower()] = source.search_gene(gene)
     return res
 
+
 def search_transcript(transcript_str):
     transcript = GeneReference(transcript_str)
     res = {
         'ids': transcript.get_all_ids(),
-        'myvariant': MyVariantUtil.myvariant_query(transcript_str)
+        'myvariant': transcript.get_myvariant_res()
     }  # for test
     for source in gene_sources:
         source_res = source.search_transcript(transcript)

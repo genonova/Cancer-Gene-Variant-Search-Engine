@@ -23,7 +23,7 @@ class HGNC(GeneSource):
         if isinstance(gene, GeneReference):
             to_types = [GeneReference.REF_TYPE_GENE, GeneReference.REF_TYPE_ENSG]
             for to_type in to_types:
-                ref_seq = GeneReference.transform_ref_seq(gene.ref_seq, to_type)
+                ref_seq = gene.transform_ref_seq(to_type)
                 if ref_seq:
                     fields = []
                     if to_type == GeneReference.REF_TYPE_GENE:

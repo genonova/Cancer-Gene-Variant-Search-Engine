@@ -34,30 +34,30 @@ class TestVariantUtil:
 
     def test_variant_transform_type_ENST(self):
         variant = GeneVariant(expr='NM_005957.4:c.665C>T')
-        assert variant.transform_ref_seq(variant.ref_seq, GeneVariant.REF_TYPE_ENST)
+        assert variant.transform_ref_seq(GeneVariant.REF_TYPE_ENST)
 
         variant = GeneVariant(expr='ENST00000376590:c.665C>T')
-        assert variant.transform_ref_seq(variant.ref_seq, GeneVariant.REF_TYPE_NM)
+        assert variant.transform_ref_seq(GeneVariant.REF_TYPE_NM)
 
     def test_variant_transform_type_else(self):
         variant = GeneVariant(expr='chr1:g.11856378G>A')
-        assert variant.transform_ref_seq(variant.expr, GeneVariant.REF_TYPE_NM)
+        assert variant.transform_ref_seq(GeneVariant.REF_TYPE_NM)
         variant = GeneVariant(expr='chr1:g.11856378G>A')
-        assert variant.transform_ref_seq(variant.expr, GeneVariant.REF_TYPE_NP)
+        assert variant.transform_ref_seq(GeneVariant.REF_TYPE_NP)
         variant = GeneVariant(expr='chr1:g.11856378G>A')
-        assert variant.transform_ref_seq(variant.expr, GeneVariant.REF_TYPE_NC)
+        assert variant.transform_ref_seq(GeneVariant.REF_TYPE_NC)
 
         variant = GeneVariant(expr='NM_005957.4:c.665C>T')
-        assert variant.transform_ref_seq(variant.expr, GeneVariant.REF_TYPE_CHR)
+        assert variant.transform_ref_seq(GeneVariant.REF_TYPE_CHR)
         variant = GeneVariant(expr='NP_005948.3:p.Ala222Val')
-        assert variant.transform_ref_seq(variant.expr, GeneVariant.REF_TYPE_CHR)
+        assert variant.transform_ref_seq(GeneVariant.REF_TYPE_CHR)
         variant = GeneVariant(expr='NC_000001.10:g.11856378G>A')
-        assert variant.transform_ref_seq(variant.expr, GeneVariant.REF_TYPE_CHR)
+        assert variant.transform_ref_seq(GeneVariant.REF_TYPE_CHR)
 
     def test_myvariant_query_transcript(self):
-        assert len(MyVariantUtil.myvariant_query('ENST00000376592')) >= 1
-        assert len(MyVariantUtil.myvariant_query('NP_005948.3')) >= 1
-        assert len(MyVariantUtil.myvariant_query('NM_005957')) >= 1
+        assert len(MyVariantUtil.query('ENST00000376592')) >= 1
+        assert len(MyVariantUtil.query('NP_005948.3')) >= 1
+        assert len(MyVariantUtil.query('NM_005957')) >= 1
         '''
             "NM_005957.4:c.665C>T",
             "NP_005948.3:p.Ala222Val",
@@ -66,35 +66,35 @@ class TestVariantUtil:
             "chr1:g.11856378G>A"
         '''
         # 1. all combination of transcripts:
-        assert len(MyVariantUtil.myvariant_query('NM_005957.4:c.665C>T')) == 1
-        assert len(MyVariantUtil.myvariant_query('NM_005957.4:p.Ala222Val')) == 1
+        assert len(MyVariantUtil.query('NM_005957.4:c.665C>T')) == 1
+        assert len(MyVariantUtil.query('NM_005957.4:p.Ala222Val')) == 1
 
         # NP will be covered by cosmic expressions
-        assert len(MyVariantUtil.myvariant_query('NP_005948.3:p.Ala222Val')) == 1
-        assert len(MyVariantUtil.myvariant_query('NP_005948.3:p.A222V')) == 1
+        assert len(MyVariantUtil.query('NP_005948.3:p.Ala222Val')) == 1
+        assert len(MyVariantUtil.query('NP_005948.3:p.A222V')) == 1
 
-        assert len(MyVariantUtil.myvariant_query('ENST00000376592.1:c.665G>A')) == 1
-        assert len(MyVariantUtil.myvariant_query('ENST00000376592.1:p.A222V')) == 1
-        assert len(MyVariantUtil.myvariant_query('NC_000001.10:g.11856378G>A')) == 1
-        assert len(MyVariantUtil.myvariant_query('chr1:g.11856378G>A')) == 1
+        assert len(MyVariantUtil.query('ENST00000376592.1:c.665G>A')) == 1
+        assert len(MyVariantUtil.query('ENST00000376592.1:p.A222V')) == 1
+        assert len(MyVariantUtil.query('NC_000001.10:g.11856378G>A')) == 1
+        assert len(MyVariantUtil.query('chr1:g.11856378G>A')) == 1
 
     def test_myvariant_query_gene(self):
-        assert len(MyVariantUtil.myvariant_query('MTHFR')) >= 1
-        assert len(MyVariantUtil.myvariant_query('MTHFR:c.665G>A')) >= 1
+        assert len(MyVariantUtil.query('MTHFR')) >= 1
+        assert len(MyVariantUtil.query('MTHFR:c.665G>A')) >= 1
 
     def test_myvariant_extract(self):
-        data = MyVariantUtil.myvariant_query('chr1:g.11856378G>A')[0]
-        assert MyVariantUtil.myvariant_extract(data, GeneVariant.REF_TYPE_GENE) == 'MTHFR'
-        assert MyVariantUtil.myvariant_extract(data, GeneVariant.REF_TYPE_CHR) == 'chr1'
-        assert MyVariantUtil.myvariant_extract(data, GeneVariant.REF_TYPE_NC) == 'NC_000001.10'
-        assert MyVariantUtil.myvariant_extract(data, GeneVariant.REF_TYPE_NP) == 'NP_005948.3'
-        assert MyVariantUtil.myvariant_extract(data, GeneVariant.REF_TYPE_NM) == 'NM_005957.4'
-        assert MyVariantUtil.myvariant_extract(data, GeneVariant.REF_TYPE_ENST) == 'ENST00000376592'
-        assert MyVariantUtil.myvariant_extract(data, GeneVariant.REF_TYPE_ENSG) == 'ENSG00000177000'
+        data = MyVariantUtil.query('chr1:g.11856378G>A')[0]
+        assert MyVariantUtil.extract(data, GeneVariant.REF_TYPE_GENE) == 'MTHFR'
+        assert MyVariantUtil.extract(data, GeneVariant.REF_TYPE_CHR) == 'chr1'
+        assert MyVariantUtil.extract(data, GeneVariant.REF_TYPE_NC) == 'NC_000001.10'
+        assert MyVariantUtil.extract(data, GeneVariant.REF_TYPE_NP) == 'NP_005948.3'
+        assert MyVariantUtil.extract(data, GeneVariant.REF_TYPE_NM) == 'NM_005957.4'
+        assert MyVariantUtil.extract(data, GeneVariant.REF_TYPE_ENST) == 'ENST00000376592'
+        assert MyVariantUtil.extract(data, GeneVariant.REF_TYPE_ENSG) == 'ENSG00000177000'
 
-        assert MyVariantUtil.myvariant_extract(data, GeneVariant.INFO_TYPE_G) == 'g.11856378G>A'
-        assert MyVariantUtil.myvariant_extract(data, GeneVariant.INFO_TYPE_C) == 'c.665C>T'
-        assert MyVariantUtil.myvariant_extract(data, GeneVariant.INFO_TYPE_P) == 'p.Ala222Val'
+        assert MyVariantUtil.extract(data, GeneVariant.INFO_TYPE_G) == 'g.11856378G>A'
+        assert MyVariantUtil.extract(data, GeneVariant.INFO_TYPE_C) == 'c.665C>T'
+        assert MyVariantUtil.extract(data, GeneVariant.INFO_TYPE_P) == 'p.Ala222Val'
 
 import util_query
 

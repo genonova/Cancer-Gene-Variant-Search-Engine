@@ -21,7 +21,7 @@ class GnomAD(GeneSource):
         if isinstance(reference, GeneReference):
             ref_seq = reference.ref_seq
             if reference.ref_type != GeneVariant.REF_TYPE_ENST:
-                ref_seq = GeneReference.transform_ref_seq(ref_seq, GeneVariant.REF_TYPE_ENST)
+                ref_seq = reference.transform_ref_seq(GeneVariant.REF_TYPE_ENST)
                 if not ref_seq:
                     return None
             return GnomAD.TRANSCRIPT_ROUTE + urllib.quote(ref_seq)
@@ -32,7 +32,7 @@ class GnomAD(GeneSource):
         if isinstance(reference, GeneReference):
             ref_seq = reference.ref_seq
             if reference.ref_type != GeneVariant.REF_TYPE_ENSG:
-                ref_seq = GeneReference.transform_ref_seq(ref_seq, GeneVariant.REF_TYPE_ENSG)
+                ref_seq = reference.transform_ref_seq(GeneVariant.REF_TYPE_ENSG)
                 if not ref_seq:
                     return None
             return GnomAD.GENE_ROUTE + urllib.quote(ref_seq)
@@ -48,8 +48,8 @@ class GnomAD(GeneSource):
         return None
 
     @staticmethod
-    def search_variant(gene):
-        url = GnomAD.get_variant_url(gene)
+    def search_variant(variant):
+        url = GnomAD.get_variant_url(variant)
         if url:
             return {
                 'url': url
@@ -57,8 +57,8 @@ class GnomAD(GeneSource):
         return None
 
     @staticmethod
-    def search_transcript(gene):
-        url = GnomAD.get_trascript_url(gene)
+    def search_transcript(transcript):
+        url = GnomAD.get_trascript_url(transcript)
         if url:
             return {
                 'url': url

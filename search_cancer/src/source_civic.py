@@ -12,12 +12,12 @@ class CIViC(GeneSource):
     @staticmethod
     def search_variant(variant):
         if isinstance(variant, GeneVariant):
-            mv_res = MyVariantUtil.myvariant_query(variant.expr)
+            mv_res = variant.get_myvariant_res()
             if mv_res:
                 '''This logic is redundant as myvariant already gives civic data
                 but we can retrieve latest data from CIViC API'''
-                gene_id = MyVariantUtil.myvariant_extract(mv_res[0], 'civic.gene_id')
-                variant_id = MyVariantUtil.myvariant_extract(mv_res[0], 'civic.variant_id')
+                gene_id = MyVariantUtil.extract(mv_res, 'civic.gene_id')
+                variant_id = MyVariantUtil.extract(mv_res, 'civic.variant_id')
                 if type(gene_id) == int and type(variant_id) == int:
                     response = requests.get(CIViC.VARIANT_API.replace('<variant_id>', str(variant_id)))
                     if response.status_code == 200:
@@ -31,7 +31,7 @@ class CIViC(GeneSource):
     @staticmethod
     def search_gene(gene):
         if isinstance(gene, GeneReference):
-            ref_seq = GeneReference.transform_ref_seq(gene.ref_seq, GeneReference.REF_TYPE_GENE)
+            ref_seq = gene.transform_ref_seq(GeneReference.REF_TYPE_GENE)
             if ref_seq:
                 response = requests.get(CIViC.GENE_API.replace('<gene>', ref_seq))
                 if response.status_code == 200:

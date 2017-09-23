@@ -15,15 +15,6 @@ class COSMIC(GeneSource):
             cancer_db = config.connect_db(config.CANCER_DB_KEY)
             cursor = cancer_db.cursor()
             if variant.info_type == GeneVariant.INFO_TYPE_G:  # chr1:g.11796321>A vs 10:26541626-26541626
-                s = None
-                e = len(variant.var_info)
-                for i, c in enumerate(variant.var_info):
-                    if c.isdigit():
-                        if not s:
-                            s = i
-                    elif s:
-                        e = i
-                        break
                 chr_num = 0
                 s = None
                 for i, c in enumerate(variant.ref_seq):
@@ -33,10 +24,20 @@ class COSMIC(GeneSource):
                         chr_num = chr_num * 10 + int(c)
                     elif s:
                         break
-                pos = str(map_chr_to_num(chr_num)) + ':' + variant.var_info[s:e]
+                s = None
+                e = len(variant.var_info)
+                for i, c in enumerate(variant.var_info):
+                    if c.isdigit():
+                        if not s:
+                            s = i
+                    elif s:
+                        e = i
+                        break
+                pos = variant.var_info[s:e]
+                chr_pos = str(map_chr_to_num(chr_num)) + ':' + pos
                 base_query = "SELECT " + ("COUNT(*) count" if only_count else "*") \
                              + " FROM COSMICMutantExport WHERE Mutation_Genome_Position LIKE %s"
-                base_params = (pos + '%',)
+                base_params = (chr_pos + '%',)
                 query, params = util_query.add_limit(base_query, base_params, start, limit)
                 cursor.execute(query, params)
                 res = cursor.fetchall()
@@ -50,8 +51,8 @@ class COSMIC(GeneSource):
                     info_attr = 'Mutation_AA'
                 else:
                     return []
-                ref_seq1 = variant.transform_ref_seq(variant.ref_seq, GeneVariant.REF_TYPE_ENST)
-                ref_seq2 = variant.transform_ref_seq(variant.ref_seq, GeneVariant.REF_TYPE_NM)
+                ref_seq1 = variant.transform_ref_seq(GeneVariant.REF_TYPE_ENST)
+                ref_seq2 = variant.transform_ref_seq(GeneVariant.REF_TYPE_NM)
 
                 base_query = "SELECT " + ("COUNT(*) count" if only_count else "*") \
                              + " FROM COSMICMutantExport WHERE Accession_Number=%s AND " + info_attr + " LIKE %s"
@@ -65,9 +66,9 @@ class COSMIC(GeneSource):
                             break
             if not res or (only_count and not res[0]['count']):
                 # try myvariant directly
-                mv_res = MyVariantUtil.myvariant_query(variant.expr)
+                mv_res = variant.get_myvariant_res()
                 if mv_res:
-                    cosmic_id = MyVariantUtil.myvariant_extract(mv_res[0], 'cosmic.cosmic_id')
+                    cosmic_id = MyVariantUtil.extract(mv_res, 'cosmic.cosmic_id')
                     if cosmic_id:
                         base_query = "SELECT " + ("COUNT(*) count" if only_count else "*") \
                                      + " FROM COSMICMutantExport WHERE ID_Mutation=%s"
@@ -85,7 +86,7 @@ class COSMIC(GeneSource):
         if isinstance(reference, GeneReference):
             gene = reference.ref_seq
             if reference.ref_type != GeneVariant.REF_TYPE_GENE:
-                gene = GeneReference.transform_ref_seq(gene, GeneVariant.REF_TYPE_GENE)
+                gene = reference.transform_ref_seq(GeneVariant.REF_TYPE_GENE)
             if gene:
                 cancer_db = config.connect_db(config.CANCER_DB_KEY)
                 cursor = cancer_db.cursor()
@@ -107,8 +108,8 @@ class COSMIC(GeneSource):
                          + " FROM COSMICMutantExport WHERE Accession_Number LIKE %s"
             cancer_db = config.connect_db(config.CANCER_DB_KEY)
             cursor = cancer_db.cursor()
-            ref_seq1 = reference.transform_ref_seq(reference.ref_seq, GeneVariant.REF_TYPE_ENST)
-            ref_seq2 = reference.transform_ref_seq(reference.ref_seq, GeneVariant.REF_TYPE_NM)
+            ref_seq1 = reference.transform_ref_seq(GeneVariant.REF_TYPE_ENST)
+            ref_seq2 = reference.transform_ref_seq(GeneVariant.REF_TYPE_NM)
             for ref_seq in (ref_seq1, ref_seq2):
                 if ref_seq:
                     base_params = (ref_seq,)
@@ -166,23 +167,23 @@ class COSMIC(GeneSource):
     @staticmethod
     def search_gene(gene):
         if isinstance(gene, GeneReference):
-            ref_seq = GeneReference.transform_ref_seq(gene.ref_seq, GeneReference.REF_TYPE_GENE)
-            cosmic_count = COSMIC.search_gene_db(GeneReference(ref_seq), only_count=True)
-            if cosmic_count > 0:
-                return {
-                    'count': cosmic_count,
-                    'url': COSMIC.get_cosmic_url(ref_seq)
-                }
+            ref_seq = gene.transform_ref_seq(GeneReference.REF_TYPE_GENE)
+            if ref_seq:
+                cosmic_count = COSMIC.search_gene_db(GeneReference(ref_seq), only_count=True)
+                if cosmic_count > 0:
+                    return {
+                        'count': cosmic_count,
+                        'url': COSMIC.get_cosmic_url(ref_seq)
+                    }
         return None
 
     @staticmethod
     def search_transcript(transcript):
         if isinstance(transcript, GeneReference):
-            ref_seq = transcript.ref_seq
             cosmic_count = COSMIC.search_transcript_db(transcript, only_count=True)
             if cosmic_count > 0:
                 return {
                     'count': cosmic_count,
-                    'url': COSMIC.get_cosmic_url(transcript.transform_ref_seq(ref_seq, GeneReference.REF_TYPE_ENST))
+                    'url': COSMIC.get_cosmic_url(transcript.transform_ref_seq(GeneReference.REF_TYPE_ENST))
                 }
         return None

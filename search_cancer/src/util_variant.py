@@ -3,8 +3,8 @@ import myvariant
 import json
 
 import redis
-redis.StrictRedis(host='localhost', port=6379, db=0).flushall()
 
+redis.StrictRedis(host='localhost', port=6379, db=0).flushall()
 # Amino Acid Map
 aa_map_1to3 = {'A': 'Ala',
                'B': 'Asx',
@@ -52,6 +52,7 @@ def map_aa_1to3(aa):
         temp = temp.replace(key, aa_map_1to3[key])
     return temp
 
+
 def map_chr_to_num(chr):
     if isinstance(chr, basestring):
         if chr.lower() == 'x':
@@ -59,6 +60,7 @@ def map_chr_to_num(chr):
         elif chr.lower() == 'y':
             return 24
     return int(chr)
+
 
 def map_chr_to_str(chr):
     if isinstance(chr, basestring):
@@ -69,6 +71,7 @@ def map_chr_to_str(chr):
     elif chr == 24:
         return 'Y'
     return str(chr)
+
 
 # <REFERENCE_SEQUENCE_ID>:<SEQUENCE_TYPE>.<POSITION><CHANGE>
 
@@ -82,12 +85,13 @@ class GeneReference:
     REF_TYPE_ENSG = "ENSG"
 
     def __init__(self, ref_seq=None):
+        self.myvariant_res = None
         self.ref_seq = ref_seq
         ref_type = self.get_ref_type(ref_seq)
         if ref_type:
             self.ref_type = ref_type
         else:
-            raise ValueError("Malformed reference sequence: " + ref_seq)
+            raise ValueError("Malformed reference sequence: " + str(ref_seq))
 
     def get_all_ids(self):
         res = {
@@ -96,63 +100,72 @@ class GeneReference:
         for a in dir(self):
             if a.startswith('REF_TYPE_'):
                 ref_type = getattr(self, a)
-                new_ref_seq = self.transform_ref_seq(self.ref_seq, ref_type)
+                new_ref_seq = self.transform_ref_seq(ref_type)
                 if new_ref_seq:
                     res['ref_seq'].append(new_ref_seq)
         return res
 
+    def get_myvariant_res(self, downgrade=True):
+        if not self.myvariant_res:
+            mv_results = MyVariantUtil.query(self.ref_seq)
+            if mv_results:
+                self.myvariant_res = mv_results[0]
+        return self.myvariant_res
+
     @staticmethod
-    def get_ref_type(ref_seq):
-        if ref_seq:
-            if ref_seq.startswith(GeneVariant.REF_TYPE_ENST):
+    def get_ref_type(target):
+        if target:
+            if target.startswith(GeneVariant.REF_TYPE_ENST):
                 return GeneVariant.REF_TYPE_ENST
-            elif ref_seq.startswith(GeneVariant.REF_TYPE_NM):
+            elif target.startswith(GeneVariant.REF_TYPE_NM):
                 return GeneVariant.REF_TYPE_NM
-            elif ref_seq.startswith(GeneVariant.REF_TYPE_NC):
+            elif target.startswith(GeneVariant.REF_TYPE_NC):
                 return GeneVariant.REF_TYPE_NC
-            elif ref_seq.startswith(GeneVariant.REF_TYPE_NP):
+            elif target.startswith(GeneVariant.REF_TYPE_NP):
                 return GeneVariant.REF_TYPE_NP
-            elif ref_seq.startswith(GeneVariant.REF_TYPE_CHR):
+            elif target.startswith(GeneVariant.REF_TYPE_CHR):
                 return GeneVariant.REF_TYPE_CHR
-            elif ref_seq.startswith(GeneVariant.REF_TYPE_ENSG):
+            elif target.startswith(GeneVariant.REF_TYPE_ENSG):
                 return GeneVariant.REF_TYPE_ENSG
-            elif all(x.isupper() or x.isdigit() for x in ref_seq):
+            elif all(x.isupper() or x.isdigit() for x in target):
                 return GeneVariant.REF_TYPE_GENE
         return None
 
-    @staticmethod
-    def transform_ref_seq(target, to_type):
+    def transform_ref_seq(self, to_type):
         '''
         Transform the reference sequence to target type
-        :param target: it can be just reference sequence for transcript but full expression for gCDNA
         :param to_type: type of reference sequence
         :return:
         '''
-        ref_seq = target.split(':')[0]
-        from_type = GeneVariant.get_ref_type(ref_seq)
-        if to_type == from_type:
-            return target
 
-        if to_type == GeneVariant.REF_TYPE_ENST or from_type == GeneVariant.REF_TYPE_ENST:
+        if self.ref_type == to_type:
+            return self.ref_seq
+
+        ''' All transformation: myvariant'''
+        # MyVariantInfo(url='http://myvariant.info/v1')
+        mv_res = self.get_myvariant_res()
+        if mv_res:
+            res = MyVariantUtil.extract(mv_res, to_type)
+            if res:
+                return res
+
+        ''' Fall back : EnsemblTranscriptDict '''
+        if to_type == GeneVariant.REF_TYPE_ENST or self.ref_type == GeneVariant.REF_TYPE_ENST:
             ''' If ENST transformation, first try DB:EnsemblTranscriptDict '''
             cancer_db = config.connect_db(config.CANCER_DB_KEY)
-            from_ENST = from_type == GeneVariant.REF_TYPE_ENST
+            from_ENST = self.ref_type == GeneVariant.REF_TYPE_ENST
             query = "SELECT Ref_Seq FROM EnsemblTranscriptDict WHERE ENST_ID = %s" \
                 if from_ENST else "SELECT ENST_ID FROM EnsemblTranscriptDict WHERE Ref_Seq = %s"
             result_key = 'Ref_Seq' if from_ENST else 'ENST_ID'
-            params = (ref_seq,)
+            params = (self.ref_seq,)
             cursor = cancer_db.cursor()
             cursor.execute(query, params)
             res = cursor.fetchone()
             if res:
                 to_ref_seq = res.get(result_key, None)
-                if to_ref_seq and GeneVariant.get_ref_type(to_ref_seq) == to_type:
+                if to_ref_seq and GeneReference.get_ref_type(to_ref_seq) == to_type:
                     return to_ref_seq
-        ''' All transformation: myvariant'''
-        # MyVariantInfo(url='http://myvariant.info/v1')
-        mv_res = MyVariantUtil.myvariant_query(target)
-        if mv_res:
-            return MyVariantUtil.myvariant_extract(mv_res[0], to_type)
+
         return None
 
 
@@ -170,7 +183,7 @@ class GeneVariant(GeneReference):
                 ref_seq = arr[0]
                 var_info = arr[1]
             except Exception as e:
-                raise ValueError("Malformed expression: " + expr)
+                raise ValueError("Malformed expression: " + str(expr))
         else:
             expr = ref_seq + ':' + var_info
 
@@ -181,7 +194,18 @@ class GeneVariant(GeneReference):
         if info_type:
             self.info_type = info_type
         else:
-            raise ValueError("Malformed variant detail info: " + var_info)
+            raise ValueError("Malformed variant detail info: " + str(var_info))
+
+    def get_myvariant_res(self, downgrade=False):
+        if not self.myvariant_res:
+            mv_results = MyVariantUtil.query(self.expr)
+            if mv_results:
+                self.myvariant_res = mv_results[0]
+            else:
+                mv_results = MyVariantUtil.query(self.ref_seq)
+                if mv_results:
+                    self.myvariant_res = mv_results[0]
+        return self.myvariant_res
 
     def get_all_ids(self):
         res = {
@@ -216,9 +240,9 @@ class GeneVariant(GeneReference):
 
     def transform_variant(self, to_ref_type=None, to_info_type=None):
         if to_ref_type == GeneVariant.TRANSFORM_CHR_POS_REF_ALT:  # special case
-            results = MyVariantUtil.myvariant_query(self.expr)
-            if results:
-                return MyVariantUtil.myvariant_extract(results[0], MyVariantUtil.MYVARIANT_CHR_POS_REF_ALT)
+            mv_res = self.get_myvariant_res()
+            if mv_res:
+                return MyVariantUtil.extract(mv_res, MyVariantUtil.MYVARIANT_CHR_POS_REF_ALT)
             else:
                 return []
         to_var_info = None
@@ -226,22 +250,23 @@ class GeneVariant(GeneReference):
         if to_ref_type == self.ref_type:
             to_ref_seq = self.ref_seq
         elif to_ref_type:
-            to_ref_seq = GeneVariant.transform_ref_seq(self.expr, to_ref_type)
+            to_ref_seq = self.transform_ref_seq(to_ref_type)
 
         if to_info_type == self.info_type:
             to_var_info = self.var_info
         elif to_info_type:
-            results = MyVariantUtil.myvariant_query(self.expr)
-            if results:
-                to_var_info = MyVariantUtil.myvariant_extract(results[0], to_info_type)
+            mv_res = self.get_myvariant_res()
+            if mv_res:
+                to_var_info = MyVariantUtil.extract(mv_res, to_info_type)
         return [to_ref_seq, to_var_info]
+
 
 class MyVariantUtil:
     MYVARIANT_CHR_POS_REF_ALT = 'chr_pos_ref_alt'
     REDIS_MV = redis.StrictRedis(host='localhost', port=6379, db=0)
 
     @staticmethod
-    def myvariant_extract(mv_res, type):
+    def extract(mv_res, type):
         # reference type retrieval
         res = None
         if type == MyVariantUtil.MYVARIANT_CHR_POS_REF_ALT:
@@ -376,7 +401,7 @@ class MyVariantUtil:
     MYVARIANT_EXPR = 'civic.hgvs_expressions'
 
     @staticmethod
-    def myvariant_query(target, field='ref_seq'):
+    def query(target, field='ref_seq'):
         '''
         Currently only use snpeff, dbnsfp, cadd, cosmic data
 
@@ -446,7 +471,7 @@ class MyVariantUtil:
             query = field + ':' + target + '*'  # e.g. 'cosmic.cosmic_id:COSM426644'
             res = mv.query(query)['hits']
         if res:
-            MyVariantUtil.REDIS_MV.set(target, json.dumps(res), ex=60) # TODO: change ex
+            MyVariantUtil.REDIS_MV.set(target, json.dumps(res), ex=60)  # TODO: change ex
             return res
         else:
             return []
