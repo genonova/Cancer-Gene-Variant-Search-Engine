@@ -1,4 +1,5 @@
 /backend_doc/
+*.pyc
 .idea
 config/
 /local_data/
