@@ -245,7 +245,7 @@ def prepare_source_report(res, search_type):
             for report_key in key_fields:
                 field = key_fields[report_key]
                 update_dict(report_res, report_key, extract_dict(res[source], field))
-                if report_key == 'effect':  # dirty check
+                if report_key == 'effect' and report_res[report_key]:  # dirty check
                     arr = report_res[report_key].split('_')
                     report_res[report_key] = ' '.join([word.capitalize() for word in arr])
 
