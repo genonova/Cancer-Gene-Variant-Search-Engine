@@ -55,7 +55,6 @@ class GnomAD(GeneSource):
                 cursor = cancer_db.cursor()
                 cursor.execute(query, params)
                 res = cursor.fetchone()
-                print res
                 return res
         return None
 

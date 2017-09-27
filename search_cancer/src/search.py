@@ -25,7 +25,7 @@ GRANTHAM_SCORE_KEY = 'grantham_score'
 GRANTHAM_INFO_KEY = 'grantham_info'
 REF_AA_KEY = 'ref_aa'
 ALT_AA_KEY = 'alt_aa'
-
+SOURCE_URLS_KEY = 'source_urls'
 def search_sources(target_str, search_type):
     if search_type == TYPE_GENE or search_type == TYPE_TRANSCRIPT:
         target = GeneReference(target_str)
@@ -62,7 +62,7 @@ def search_sources(target_str, search_type):
         res[SOURCE_NAMES_KEY][source.__name__.lower()] = source.__name__
         time_elapsed = (time.clock() - time_start)
         print source.__name__ + ' takes time ' + str(time_elapsed)
-    prepare_report(res)
+    prepare_source_report(res, search_type)
     report = res[REPORT_KEY]
 
     time_start = time.clock()
@@ -98,34 +98,17 @@ def search_sources(target_str, search_type):
 '''
 
 
-def prepare_report(res):
+def prepare_source_report(res, search_type):
     if REPORT_KEY not in res:
         res[REPORT_KEY] = {}
-    report_res_dict = res[REPORT_KEY]
-    report_extract_dict = {
+    report_res = res[REPORT_KEY]
+    report_variant_extract_dict = {
         COSMIC.__name__.lower(): {
-            'source_urls.' + COSMIC.__name__: 'url',
             'mutation_description': 'example.Mutation_Description'
         },
         GnomAD.__name__.lower(): {
-            'source_urls.' + GnomAD.__name__: 'url',
             'allele_freq': 'match.Total_freq',
             'homozygotes_num': 'match.Total_hom_cnt'
-        },
-        CIViC.__name__.lower(): {
-            'source_urls.' + CIViC.__name__: 'url'
-        },
-        HGNC.__name__.lower(): {
-            'source_urls.' + HGNC.__name__: 'url'
-        },
-        GeneCards.__name__.lower(): {
-            'source_urls.' + GeneCards.__name__: 'url'
-        },
-        GTEx.__name__.lower(): {
-            'source_urls.' + GTEx.__name__: 'url'
-        },
-        DECIPHER.__name__.lower(): {
-            'source_urls.' + DECIPHER.__name__: 'url'
         },
         MY_VARIANT: {
             # 'allele_origin': 'dbsnp.allele_origin',
@@ -149,7 +132,7 @@ def prepare_report(res):
         }
     }
 
-    report_info_dict = {
+    pred_info_dict = {
         'pred_rank_score.polyphen2_hvar.description': [
             '[0.909,1] : ' + unicode(_('Probably Damaging')),
             '[0.447,0.908] : ' + unicode(_('Possibly Damaging')),
@@ -193,7 +176,6 @@ def prepare_report(res):
         ],
         'pred_rank_score.sift.score_range': '0 ~ 1',
         'pred_rank_score.sift.score_relation': False  # False: score higher the more likely to be tolerated
-
     }
 
     def extract_dict(target, key):
@@ -252,28 +234,35 @@ def prepare_report(res):
                 return _('Polymorphism Automatic')
         return _('Unknown')
 
-    for source in report_extract_dict:
-        key_fields = report_extract_dict[source]
-        for report_key in key_fields:
-            field = key_fields[report_key]
-            update_dict(report_res_dict, report_key, extract_dict(res[source], field))
-            if report_key == 'effect':  # dirty check
-                arr = report_res_dict[report_key].split('_')
-                report_res_dict[report_key] = ' '.join([word.capitalize() for word in arr])
+    # extract out source url - applies to all search type
+    report_res[SOURCE_URLS_KEY] = {}
+    for source in GENE_SOURCES:
+        report_res[SOURCE_URLS_KEY][source.__name__] = extract_dict(res[source.__name__.lower()], 'url')
 
-            '''Deleteriousness predictions'''
-            if source == MY_VARIANT:  # much dirty check
-                if report_key.endswith('pred'):
-                    pred_key = report_key.split('.')[-2]  # e.g. xx.sift.pred and take out sift
-                    pred = extract_dict(report_res_dict, report_key)
-                    if isinstance(pred, list):
-                        for i, p in enumerate(pred):
-                            pred[i] = map_pred_abbr(pred_key, pred[i])
-                    else:
-                        update_dict(report_res_dict, report_key, [map_pred_abbr(pred_key, pred)])
-                if report_key.endswith('score'):
-                    score = extract_dict(report_res_dict, report_key)
-                    if not isinstance(score, list):
-                        update_dict(report_res_dict, report_key, [score])
-    for key in report_info_dict:
-        update_dict(report_res_dict, key, report_info_dict[key])
+    # extract out specific fields - variant
+    if search_type == TYPE_VARIANT:
+        for source in report_variant_extract_dict:
+            key_fields = report_variant_extract_dict[source]
+            for report_key in key_fields:
+                field = key_fields[report_key]
+                update_dict(report_res, report_key, extract_dict(res[source], field))
+                if report_key == 'effect':  # dirty check
+                    arr = report_res[report_key].split('_')
+                    report_res[report_key] = ' '.join([word.capitalize() for word in arr])
+
+                '''Deleteriousness predictions'''
+                if source == MY_VARIANT:  # much dirty check
+                    if report_key.endswith('pred'):
+                        pred_key = report_key.split('.')[-2]  # e.g. xx.sift.pred and take out sift
+                        pred = extract_dict(report_res, report_key)
+                        if isinstance(pred, list):
+                            for i, p in enumerate(pred):
+                                pred[i] = map_pred_abbr(pred_key, pred[i])
+                        else:
+                            update_dict(report_res, report_key, [map_pred_abbr(pred_key, pred)])
+                    if report_key.endswith('score'):
+                        score = extract_dict(report_res, report_key)
+                        if not isinstance(score, list):
+                            update_dict(report_res, report_key, [score])
+        for key in pred_info_dict:
+            update_dict(report_res, key, pred_info_dict[key])
