@@ -433,6 +433,31 @@
                                     </tr>
                                 </table>
                             {% endif %}
+                            {% if result.report.mcg_variants %}
+                                <h4>
+                                    {% if result.report.source_urls.MyCancerGenome %}
+                                        <a href="{{ result.report.source_urls.MyCancerGenome }}">MyCancerGenome</a>
+                                    {% else %}MyCancerGenome{% endif %}
+                                </h4>
+                                <table class="table table-bordered table-hover">
+                                    {% for variant, details in result.report.mcg_variants.items %}
+                                        <tr>
+                                            <td>
+                                                {{ variant }}
+                                            </td>
+                                            <td>
+                                                <table class="table table-bordered table-hover">
+                                                    {% for detail in details %}
+                                                        <tr>
+                                                            <td><a href="{{ detail.url }}">{{ detail.disease }}</a></td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            {% endif %}
                             {% if result.report.ref_aa and result.report.alt_aa %}
                                 <h4>{% trans 'Atomic Acid' %}</h4>
                                 <table class="table table-bordered table-hover" style="table-layout: fixed;">

@@ -1,0 +1,3994 @@
+{
+  "PDGFRA": {
+    "Exon 18 Mutation": [
+      {
+        "disease_id": "4",
+        "gene": "PDGFRA",
+        "disease": "GIST",
+        "gene_id": 18,
+        "variant_id": 53
+      }
+    ],
+    "Exon 18 Mutation (D842V)": [
+      {
+        "disease_id": "4",
+        "gene": "PDGFRA",
+        "disease": "GIST",
+        "gene_id": 18,
+        "variant_id": 45
+      }
+    ],
+    "Exon 12 Mutation": [
+      {
+        "disease_id": "4",
+        "gene": "PDGFRA",
+        "disease": "GIST",
+        "gene_id": 18,
+        "variant_id": 48
+      }
+    ],
+    "No Mutation Detected": [
+      {
+        "disease_id": "4",
+        "gene": "PDGFRA",
+        "disease": "GIST",
+        "gene_id": 18,
+        "variant_id": 57
+      }
+    ],
+    "Exon 14 Mutation": [
+      {
+        "disease_id": "4",
+        "gene": "PDGFRA",
+        "disease": "GIST",
+        "gene_id": 18,
+        "variant_id": 51
+      }
+    ]
+  },
+  "CRLF2": {
+    "Fusions": [
+      {
+        "disease_id": "16",
+        "gene": "CRLF2",
+        "disease": "Acute Lymphoblastic Leukemia",
+        "gene_id": 23,
+        "variant_id": 208
+      }
+    ],
+    "c.695T>G (F232C)": [
+      {
+        "disease_id": "16",
+        "gene": "CRLF2",
+        "disease": "Acute Lymphoblastic Leukemia",
+        "gene_id": 23,
+        "variant_id": 199
+      }
+    ]
+  },
+  "PML-RARA": {
+    "Fusion": [
+      {
+        "disease_id": "20",
+        "gene": "PML-RARA",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 31,
+        "variant_id": 253
+      }
+    ]
+  },
+  "HRAS": {
+    "c.182A>G (Q61R)": [
+      {
+        "disease_id": "7",
+        "gene": "HRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 40,
+        "variant_id": 307
+      }
+    ],
+    "c.34G>C (G12R)": [
+      {
+        "disease_id": "7",
+        "gene": "HRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 40,
+        "variant_id": 303
+      }
+    ],
+    "c.37G>T (G13C)": [
+      {
+        "disease_id": "7",
+        "gene": "HRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 40,
+        "variant_id": 305
+      }
+    ],
+    "c.37G>C (G13R)": [
+      {
+        "disease_id": "7",
+        "gene": "HRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 40,
+        "variant_id": 306
+      }
+    ],
+    "c.35G>T (G12V)": [
+      {
+        "disease_id": "7",
+        "gene": "HRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 40,
+        "variant_id": 304
+      }
+    ]
+  },
+  "SF3B1": {
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "SF3B1",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 50,
+        "variant_id": 327
+      }
+    ]
+  },
+  "RET": {
+    "Fusions": [
+      {
+        "disease_id": "2",
+        "gene": "RET",
+        "disease": "Lung Cancer",
+        "gene_id": 20,
+        "variant_id": 127
+      },
+      {
+        "disease_id": "7",
+        "gene": "RET",
+        "disease": "Thyroid Cancer",
+        "gene_id": 20,
+        "variant_id": 127
+      }
+    ],
+    "C634 Mutations": [
+      {
+        "disease_id": "7",
+        "gene": "RET",
+        "disease": "Thyroid Cancer",
+        "gene_id": 20,
+        "variant_id": 126
+      }
+    ],
+    "M918T": [
+      {
+        "disease_id": "7",
+        "gene": "RET",
+        "disease": "Thyroid Cancer",
+        "gene_id": 20,
+        "variant_id": 128
+      }
+    ]
+  },
+  "CTNNB1": {
+    "c.110C>T (S37F)": [
+      {
+        "disease_id": "5",
+        "gene": "CTNNB1",
+        "disease": "Melanoma",
+        "gene_id": 15,
+        "variant_id": 104
+      }
+    ],
+    "c.110C>A (S37Y)": [
+      {
+        "disease_id": "5",
+        "gene": "CTNNB1",
+        "disease": "Melanoma",
+        "gene_id": 15,
+        "variant_id": 105
+      }
+    ],
+    "c.134C>T (S45F)": [
+      {
+        "disease_id": "5",
+        "gene": "CTNNB1",
+        "disease": "Melanoma",
+        "gene_id": 15,
+        "variant_id": 106
+      }
+    ],
+    "c.134C>A (S45Y)": [
+      {
+        "disease_id": "5",
+        "gene": "CTNNB1",
+        "disease": "Melanoma",
+        "gene_id": 15,
+        "variant_id": 108
+      }
+    ],
+    "c.133T>C (S45P)": [
+      {
+        "disease_id": "5",
+        "gene": "CTNNB1",
+        "disease": "Melanoma",
+        "gene_id": 15,
+        "variant_id": 107
+      }
+    ]
+  },
+  "AKT1": {
+    "c.49G>A (E17K)": [
+      {
+        "disease_id": "1",
+        "gene": "AKT1",
+        "disease": "Breast Cancer",
+        "gene_id": 1,
+        "variant_id": 23
+      },
+      {
+        "disease_id": "3",
+        "gene": "AKT1",
+        "disease": "Colorectal Cancer",
+        "gene_id": 1,
+        "variant_id": 23
+      },
+      {
+        "disease_id": "2",
+        "gene": "AKT1",
+        "disease": "Lung Cancer",
+        "gene_id": 1,
+        "variant_id": 23
+      }
+    ]
+  },
+  "MAP2K1": {
+    "c.790C>T (P264S)": [
+      {
+        "disease_id": "5",
+        "gene": "MAP2K1",
+        "disease": "Melanoma",
+        "gene_id": 11,
+        "variant_id": 216
+      }
+    ],
+    "c.362G>C (C121S)": [
+      {
+        "disease_id": "5",
+        "gene": "MAP2K1",
+        "disease": "Melanoma",
+        "gene_id": 11,
+        "variant_id": 212
+      }
+    ],
+    "c.371C>T (P124L)": [
+      {
+        "disease_id": "5",
+        "gene": "MAP2K1",
+        "disease": "Melanoma",
+        "gene_id": 11,
+        "variant_id": 213
+      }
+    ],
+    "c.607G>A (E203K)": [
+      {
+        "disease_id": "5",
+        "gene": "MAP2K1",
+        "disease": "Melanoma",
+        "gene_id": 11,
+        "variant_id": 215
+      }
+    ],
+    "c.1144A>C (N382H)": [
+      {
+        "disease_id": "5",
+        "gene": "MAP2K1",
+        "disease": "Melanoma",
+        "gene_id": 11,
+        "variant_id": 217
+      }
+    ],
+    "c.167A>C (Q56P)": [
+      {
+        "disease_id": "2",
+        "gene": "MAP2K1",
+        "disease": "Lung Cancer",
+        "gene_id": 11,
+        "variant_id": 74
+      }
+    ],
+    "c.370C>T (P124S)": [
+      {
+        "disease_id": "5",
+        "gene": "MAP2K1",
+        "disease": "Melanoma",
+        "gene_id": 11,
+        "variant_id": 214
+      }
+    ],
+    "c.171G>T (K57N)": [
+      {
+        "disease_id": "2",
+        "gene": "MAP2K1",
+        "disease": "Lung Cancer",
+        "gene_id": 11,
+        "variant_id": 72
+      }
+    ],
+    "c.199G>A (D67N)": [
+      {
+        "disease_id": "2",
+        "gene": "MAP2K1",
+        "disease": "Lung Cancer",
+        "gene_id": 11,
+        "variant_id": 60
+      }
+    ],
+    "c.332T>G (I111S)": [
+      {
+        "disease_id": "5",
+        "gene": "MAP2K1",
+        "disease": "Melanoma",
+        "gene_id": 11,
+        "variant_id": 211
+      }
+    ],
+    "c.157T>C (F53L)": [
+      {
+        "disease_id": "5",
+        "gene": "MAP2K1",
+        "disease": "Melanoma",
+        "gene_id": 11,
+        "variant_id": 210
+      }
+    ]
+  },
+  "EZH2": {
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "EZH2",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 47,
+        "variant_id": 324
+      }
+    ]
+  },
+  "GNAQ": {
+    "c.626A>C (Q209P)": [
+      {
+        "disease_id": "5",
+        "gene": "GNAQ",
+        "disease": "Melanoma",
+        "gene_id": 17,
+        "variant_id": 102
+      }
+    ],
+    "c.548G>A (R183Q)": [
+      {
+        "disease_id": "5",
+        "gene": "GNAQ",
+        "disease": "Melanoma",
+        "gene_id": 17,
+        "variant_id": 337
+      }
+    ],
+    "c.626A>T (Q209L)": [
+      {
+        "disease_id": "5",
+        "gene": "GNAQ",
+        "disease": "Melanoma",
+        "gene_id": 17,
+        "variant_id": 100
+      }
+    ],
+    "c.626A>G (Q209R)": [
+      {
+        "disease_id": "5",
+        "gene": "GNAQ",
+        "disease": "Melanoma",
+        "gene_id": 17,
+        "variant_id": 103
+      }
+    ]
+  },
+  "RBM15-MKL1": {
+    "Fusion": [
+      {
+        "disease_id": "20",
+        "gene": "RBM15-MKL1",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 35,
+        "variant_id": 257
+      }
+    ]
+  },
+  "RICTOR": {
+    "Amplification": [
+      {
+        "disease_id": "2",
+        "gene": "RICTOR",
+        "disease": "Lung Cancer",
+        "gene_id": 528,
+        "variant_id": 340
+      }
+    ]
+  },
+  "FLT3": {
+    "c.2503G>C (D835H)": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 278
+      }
+    ],
+    "c.2505T>G (D835E)": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 283
+      }
+    ],
+    "ITD": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 277
+      }
+    ],
+    "c.2503G>A (D835N)": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 279
+      }
+    ],
+    "c.2504A>T (D835V)": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 282
+      }
+    ],
+    "c.2506A>G (I836V)": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 285
+      }
+    ],
+    "c.2506A>C (I836L)": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 284
+      }
+    ],
+    "c.2506A>T (I836F)": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 289
+      }
+    ],
+    "c.2506_2507delATinsCA (I836H)": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 287
+      }
+    ],
+    "c.2503G>T (D835Y)": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 280
+      }
+    ],
+    "c.2504A>C (D835A)": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 281
+      }
+    ],
+    "c.2508C>G (I836M)": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 290
+      }
+    ],
+    "c.2505T>A (D835E)": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 288
+      }
+    ],
+    "c.2506_2507delATinsGA (I836D)": [
+      {
+        "disease_id": "20",
+        "gene": "FLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 38,
+        "variant_id": 286
+      }
+    ]
+  },
+  "TSC1": {
+    "c.1907_1908del (E636fs)": [
+      {
+        "disease_id": "19",
+        "gene": "TSC1",
+        "disease": "Bladder Cancer",
+        "gene_id": 26,
+        "variant_id": 237
+      }
+    ]
+  },
+  "ZRSR2": {
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "ZRSR2",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 56,
+        "variant_id": 333
+      }
+    ]
+  },
+  "RPN1-EVI1": {
+    "Inversion": [
+      {
+        "disease_id": "20",
+        "gene": "RPN1-EVI1",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 34,
+        "variant_id": 256
+      }
+    ],
+    "Translocation": [
+      {
+        "disease_id": "20",
+        "gene": "RPN1-EVI1",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 34,
+        "variant_id": 259
+      }
+    ]
+  },
+  "CBFB-MYH11": {
+    "Inversion": [
+      {
+        "disease_id": "20",
+        "gene": "CBFB-MYH11",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 30,
+        "variant_id": 258
+      }
+    ],
+    "Translocation": [
+      {
+        "disease_id": "20",
+        "gene": "CBFB-MYH11",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 30,
+        "variant_id": 252
+      }
+    ]
+  },
+  "RUNX1-RUNX1T1": {
+    "Fusion": [
+      {
+        "disease_id": "20",
+        "gene": "RUNX1-RUNX1T1",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 29,
+        "variant_id": 251
+      }
+    ]
+  },
+  "ASXL1": {
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "ASXL1",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 44,
+        "variant_id": 320
+      }
+    ]
+  },
+  "PIK3CA": {
+    "c.3140A>G (H1047R)": [
+      {
+        "disease_id": "1",
+        "gene": "PIK3CA",
+        "disease": "Breast Cancer",
+        "gene_id": 2,
+        "variant_id": 11
+      },
+      {
+        "disease_id": "3",
+        "gene": "PIK3CA",
+        "disease": "Colorectal Cancer",
+        "gene_id": 2,
+        "variant_id": 11
+      },
+      {
+        "disease_id": "2",
+        "gene": "PIK3CA",
+        "disease": "Lung Cancer",
+        "gene_id": 2,
+        "variant_id": 11
+      },
+      {
+        "disease_id": "10",
+        "gene": "PIK3CA",
+        "disease": "Ovarian Cancer",
+        "gene_id": 2,
+        "variant_id": 11
+      }
+    ],
+    "c.1634A>G (E545G)": [
+      {
+        "disease_id": "1",
+        "gene": "PIK3CA",
+        "disease": "Breast Cancer",
+        "gene_id": 2,
+        "variant_id": 13
+      },
+      {
+        "disease_id": "3",
+        "gene": "PIK3CA",
+        "disease": "Colorectal Cancer",
+        "gene_id": 2,
+        "variant_id": 13
+      }
+    ],
+    "c.1636C>G (Q546E)": [
+      {
+        "disease_id": "1",
+        "gene": "PIK3CA",
+        "disease": "Breast Cancer",
+        "gene_id": 2,
+        "variant_id": 15
+      },
+      {
+        "disease_id": "3",
+        "gene": "PIK3CA",
+        "disease": "Colorectal Cancer",
+        "gene_id": 2,
+        "variant_id": 15
+      }
+    ],
+    "c.1637A>G (Q546R)": [
+      {
+        "disease_id": "1",
+        "gene": "PIK3CA",
+        "disease": "Breast Cancer",
+        "gene_id": 2,
+        "variant_id": 19
+      },
+      {
+        "disease_id": "3",
+        "gene": "PIK3CA",
+        "disease": "Colorectal Cancer",
+        "gene_id": 2,
+        "variant_id": 19
+      }
+    ],
+    "c.1624G>A (E542K)": [
+      {
+        "disease_id": "1",
+        "gene": "PIK3CA",
+        "disease": "Breast Cancer",
+        "gene_id": 2,
+        "variant_id": 7
+      },
+      {
+        "disease_id": "3",
+        "gene": "PIK3CA",
+        "disease": "Colorectal Cancer",
+        "gene_id": 2,
+        "variant_id": 7
+      },
+      {
+        "disease_id": "2",
+        "gene": "PIK3CA",
+        "disease": "Lung Cancer",
+        "gene_id": 2,
+        "variant_id": 7
+      },
+      {
+        "disease_id": "10",
+        "gene": "PIK3CA",
+        "disease": "Ovarian Cancer",
+        "gene_id": 2,
+        "variant_id": 7
+      }
+    ],
+    "c.1645G>A (D549N)": [
+      {
+        "disease_id": "1",
+        "gene": "PIK3CA",
+        "disease": "Breast Cancer",
+        "gene_id": 2,
+        "variant_id": 20
+      },
+      {
+        "disease_id": "3",
+        "gene": "PIK3CA",
+        "disease": "Colorectal Cancer",
+        "gene_id": 2,
+        "variant_id": 20
+      }
+    ],
+    "c.1637A>C (Q546P)": [
+      {
+        "disease_id": "1",
+        "gene": "PIK3CA",
+        "disease": "Breast Cancer",
+        "gene_id": 2,
+        "variant_id": 18
+      },
+      {
+        "disease_id": "3",
+        "gene": "PIK3CA",
+        "disease": "Colorectal Cancer",
+        "gene_id": 2,
+        "variant_id": 18
+      }
+    ],
+    "c.1636C>A (Q546K)": [
+      {
+        "disease_id": "1",
+        "gene": "PIK3CA",
+        "disease": "Breast Cancer",
+        "gene_id": 2,
+        "variant_id": 16
+      },
+      {
+        "disease_id": "3",
+        "gene": "PIK3CA",
+        "disease": "Colorectal Cancer",
+        "gene_id": 2,
+        "variant_id": 16
+      },
+      {
+        "disease_id": "10",
+        "gene": "PIK3CA",
+        "disease": "Ovarian Cancer",
+        "gene_id": 2,
+        "variant_id": 16
+      }
+    ],
+    "c.1633G>C (E545Q)": [
+      {
+        "disease_id": "1",
+        "gene": "PIK3CA",
+        "disease": "Breast Cancer",
+        "gene_id": 2,
+        "variant_id": 9
+      },
+      {
+        "disease_id": "3",
+        "gene": "PIK3CA",
+        "disease": "Colorectal Cancer",
+        "gene_id": 2,
+        "variant_id": 9
+      },
+      {
+        "disease_id": "2",
+        "gene": "PIK3CA",
+        "disease": "Lung Cancer",
+        "gene_id": 2,
+        "variant_id": 9
+      }
+    ],
+    "c.1634A>T (E545V)": [
+      {
+        "disease_id": "1",
+        "gene": "PIK3CA",
+        "disease": "Breast Cancer",
+        "gene_id": 2,
+        "variant_id": 14
+      },
+      {
+        "disease_id": "3",
+        "gene": "PIK3CA",
+        "disease": "Colorectal Cancer",
+        "gene_id": 2,
+        "variant_id": 14
+      }
+    ],
+    "c.1633G>A (E545K)": [
+      {
+        "disease_id": "1",
+        "gene": "PIK3CA",
+        "disease": "Breast Cancer",
+        "gene_id": 2,
+        "variant_id": 8
+      },
+      {
+        "disease_id": "3",
+        "gene": "PIK3CA",
+        "disease": "Colorectal Cancer",
+        "gene_id": 2,
+        "variant_id": 8
+      },
+      {
+        "disease_id": "2",
+        "gene": "PIK3CA",
+        "disease": "Lung Cancer",
+        "gene_id": 2,
+        "variant_id": 8
+      },
+      {
+        "disease_id": "10",
+        "gene": "PIK3CA",
+        "disease": "Ovarian Cancer",
+        "gene_id": 2,
+        "variant_id": 8
+      }
+    ],
+    "c.1637A>T (Q546L)": [
+      {
+        "disease_id": "1",
+        "gene": "PIK3CA",
+        "disease": "Breast Cancer",
+        "gene_id": 2,
+        "variant_id": 17
+      },
+      {
+        "disease_id": "3",
+        "gene": "PIK3CA",
+        "disease": "Colorectal Cancer",
+        "gene_id": 2,
+        "variant_id": 17
+      }
+    ],
+    "c.3140A>T (H1047L)": [
+      {
+        "disease_id": "1",
+        "gene": "PIK3CA",
+        "disease": "Breast Cancer",
+        "gene_id": 2,
+        "variant_id": 10
+      },
+      {
+        "disease_id": "3",
+        "gene": "PIK3CA",
+        "disease": "Colorectal Cancer",
+        "gene_id": 2,
+        "variant_id": 10
+      },
+      {
+        "disease_id": "2",
+        "gene": "PIK3CA",
+        "disease": "Lung Cancer",
+        "gene_id": 2,
+        "variant_id": 10
+      },
+      {
+        "disease_id": "10",
+        "gene": "PIK3CA",
+        "disease": "Ovarian Cancer",
+        "gene_id": 2,
+        "variant_id": 10
+      }
+    ]
+  },
+  "NRAS": {
+    "c.34G>A (G12S)": [
+      {
+        "disease_id": "3",
+        "gene": "NRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 13,
+        "variant_id": 89
+      },
+      {
+        "disease_id": "2",
+        "gene": "NRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 13,
+        "variant_id": 89
+      },
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 89
+      }
+    ],
+    "c.37G>T (G13C)": [
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 297
+      }
+    ],
+    "c.181C>A (Q61K)": [
+      {
+        "disease_id": "3",
+        "gene": "NRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 13,
+        "variant_id": 75
+      },
+      {
+        "disease_id": "2",
+        "gene": "NRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 13,
+        "variant_id": 75
+      },
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 75
+      },
+      {
+        "disease_id": "7",
+        "gene": "NRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 13,
+        "variant_id": 75
+      }
+    ],
+    "c.34G>T (G12C)": [
+      {
+        "disease_id": "3",
+        "gene": "NRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 13,
+        "variant_id": 86
+      },
+      {
+        "disease_id": "2",
+        "gene": "NRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 13,
+        "variant_id": 86
+      },
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 86
+      }
+    ],
+    "c.182_183delAAinsTG (Q61L)": [
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 83
+      }
+    ],
+    "c.35G>C (G12A)": [
+      {
+        "disease_id": "3",
+        "gene": "NRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 13,
+        "variant_id": 85
+      },
+      {
+        "disease_id": "2",
+        "gene": "NRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 13,
+        "variant_id": 85
+      },
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 85
+      }
+    ],
+    "c.38G>A (G13D)": [
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 92
+      }
+    ],
+    "c.34G>C (G12R)": [
+      {
+        "disease_id": "2",
+        "gene": "NRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 13,
+        "variant_id": 88
+      },
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 88
+      }
+    ],
+    "c.37G>C (G13R)": [
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 93
+      }
+    ],
+    "c.38G>C (G13A)": [
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 91
+      }
+    ],
+    "c.38G>T (G13V)": [
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 94
+      }
+    ],
+    "c.182A>T (Q61L)": [
+      {
+        "disease_id": "2",
+        "gene": "NRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 13,
+        "variant_id": 76
+      },
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 76
+      }
+    ],
+    "No Mutation Detected": [
+      {
+        "disease_id": "3",
+        "gene": "NRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 13,
+        "variant_id": 316
+      }
+    ],
+    "c.182_183delAAinsGG (Q61R)": [
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 82
+      }
+    ],
+    "c.183A>T (Q61H)": [
+      {
+        "disease_id": "2",
+        "gene": "NRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 13,
+        "variant_id": 81
+      },
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 81
+      }
+    ],
+    "c.35G>T (G12V)": [
+      {
+        "disease_id": "3",
+        "gene": "NRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 13,
+        "variant_id": 90
+      },
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 90
+      }
+    ],
+    "c.182A>G (Q61R)": [
+      {
+        "disease_id": "3",
+        "gene": "NRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 13,
+        "variant_id": 77
+      },
+      {
+        "disease_id": "2",
+        "gene": "NRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 13,
+        "variant_id": 77
+      },
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 77
+      },
+      {
+        "disease_id": "7",
+        "gene": "NRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 13,
+        "variant_id": 77
+      }
+    ],
+    "c.181C>G (Q61E)": [
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 97
+      }
+    ],
+    "c.182A>C (Q61P)": [
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 98
+      }
+    ],
+    "c.183A>C (Q61H)": [
+      {
+        "disease_id": "2",
+        "gene": "NRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 13,
+        "variant_id": 80
+      },
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 80
+      }
+    ],
+    "c.35G>A (G12D)": [
+      {
+        "disease_id": "3",
+        "gene": "NRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 13,
+        "variant_id": 87
+      },
+      {
+        "disease_id": "2",
+        "gene": "NRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 13,
+        "variant_id": 87
+      },
+      {
+        "disease_id": "5",
+        "gene": "NRAS",
+        "disease": "Melanoma",
+        "gene_id": 13,
+        "variant_id": 87
+      }
+    ]
+  },
+  "NTRK1": {
+    "(TRKA) Fusions": [
+      {
+        "disease_id": "2",
+        "gene": "NTRK1",
+        "disease": "Lung Cancer",
+        "gene_id": 43,
+        "variant_id": 315
+      }
+    ]
+  },
+  "SMO": {
+    "c.1685G>A (R562Q)": [
+      {
+        "disease_id": "11",
+        "gene": "SMO",
+        "disease": "Basal Cell Carcinoma",
+        "gene_id": 22,
+        "variant_id": 170
+      }
+    ],
+    "c.1417G>C (D473H)": [
+      {
+        "disease_id": "11",
+        "gene": "SMO",
+        "disease": "Basal Cell Carcinoma",
+        "gene_id": 22,
+        "variant_id": 163
+      },
+      {
+        "disease_id": "12",
+        "gene": "SMO",
+        "disease": "Medulloblastoma",
+        "gene_id": 22,
+        "variant_id": 163
+      }
+    ],
+    "c.1955C>T (A652V)": [
+      {
+        "disease_id": "11",
+        "gene": "SMO",
+        "disease": "Basal Cell Carcinoma",
+        "gene_id": 22,
+        "variant_id": 171
+      }
+    ],
+    "c.2263_2264delCCinsTT (P755F)": [
+      {
+        "disease_id": "11",
+        "gene": "SMO",
+        "disease": "Basal Cell Carcinoma",
+        "gene_id": 22,
+        "variant_id": 172
+      }
+    ],
+    "c.595C>T (R199W)": [
+      {
+        "disease_id": "11",
+        "gene": "SMO",
+        "disease": "Basal Cell Carcinoma",
+        "gene_id": 22,
+        "variant_id": 165
+      }
+    ],
+    "c.1046_1047delCCinsTT (T349I)": [
+      {
+        "disease_id": "11",
+        "gene": "SMO",
+        "disease": "Basal Cell Carcinoma",
+        "gene_id": 22,
+        "variant_id": 166
+      }
+    ],
+    "c.1604G>T (W535L)": [
+      {
+        "disease_id": "11",
+        "gene": "SMO",
+        "disease": "Basal Cell Carcinoma",
+        "gene_id": 22,
+        "variant_id": 169
+      }
+    ],
+    "c.1452_1453delCCinsTT (R485W)": [
+      {
+        "disease_id": "11",
+        "gene": "SMO",
+        "disease": "Basal Cell Carcinoma",
+        "gene_id": 22,
+        "variant_id": 167
+      }
+    ],
+    "c.1542_1543delCCinsTT (L515F)": [
+      {
+        "disease_id": "11",
+        "gene": "SMO",
+        "disease": "Basal Cell Carcinoma",
+        "gene_id": 22,
+        "variant_id": 168
+      }
+    ],
+    "c.203_204delCCinsTT (A68V)": [
+      {
+        "disease_id": "11",
+        "gene": "SMO",
+        "disease": "Basal Cell Carcinoma",
+        "gene_id": 22,
+        "variant_id": 164
+      }
+    ]
+  },
+  "ROS1": {
+    "Fusions": [
+      {
+        "disease_id": "2",
+        "gene": "ROS1",
+        "disease": "Lung Cancer",
+        "gene_id": 14,
+        "variant_id": 67
+      }
+    ],
+    "Mutations Resistant to ROS1 TKI Therapy": [
+      {
+        "disease_id": "2",
+        "gene": "ROS1",
+        "disease": "Lung Cancer",
+        "gene_id": 14,
+        "variant_id": 346
+      }
+    ]
+  },
+  "SMAD4": {
+    "c.1081C>T (R361C)": [
+      {
+        "disease_id": "3",
+        "gene": "SMAD4",
+        "disease": "Colorectal Cancer",
+        "gene_id": 21,
+        "variant_id": 157
+      }
+    ],
+    "c.1051G>A (D351N)": [
+      {
+        "disease_id": "3",
+        "gene": "SMAD4",
+        "disease": "Colorectal Cancer",
+        "gene_id": 21,
+        "variant_id": 154
+      }
+    ],
+    "c.1065C>A (D355E)": [
+      {
+        "disease_id": "3",
+        "gene": "SMAD4",
+        "disease": "Colorectal Cancer",
+        "gene_id": 21,
+        "variant_id": 155
+      }
+    ],
+    "c.1082G>A (R361H)": [
+      {
+        "disease_id": "3",
+        "gene": "SMAD4",
+        "disease": "Colorectal Cancer",
+        "gene_id": 21,
+        "variant_id": 158
+      }
+    ],
+    "c.1609G>T (D537Y)": [
+      {
+        "disease_id": "3",
+        "gene": "SMAD4",
+        "disease": "Colorectal Cancer",
+        "gene_id": 21,
+        "variant_id": 153
+      }
+    ],
+    "c.989A>C (E330A)": [
+      {
+        "disease_id": "3",
+        "gene": "SMAD4",
+        "disease": "Colorectal Cancer",
+        "gene_id": 21,
+        "variant_id": 151
+      }
+    ],
+    "c.1081C>A (R361S)": [
+      {
+        "disease_id": "3",
+        "gene": "SMAD4",
+        "disease": "Colorectal Cancer",
+        "gene_id": 21,
+        "variant_id": 156
+      }
+    ],
+    "c.1051G>C (D351H)": [
+      {
+        "disease_id": "3",
+        "gene": "SMAD4",
+        "disease": "Colorectal Cancer",
+        "gene_id": 21,
+        "variant_id": 152
+      }
+    ]
+  },
+  "PGR": {
+    "Expression": [
+      {
+        "disease_id": "1",
+        "gene": "PGR",
+        "disease": "Breast Cancer",
+        "gene_id": 28,
+        "variant_id": 249
+      }
+    ]
+  },
+  "NF1": {
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "NF1",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 48,
+        "variant_id": 325
+      },
+      {
+        "disease_id": "5",
+        "gene": "NF1",
+        "disease": "Melanoma",
+        "gene_id": 48,
+        "variant_id": 325
+      }
+    ]
+  },
+  "JAK2": {
+    "c.2049A>C (R683S)": [
+      {
+        "disease_id": "16",
+        "gene": "JAK2",
+        "disease": "Acute Lymphoblastic Leukemia",
+        "gene_id": 24,
+        "variant_id": 202
+      }
+    ],
+    "c.2047A>G (R683G)": [
+      {
+        "disease_id": "16",
+        "gene": "JAK2",
+        "disease": "Acute Lymphoblastic Leukemia",
+        "gene_id": 24,
+        "variant_id": 200
+      }
+    ],
+    "c.2049A>T (R683S)": [
+      {
+        "disease_id": "16",
+        "gene": "JAK2",
+        "disease": "Acute Lymphoblastic Leukemia",
+        "gene_id": 24,
+        "variant_id": 201
+      }
+    ],
+    "c.2048G>C (R683T)": [
+      {
+        "disease_id": "16",
+        "gene": "JAK2",
+        "disease": "Acute Lymphoblastic Leukemia",
+        "gene_id": 24,
+        "variant_id": 203
+      }
+    ]
+  },
+  "KRAS": {
+    "c.34G>A (G12S)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 36
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 36
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 36
+      }
+    ],
+    "c.181C>A (Q61K)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 41
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 41
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 41
+      }
+    ],
+    "c.436G>C (A146P)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 27
+      }
+    ],
+    "c.182A>T (Q61L)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 42
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 42
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 42
+      }
+    ],
+    "c.182A>G (Q61R)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 43
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 43
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 43
+      }
+    ],
+    "c.38G>T (G13V)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 159
+      }
+    ],
+    "c.437C>T (A146V)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 29
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 29
+      }
+    ],
+    "c.351A>T (K117N)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 161
+      }
+    ],
+    "No Mutation Detected": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 44
+      }
+    ],
+    "c.183A>T (Q61H)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 31
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 31
+      }
+    ],
+    "c.34G>C (G12R)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 35
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 35
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 35
+      },
+      {
+        "disease_id": "10",
+        "gene": "KRAS",
+        "disease": "Ovarian Cancer",
+        "gene_id": 10,
+        "variant_id": 35
+      }
+    ],
+    "c.37G>A (G13S)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 69
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 69
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 69
+      }
+    ],
+    "c.183A>C (Q61H)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 30
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 30
+      }
+    ],
+    "c.35G>A (G12D)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 34
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 34
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 34
+      },
+      {
+        "disease_id": "10",
+        "gene": "KRAS",
+        "disease": "Ovarian Cancer",
+        "gene_id": 10,
+        "variant_id": 34
+      }
+    ],
+    "c.34G>T (G12C)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 33
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 33
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 33
+      },
+      {
+        "disease_id": "10",
+        "gene": "KRAS",
+        "disease": "Ovarian Cancer",
+        "gene_id": 10,
+        "variant_id": 33
+      }
+    ],
+    "c.35G>C (G12A)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 32
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 32
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 32
+      },
+      {
+        "disease_id": "10",
+        "gene": "KRAS",
+        "disease": "Ovarian Cancer",
+        "gene_id": 10,
+        "variant_id": 32
+      }
+    ],
+    "c.38G>A (G13D)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 39
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 39
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 39
+      },
+      {
+        "disease_id": "10",
+        "gene": "KRAS",
+        "disease": "Ovarian Cancer",
+        "gene_id": 10,
+        "variant_id": 39
+      }
+    ],
+    "c.64C>A (Q22K)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 347
+      }
+    ],
+    "c.38G>C (G13A)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 68
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 68
+      }
+    ],
+    "c.182A>C (Q61P)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 308
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 308
+      }
+    ],
+    "c.37G>T (G13C)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 38
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 38
+      }
+    ],
+    "c.37G>C (G13R)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 40
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 40
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 40
+      }
+    ],
+    "c.351A>C (K117N)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 160
+      }
+    ],
+    "c.35G>T (G12V)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 37
+      },
+      {
+        "disease_id": "2",
+        "gene": "KRAS",
+        "disease": "Lung Cancer",
+        "gene_id": 10,
+        "variant_id": 37
+      },
+      {
+        "disease_id": "7",
+        "gene": "KRAS",
+        "disease": "Thyroid Cancer",
+        "gene_id": 10,
+        "variant_id": 37
+      },
+      {
+        "disease_id": "10",
+        "gene": "KRAS",
+        "disease": "Ovarian Cancer",
+        "gene_id": 10,
+        "variant_id": 37
+      }
+    ],
+    "c.436G>A (A146T)": [
+      {
+        "disease_id": "3",
+        "gene": "KRAS",
+        "disease": "Colorectal Cancer",
+        "gene_id": 10,
+        "variant_id": 28
+      }
+    ]
+  },
+  "MLL-MLLT3": {
+    "Fusion": [
+      {
+        "disease_id": "20",
+        "gene": "MLL-MLLT3",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 32,
+        "variant_id": 254
+      }
+    ]
+  },
+  "ESR1": {
+    "Expression": [
+      {
+        "disease_id": "1",
+        "gene": "ESR1",
+        "disease": "Breast Cancer",
+        "gene_id": 27,
+        "variant_id": 248
+      }
+    ],
+    "Mutations Resistant to Antiestrogen Therapy": [
+      {
+        "disease_id": "1",
+        "gene": "ESR1",
+        "disease": "Breast Cancer",
+        "gene_id": 27,
+        "variant_id": 314
+      }
+    ]
+  },
+  "ERBB2": {
+    "Exon 20 Insertion": [
+      {
+        "disease_id": "2",
+        "gene": "ERBB2",
+        "disease": "Lung Cancer",
+        "gene_id": 9,
+        "variant_id": 65
+      }
+    ],
+    "Amplification": [
+      {
+        "disease_id": "1",
+        "gene": "ERBB2",
+        "disease": "Breast Cancer",
+        "gene_id": 9,
+        "variant_id": 119
+      },
+      {
+        "disease_id": "9",
+        "gene": "ERBB2",
+        "disease": "Gastric Cancer",
+        "gene_id": 9,
+        "variant_id": 119
+      }
+    ],
+    "c.2329G>T (V777L)": [
+      {
+        "disease_id": "1",
+        "gene": "ERBB2",
+        "disease": "Breast Cancer",
+        "gene_id": 9,
+        "variant_id": 247
+      }
+    ],
+    "Overexpression": [
+      {
+        "disease_id": "1",
+        "gene": "ERBB2",
+        "disease": "Breast Cancer",
+        "gene_id": 9,
+        "variant_id": 238
+      }
+    ],
+    "c.2339_2340ins (G778_P780dup)": [
+      {
+        "disease_id": "1",
+        "gene": "ERBB2",
+        "disease": "Breast Cancer",
+        "gene_id": 9,
+        "variant_id": 243
+      }
+    ],
+    "c.2264T>C (L755S)": [
+      {
+        "disease_id": "1",
+        "gene": "ERBB2",
+        "disease": "Breast Cancer",
+        "gene_id": 9,
+        "variant_id": 246
+      }
+    ],
+    "c.2686C>T (R896C)": [
+      {
+        "disease_id": "1",
+        "gene": "ERBB2",
+        "disease": "Breast Cancer",
+        "gene_id": 9,
+        "variant_id": 245
+      }
+    ],
+    "c.926G>C (G309A)": [
+      {
+        "disease_id": "1",
+        "gene": "ERBB2",
+        "disease": "Breast Cancer",
+        "gene_id": 9,
+        "variant_id": 239
+      }
+    ],
+    "c.2264_2278del (L755_T759del)": [
+      {
+        "disease_id": "1",
+        "gene": "ERBB2",
+        "disease": "Breast Cancer",
+        "gene_id": 9,
+        "variant_id": 242
+      }
+    ],
+    "c.2524G>A (V842I)": [
+      {
+        "disease_id": "1",
+        "gene": "ERBB2",
+        "disease": "Breast Cancer",
+        "gene_id": 9,
+        "variant_id": 244
+      }
+    ],
+    "c.2305G>C (D769H)": [
+      {
+        "disease_id": "1",
+        "gene": "ERBB2",
+        "disease": "Breast Cancer",
+        "gene_id": 9,
+        "variant_id": 240
+      }
+    ],
+    "c.2305G>T (D769Y)": [
+      {
+        "disease_id": "1",
+        "gene": "ERBB2",
+        "disease": "Breast Cancer",
+        "gene_id": 9,
+        "variant_id": 241
+      }
+    ]
+  },
+  "DNMT3A": {
+    "c.2645G>C (R882P)": [
+      {
+        "disease_id": "20",
+        "gene": "DNMT3A",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 39,
+        "variant_id": 294
+      }
+    ],
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "DNMT3A",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 39,
+        "variant_id": 322
+      }
+    ],
+    "c.2644C>A (R882S)": [
+      {
+        "disease_id": "20",
+        "gene": "DNMT3A",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 39,
+        "variant_id": 292
+      }
+    ],
+    "c.2644C>T (R882C)": [
+      {
+        "disease_id": "20",
+        "gene": "DNMT3A",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 39,
+        "variant_id": 291
+      }
+    ],
+    "c.2644C>G (R882G)": [
+      {
+        "disease_id": "20",
+        "gene": "DNMT3A",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 39,
+        "variant_id": 295
+      }
+    ],
+    "c.2645G>A (R882H)": [
+      {
+        "disease_id": "20",
+        "gene": "DNMT3A",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 39,
+        "variant_id": 293
+      }
+    ],
+    "c.2645G>T (R882L)": [
+      {
+        "disease_id": "20",
+        "gene": "DNMT3A",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 39,
+        "variant_id": 296
+      }
+    ]
+  },
+  "PTEN": {
+    "c.968dupA (N323fs*2)": [
+      {
+        "disease_id": "10",
+        "gene": "PTEN",
+        "disease": "Ovarian Cancer",
+        "gene_id": 3,
+        "variant_id": 140
+      }
+    ],
+    "c.697C>T (R233*)": [
+      {
+        "disease_id": "1",
+        "gene": "PTEN",
+        "disease": "Breast Cancer",
+        "gene_id": 3,
+        "variant_id": 25
+      },
+      {
+        "disease_id": "3",
+        "gene": "PTEN",
+        "disease": "Colorectal Cancer",
+        "gene_id": 3,
+        "variant_id": 25
+      },
+      {
+        "disease_id": "2",
+        "gene": "PTEN",
+        "disease": "Lung Cancer",
+        "gene_id": 3,
+        "variant_id": 25
+      }
+    ],
+    "c.389G>A (R130Q)": [
+      {
+        "disease_id": "10",
+        "gene": "PTEN",
+        "disease": "Ovarian Cancer",
+        "gene_id": 3,
+        "variant_id": 144
+      }
+    ],
+    "c.477G>T (R159S)": [
+      {
+        "disease_id": "1",
+        "gene": "PTEN",
+        "disease": "Breast Cancer",
+        "gene_id": 3,
+        "variant_id": 24
+      },
+      {
+        "disease_id": "3",
+        "gene": "PTEN",
+        "disease": "Colorectal Cancer",
+        "gene_id": 3,
+        "variant_id": 24
+      }
+    ],
+    "c.800delA (K267fs*9)": [
+      {
+        "disease_id": "1",
+        "gene": "PTEN",
+        "disease": "Breast Cancer",
+        "gene_id": 3,
+        "variant_id": 26
+      },
+      {
+        "disease_id": "3",
+        "gene": "PTEN",
+        "disease": "Colorectal Cancer",
+        "gene_id": 3,
+        "variant_id": 26
+      }
+    ],
+    "c.741dupA (P248fs*5)": [
+      {
+        "disease_id": "10",
+        "gene": "PTEN",
+        "disease": "Ovarian Cancer",
+        "gene_id": 3,
+        "variant_id": 142
+      }
+    ],
+    "c.388C>G (R130G)": [
+      {
+        "disease_id": "10",
+        "gene": "PTEN",
+        "disease": "Ovarian Cancer",
+        "gene_id": 3,
+        "variant_id": 145
+      }
+    ],
+    "c.389delG (R130fs*4)": [
+      {
+        "disease_id": "10",
+        "gene": "PTEN",
+        "disease": "Ovarian Cancer",
+        "gene_id": 3,
+        "variant_id": 143
+      }
+    ],
+    "c.968delA (N323fs*21)": [
+      {
+        "disease_id": "10",
+        "gene": "PTEN",
+        "disease": "Ovarian Cancer",
+        "gene_id": 3,
+        "variant_id": 141
+      }
+    ],
+    "c.388C>T (R130*)": [
+      {
+        "disease_id": "10",
+        "gene": "PTEN",
+        "disease": "Ovarian Cancer",
+        "gene_id": 3,
+        "variant_id": 137
+      }
+    ]
+  },
+  "STAG2": {
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "STAG2",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 52,
+        "variant_id": 329
+      }
+    ]
+  },
+  "IDH2": {
+    "c.514A>T (R172W)": [
+      {
+        "disease_id": "21",
+        "gene": "IDH2",
+        "disease": "Glioma",
+        "gene_id": 37,
+        "variant_id": 318
+      }
+    ],
+    "c.418C>G (R140G)": [
+      {
+        "disease_id": "20",
+        "gene": "IDH2",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 37,
+        "variant_id": 269
+      }
+    ],
+    "c.418C>T (R140W)": [
+      {
+        "disease_id": "20",
+        "gene": "IDH2",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 37,
+        "variant_id": 267
+      }
+    ],
+    "c.516G>T (R172S)": [
+      {
+        "disease_id": "21",
+        "gene": "IDH2",
+        "disease": "Glioma",
+        "gene_id": 37,
+        "variant_id": 319
+      }
+    ],
+    "c.419G>A (R140Q)": [
+      {
+        "disease_id": "20",
+        "gene": "IDH2",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 37,
+        "variant_id": 266
+      }
+    ],
+    "c.419G>T (R140L)": [
+      {
+        "disease_id": "20",
+        "gene": "IDH2",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 37,
+        "variant_id": 268
+      }
+    ],
+    "c.515G>T (R172M)": [
+      {
+        "disease_id": "20",
+        "gene": "IDH2",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 37,
+        "variant_id": 271
+      },
+      {
+        "disease_id": "21",
+        "gene": "IDH2",
+        "disease": "Glioma",
+        "gene_id": 37,
+        "variant_id": 271
+      }
+    ],
+    "c.515G>A (R172K)": [
+      {
+        "disease_id": "20",
+        "gene": "IDH2",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 37,
+        "variant_id": 270
+      },
+      {
+        "disease_id": "21",
+        "gene": "IDH2",
+        "disease": "Glioma",
+        "gene_id": 37,
+        "variant_id": 270
+      }
+    ],
+    "c.516G>C (R172S)": [
+      {
+        "disease_id": "20",
+        "gene": "IDH2",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 37,
+        "variant_id": 272
+      },
+      {
+        "disease_id": "21",
+        "gene": "IDH2",
+        "disease": "Glioma",
+        "gene_id": 37,
+        "variant_id": 272
+      }
+    ],
+    "c.514A>G (R172G)": [
+      {
+        "disease_id": "21",
+        "gene": "IDH2",
+        "disease": "Glioma",
+        "gene_id": 37,
+        "variant_id": 317
+      }
+    ]
+  },
+  "IDH1": {
+    "c.395G>T (R132L)": [
+      {
+        "disease_id": "20",
+        "gene": "IDH1",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 36,
+        "variant_id": 264
+      },
+      {
+        "disease_id": "21",
+        "gene": "IDH1",
+        "disease": "Glioma",
+        "gene_id": 36,
+        "variant_id": 264
+      }
+    ],
+    "c.394C>A (R132S)": [
+      {
+        "disease_id": "20",
+        "gene": "IDH1",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 36,
+        "variant_id": 262
+      },
+      {
+        "disease_id": "21",
+        "gene": "IDH1",
+        "disease": "Glioma",
+        "gene_id": 36,
+        "variant_id": 262
+      }
+    ],
+    "c.394C>G (R132G)": [
+      {
+        "disease_id": "20",
+        "gene": "IDH1",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 36,
+        "variant_id": 261
+      },
+      {
+        "disease_id": "21",
+        "gene": "IDH1",
+        "disease": "Glioma",
+        "gene_id": 36,
+        "variant_id": 261
+      }
+    ],
+    "c.394C>T (R132C)": [
+      {
+        "disease_id": "20",
+        "gene": "IDH1",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 36,
+        "variant_id": 260
+      },
+      {
+        "disease_id": "21",
+        "gene": "IDH1",
+        "disease": "Glioma",
+        "gene_id": 36,
+        "variant_id": 260
+      }
+    ],
+    "c.395G>A (R132H)": [
+      {
+        "disease_id": "20",
+        "gene": "IDH1",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 36,
+        "variant_id": 263
+      },
+      {
+        "disease_id": "21",
+        "gene": "IDH1",
+        "disease": "Glioma",
+        "gene_id": 36,
+        "variant_id": 263
+      }
+    ],
+    "c.395G>C (R132P)": [
+      {
+        "disease_id": "20",
+        "gene": "IDH1",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 36,
+        "variant_id": 265
+      }
+    ]
+  },
+  "TET2": {
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "TET2",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 53,
+        "variant_id": 330
+      }
+    ]
+  },
+  "BCR-ABL1": {
+    "c.895G>C (V299L)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 234
+      }
+    ],
+    "c.951C>A (F317L)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 228
+      }
+    ],
+    "c.949T>G (F317V)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 225
+      }
+    ],
+    "Fusions": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 219
+      }
+    ],
+    "c.944C>T (T315I)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 231
+      }
+    ],
+    "c.949T>A (F317I)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 229
+      }
+    ],
+    "c.1076T>G (F359C)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 223
+      }
+    ],
+    "c.950T>G (F317C)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 230
+      }
+    ],
+    "c.895G>T (V299L)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 233
+      }
+    ],
+    "c.763G>A (E255K)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 235
+      }
+    ],
+    "c.764A>T (E255V)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 224
+      }
+    ],
+    "c.951C>G (F317L)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 226
+      }
+    ],
+    "c.1075T>G (F359V)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 221
+      }
+    ],
+    "c.943A>G (T315A)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 232
+      }
+    ],
+    "c.1075T>A (F359I)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 222
+      }
+    ],
+    "Other": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 220
+      }
+    ],
+    "c.949T>C (F317L)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 227
+      }
+    ],
+    "c.757T>C (Y253H)": [
+      {
+        "disease_id": "18",
+        "gene": "BCR-ABL1",
+        "disease": "Chronic Myeloid Leukemia",
+        "gene_id": 25,
+        "variant_id": 236
+      }
+    ]
+  },
+  "AR": {
+    "Splice Variant 7 (AR-V7) Expression": [
+      {
+        "disease_id": "24",
+        "gene": "AR",
+        "disease": "Prostate Cancer",
+        "gene_id": 42,
+        "variant_id": 355
+      }
+    ],
+    "c.2632A>G (T878A)": [
+      {
+        "disease_id": "24",
+        "gene": "AR",
+        "disease": "Prostate Cancer",
+        "gene_id": 42,
+        "variant_id": 350
+      }
+    ],
+    "Amplification": [
+      {
+        "disease_id": "24",
+        "gene": "AR",
+        "disease": "Prostate Cancer",
+        "gene_id": 42,
+        "variant_id": 354
+      }
+    ],
+    "c.2226G>T (W742C)": [
+      {
+        "disease_id": "24",
+        "gene": "AR",
+        "disease": "Prostate Cancer",
+        "gene_id": 42,
+        "variant_id": 353
+      }
+    ],
+    "c.2631C>A (F877L)": [
+      {
+        "disease_id": "24",
+        "gene": "AR",
+        "disease": "Prostate Cancer",
+        "gene_id": 42,
+        "variant_id": 349
+      }
+    ],
+    "c.2105T>A (L702H)": [
+      {
+        "disease_id": "24",
+        "gene": "AR",
+        "disease": "Prostate Cancer",
+        "gene_id": 42,
+        "variant_id": 351
+      }
+    ],
+    "c.2623C>T (H875Y)": [
+      {
+        "disease_id": "24",
+        "gene": "AR",
+        "disease": "Prostate Cancer",
+        "gene_id": 42,
+        "variant_id": 352
+      }
+    ],
+    "Expression": [
+      {
+        "disease_id": "1",
+        "gene": "AR",
+        "disease": "Breast Cancer",
+        "gene_id": 42,
+        "variant_id": 311
+      }
+    ]
+  },
+  "BCOR": {
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "BCOR",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 45,
+        "variant_id": 321
+      }
+    ]
+  },
+  "BIRC3": {
+    "Truncating Mutations": [
+      {
+        "disease_id": "23",
+        "gene": "BIRC3",
+        "disease": "Chronic Lymphocytic Leukemia",
+        "gene_id": 109,
+        "variant_id": 342
+      }
+    ]
+  },
+  "FGFR2": {
+    "Amplification": [
+      {
+        "disease_id": "1",
+        "gene": "FGFR2",
+        "disease": "Breast Cancer",
+        "gene_id": 41,
+        "variant_id": 309
+      }
+    ]
+  },
+  "FGFR3": {
+    "Amplification": [
+      {
+        "disease_id": "1",
+        "gene": "FGFR3",
+        "disease": "Breast Cancer",
+        "gene_id": 243,
+        "variant_id": 357
+      }
+    ],
+    "c.1955A>C (K652T)": [
+      {
+        "disease_id": "19",
+        "gene": "FGFR3",
+        "disease": "Bladder Cancer",
+        "gene_id": 243,
+        "variant_id": 364
+      }
+    ],
+    "c.1954A>C (K652E)": [
+      {
+        "disease_id": "19",
+        "gene": "FGFR3",
+        "disease": "Bladder Cancer",
+        "gene_id": 243,
+        "variant_id": 361
+      }
+    ],
+    "c.746C>G (S249C)": [
+      {
+        "disease_id": "1",
+        "gene": "FGFR3",
+        "disease": "Breast Cancer",
+        "gene_id": 243,
+        "variant_id": 356
+      },
+      {
+        "disease_id": "19",
+        "gene": "FGFR3",
+        "disease": "Bladder Cancer",
+        "gene_id": 243,
+        "variant_id": 356
+      }
+    ],
+    "c.742C>T (R248C)": [
+      {
+        "disease_id": "19",
+        "gene": "FGFR3",
+        "disease": "Bladder Cancer",
+        "gene_id": 243,
+        "variant_id": 365
+      }
+    ],
+    "c.1954A>G (K652Q)": [
+      {
+        "disease_id": "19",
+        "gene": "FGFR3",
+        "disease": "Bladder Cancer",
+        "gene_id": 243,
+        "variant_id": 363
+      }
+    ],
+    "Fusions": [
+      {
+        "disease_id": "2",
+        "gene": "FGFR3",
+        "disease": "Lung Cancer",
+        "gene_id": 243,
+        "variant_id": 341
+      },
+      {
+        "disease_id": "19",
+        "gene": "FGFR3",
+        "disease": "Bladder Cancer",
+        "gene_id": 243,
+        "variant_id": 341
+      }
+    ],
+    "c.1124A>G (Y375C)": [
+      {
+        "disease_id": "19",
+        "gene": "FGFR3",
+        "disease": "Bladder Cancer",
+        "gene_id": 243,
+        "variant_id": 366
+      }
+    ],
+    "c.1955A>T (K652M)": [
+      {
+        "disease_id": "19",
+        "gene": "FGFR3",
+        "disease": "Bladder Cancer",
+        "gene_id": 243,
+        "variant_id": 362
+      }
+    ],
+    "c.1114G>T (G372C)": [
+      {
+        "disease_id": "19",
+        "gene": "FGFR3",
+        "disease": "Bladder Cancer",
+        "gene_id": 243,
+        "variant_id": 360
+      }
+    ]
+  },
+  "FGFR1": {
+    "Amplification": [
+      {
+        "disease_id": "1",
+        "gene": "FGFR1",
+        "disease": "Breast Cancer",
+        "gene_id": 7,
+        "variant_id": 58
+      },
+      {
+        "disease_id": "2",
+        "gene": "FGFR1",
+        "disease": "Lung Cancer",
+        "gene_id": 7,
+        "variant_id": 58
+      }
+    ]
+  },
+  "DEK-NUP214": {
+    "Fusion": [
+      {
+        "disease_id": "20",
+        "gene": "DEK-NUP214",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 33,
+        "variant_id": 255
+      }
+    ]
+  },
+  "TP53": {
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "TP53",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 54,
+        "variant_id": 331
+      }
+    ]
+  },
+  "ALK": {
+    "c.3452C>T (T1151M)": [
+      {
+        "disease_id": "13",
+        "gene": "ALK",
+        "disease": "Neuroblastoma",
+        "gene_id": 5,
+        "variant_id": 174
+      }
+    ],
+    "c.3520T>A (F1174I)": [
+      {
+        "disease_id": "13",
+        "gene": "ALK",
+        "disease": "Neuroblastoma",
+        "gene_id": 5,
+        "variant_id": 177
+      }
+    ],
+    "c.3520T>G (F1174V)": [
+      {
+        "disease_id": "13",
+        "gene": "ALK",
+        "disease": "Neuroblastoma",
+        "gene_id": 5,
+        "variant_id": 179
+      }
+    ],
+    "c.3733T>G (F1245V)": [
+      {
+        "disease_id": "13",
+        "gene": "ALK",
+        "disease": "Neuroblastoma",
+        "gene_id": 5,
+        "variant_id": 182
+      }
+    ],
+    "c.3734T>G (F1245C)": [
+      {
+        "disease_id": "13",
+        "gene": "ALK",
+        "disease": "Neuroblastoma",
+        "gene_id": 5,
+        "variant_id": 180
+      }
+    ],
+    "Mutations Resistant to ALK TKI Therapy": [
+      {
+        "disease_id": "2",
+        "gene": "ALK",
+        "disease": "Lung Cancer",
+        "gene_id": 5,
+        "variant_id": 139
+      }
+    ],
+    "Fusions": [
+      {
+        "disease_id": "2",
+        "gene": "ALK",
+        "disease": "Lung Cancer",
+        "gene_id": 5,
+        "variant_id": 66
+      },
+      {
+        "disease_id": "15",
+        "gene": "ALK",
+        "disease": "Anaplastic Large Cell Lymphoma",
+        "gene_id": 5,
+        "variant_id": 66
+      },
+      {
+        "disease_id": "17",
+        "gene": "ALK",
+        "disease": "Inflammatory Myofibroblastic Tumor",
+        "gene_id": 5,
+        "variant_id": 66
+      }
+    ],
+    "c.3735C>G (F1245L)": [
+      {
+        "disease_id": "13",
+        "gene": "ALK",
+        "disease": "Neuroblastoma",
+        "gene_id": 5,
+        "variant_id": 181
+      }
+    ],
+    "c.3833A>C (Y1278S)": [
+      {
+        "disease_id": "13",
+        "gene": "ALK",
+        "disease": "Neuroblastoma",
+        "gene_id": 5,
+        "variant_id": 184
+      }
+    ],
+    "c.3512T>A (I1171N)": [
+      {
+        "disease_id": "13",
+        "gene": "ALK",
+        "disease": "Neuroblastoma",
+        "gene_id": 5,
+        "variant_id": 175
+      }
+    ],
+    "c.3522C>A (F1174L)": [
+      {
+        "disease_id": "13",
+        "gene": "ALK",
+        "disease": "Neuroblastoma",
+        "gene_id": 5,
+        "variant_id": 178
+      }
+    ],
+    "Exon Deletion": [
+      {
+        "disease_id": "14",
+        "gene": "ALK",
+        "disease": "Rhabdomyosarcoma",
+        "gene_id": 5,
+        "variant_id": 186
+      }
+    ],
+    "c.3271G>A (D1091N)": [
+      {
+        "disease_id": "13",
+        "gene": "ALK",
+        "disease": "Neuroblastoma",
+        "gene_id": 5,
+        "variant_id": 173
+      }
+    ],
+    "c.3824G>A (R1275Q)": [
+      {
+        "disease_id": "13",
+        "gene": "ALK",
+        "disease": "Neuroblastoma",
+        "gene_id": 5,
+        "variant_id": 183
+      }
+    ],
+    "c.3521T>G (F1174C)": [
+      {
+        "disease_id": "13",
+        "gene": "ALK",
+        "disease": "Neuroblastoma",
+        "gene_id": 5,
+        "variant_id": 176
+      }
+    ],
+    "c.3673G>A (D1225N)": [
+      {
+        "disease_id": "14",
+        "gene": "ALK",
+        "disease": "Rhabdomyosarcoma",
+        "gene_id": 5,
+        "variant_id": 187
+      }
+    ]
+  },
+  "ETV6": {
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "ETV6",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 46,
+        "variant_id": 323
+      }
+    ]
+  },
+  "DDR2": {
+    "c.2304T>A (S768R)": [
+      {
+        "disease_id": "2",
+        "gene": "DDR2",
+        "disease": "Lung Cancer",
+        "gene_id": 6,
+        "variant_id": 78
+      }
+    ]
+  },
+  "CD274": {
+    "Expression": [
+      {
+        "disease_id": "2",
+        "gene": "CD274",
+        "disease": "Lung Cancer",
+        "gene_id": 140,
+        "variant_id": 359
+      }
+    ]
+  },
+  "SRSF2": {
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "SRSF2",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 51,
+        "variant_id": 328
+      }
+    ]
+  },
+  "NOTCH1": {
+    "Truncating Mutations": [
+      {
+        "disease_id": "23",
+        "gene": "NOTCH1",
+        "disease": "Chronic Lymphocytic Leukemia",
+        "gene_id": 428,
+        "variant_id": 345
+      }
+    ],
+    "c.7541_7542delCT (P2514fs)": [
+      {
+        "disease_id": "23",
+        "gene": "NOTCH1",
+        "disease": "Chronic Lymphocytic Leukemia",
+        "gene_id": 428,
+        "variant_id": 344
+      }
+    ]
+  },
+  "KIT": {
+    "c.2447A>T (D816V)": [
+      {
+        "disease_id": "20",
+        "gene": "KIT",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 19,
+        "variant_id": 275
+      }
+    ],
+    "Amplification": [
+      {
+        "disease_id": "5",
+        "gene": "KIT",
+        "disease": "Melanoma",
+        "gene_id": 19,
+        "variant_id": 338
+      }
+    ],
+    "Exon 14 Mutation": [
+      {
+        "disease_id": "4",
+        "gene": "KIT",
+        "disease": "GIST",
+        "gene_id": 19,
+        "variant_id": 50
+      }
+    ],
+    "c.1669T>C (W557R)": [
+      {
+        "disease_id": "5",
+        "gene": "KIT",
+        "disease": "Melanoma",
+        "gene_id": 19,
+        "variant_id": 110
+      },
+      {
+        "disease_id": "6",
+        "gene": "KIT",
+        "disease": "Thymic Carcinoma",
+        "gene_id": 19,
+        "variant_id": 110
+      }
+    ],
+    "c.2446G>C (D816H)": [
+      {
+        "disease_id": "20",
+        "gene": "KIT",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 19,
+        "variant_id": 84
+      },
+      {
+        "disease_id": "5",
+        "gene": "KIT",
+        "disease": "Melanoma",
+        "gene_id": 19,
+        "variant_id": 84
+      }
+    ],
+    "c.2446_2447delGAinsAT (D816I)": [
+      {
+        "disease_id": "20",
+        "gene": "KIT",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 19,
+        "variant_id": 276
+      }
+    ],
+    "c.1679_1681del (V560del)": [
+      {
+        "disease_id": "6",
+        "gene": "KIT",
+        "disease": "Thymic Carcinoma",
+        "gene_id": 19,
+        "variant_id": 123
+      }
+    ],
+    "c.2460T>A (D820E)": [
+      {
+        "disease_id": "6",
+        "gene": "KIT",
+        "disease": "Thymic Carcinoma",
+        "gene_id": 19,
+        "variant_id": 120
+      }
+    ],
+    "c.2446G>T (D816Y)": [
+      {
+        "disease_id": "20",
+        "gene": "KIT",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 19,
+        "variant_id": 274
+      }
+    ],
+    "Exon 8 Mutation": [
+      {
+        "disease_id": "20",
+        "gene": "KIT",
+        "disease": "Acute Myeloid Leukemia",
+        "gene_id": 19,
+        "variant_id": 273
+      }
+    ],
+    "Exon 11 Mutation": [
+      {
+        "disease_id": "4",
+        "gene": "KIT",
+        "disease": "GIST",
+        "gene_id": 19,
+        "variant_id": 47
+      }
+    ],
+    "c.2089C>T (H697Y)": [
+      {
+        "disease_id": "6",
+        "gene": "KIT",
+        "disease": "Thymic Carcinoma",
+        "gene_id": 19,
+        "variant_id": 121
+      }
+    ],
+    "Exon 13 Mutation": [
+      {
+        "disease_id": "4",
+        "gene": "KIT",
+        "disease": "GIST",
+        "gene_id": 19,
+        "variant_id": 49
+      }
+    ],
+    "c.1669T>A (W557R)": [
+      {
+        "disease_id": "5",
+        "gene": "KIT",
+        "disease": "Melanoma",
+        "gene_id": 19,
+        "variant_id": 109
+      }
+    ],
+    "No Mutation Detected": [
+      {
+        "disease_id": "4",
+        "gene": "KIT",
+        "disease": "GIST",
+        "gene_id": 19,
+        "variant_id": 56
+      }
+    ],
+    "Exon 9 Mutation": [
+      {
+        "disease_id": "4",
+        "gene": "KIT",
+        "disease": "GIST",
+        "gene_id": 19,
+        "variant_id": 46
+      }
+    ],
+    "c.1730_1738del (P577_D579del)": [
+      {
+        "disease_id": "6",
+        "gene": "KIT",
+        "disease": "Thymic Carcinoma",
+        "gene_id": 19,
+        "variant_id": 122
+      }
+    ],
+    "c.1727T>C (L576P)": [
+      {
+        "disease_id": "5",
+        "gene": "KIT",
+        "disease": "Melanoma",
+        "gene_id": 19,
+        "variant_id": 96
+      },
+      {
+        "disease_id": "6",
+        "gene": "KIT",
+        "disease": "Thymic Carcinoma",
+        "gene_id": 19,
+        "variant_id": 96
+      }
+    ],
+    "c.1924A>G (K642E)": [
+      {
+        "disease_id": "5",
+        "gene": "KIT",
+        "disease": "Melanoma",
+        "gene_id": 19,
+        "variant_id": 95
+      }
+    ],
+    "c.1657T>A (Y553N)": [
+      {
+        "disease_id": "6",
+        "gene": "KIT",
+        "disease": "Thymic Carcinoma",
+        "gene_id": 19,
+        "variant_id": 124
+      }
+    ],
+    "c.1468G>A (E490K)": [
+      {
+        "disease_id": "6",
+        "gene": "KIT",
+        "disease": "Thymic Carcinoma",
+        "gene_id": 19,
+        "variant_id": 218
+      }
+    ],
+    "c.1676T>A (V559D)": [
+      {
+        "disease_id": "5",
+        "gene": "KIT",
+        "disease": "Melanoma",
+        "gene_id": 19,
+        "variant_id": 113
+      }
+    ],
+    "Other": [
+      {
+        "disease_id": "5",
+        "gene": "KIT",
+        "disease": "Melanoma",
+        "gene_id": 19,
+        "variant_id": 132
+      }
+    ],
+    "c.1676T>C (V559A)": [
+      {
+        "disease_id": "5",
+        "gene": "KIT",
+        "disease": "Melanoma",
+        "gene_id": 19,
+        "variant_id": 112
+      },
+      {
+        "disease_id": "6",
+        "gene": "KIT",
+        "disease": "Thymic Carcinoma",
+        "gene_id": 19,
+        "variant_id": 112
+      }
+    ],
+    "Exon 17 Mutation": [
+      {
+        "disease_id": "4",
+        "gene": "KIT",
+        "disease": "GIST",
+        "gene_id": 19,
+        "variant_id": 52
+      }
+    ]
+  },
+  "U2AF1": {
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "U2AF1",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 55,
+        "variant_id": 332
+      }
+    ]
+  },
+  "RUNX1": {
+    "Mutations": [
+      {
+        "disease_id": "22",
+        "gene": "RUNX1",
+        "disease": "Myelodysplastic Syndromes",
+        "gene_id": 49,
+        "variant_id": 326
+      }
+    ]
+  },
+  "BRAF": {
+    "c.1801A>G (K601E)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 190
+      }
+    ],
+    "c.1405_1406delGGinsTT (G469L)": [
+      {
+        "disease_id": "2",
+        "gene": "BRAF",
+        "disease": "Lung Cancer",
+        "gene_id": 4,
+        "variant_id": 310
+      }
+    ],
+    "c.1790T>G (L597R)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 138
+      },
+      {
+        "disease_id": "10",
+        "gene": "BRAF",
+        "disease": "Ovarian Cancer",
+        "gene_id": 4,
+        "variant_id": 138
+      }
+    ],
+    "c.1799T>G (V600G)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 115
+      }
+    ],
+    "c.1799_1800delTGinsAA (V600E)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 111
+      }
+    ],
+    "c.1799T>A  (V600E)": [
+      {
+        "disease_id": "21",
+        "gene": "BRAF",
+        "disease": "Glioma",
+        "gene_id": 4,
+        "variant_id": 54
+      },
+      {
+        "disease_id": "3",
+        "gene": "BRAF",
+        "disease": "Colorectal Cancer",
+        "gene_id": 4,
+        "variant_id": 54
+      },
+      {
+        "disease_id": "2",
+        "gene": "BRAF",
+        "disease": "Lung Cancer",
+        "gene_id": 4,
+        "variant_id": 54
+      },
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 54
+      },
+      {
+        "disease_id": "4",
+        "gene": "BRAF",
+        "disease": "GIST",
+        "gene_id": 4,
+        "variant_id": 54
+      },
+      {
+        "disease_id": "7",
+        "gene": "BRAF",
+        "disease": "Thyroid Cancer",
+        "gene_id": 4,
+        "variant_id": 54
+      },
+      {
+        "disease_id": "10",
+        "gene": "BRAF",
+        "disease": "Ovarian Cancer",
+        "gene_id": 4,
+        "variant_id": 54
+      }
+    ],
+    "c.1799_1800delTGinsAT (V600D)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 114
+      }
+    ],
+    "c.1781A>G (D594G)": [
+      {
+        "disease_id": "3",
+        "gene": "BRAF",
+        "disease": "Colorectal Cancer",
+        "gene_id": 4,
+        "variant_id": 148
+      },
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 148
+      }
+    ],
+    "Translocation": [
+      {
+        "disease_id": "7",
+        "gene": "BRAF",
+        "disease": "Thyroid Cancer",
+        "gene_id": 4,
+        "variant_id": 125
+      }
+    ],
+    "c.1789_1790delCTinsTC (L597S)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 189
+      }
+    ],
+    "c.1406G>T (G469V)": [
+      {
+        "disease_id": "3",
+        "gene": "BRAF",
+        "disease": "Colorectal Cancer",
+        "gene_id": 4,
+        "variant_id": 147
+      }
+    ],
+    "c.1415A>G (Y472C)": [
+      {
+        "disease_id": "2",
+        "gene": "BRAF",
+        "disease": "Lung Cancer",
+        "gene_id": 4,
+        "variant_id": 209
+      }
+    ],
+    "c.1406G>C (G469A)": [
+      {
+        "disease_id": "3",
+        "gene": "BRAF",
+        "disease": "Colorectal Cancer",
+        "gene_id": 4,
+        "variant_id": 71
+      },
+      {
+        "disease_id": "2",
+        "gene": "BRAF",
+        "disease": "Lung Cancer",
+        "gene_id": 4,
+        "variant_id": 71
+      }
+    ],
+    "c.1798G>A (V600M)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 117
+      }
+    ],
+    "No Mutation Detected": [
+      {
+        "disease_id": "4",
+        "gene": "BRAF",
+        "disease": "GIST",
+        "gene_id": 4,
+        "variant_id": 55
+      }
+    ],
+    "c.1786G>C (G596R)": [
+      {
+        "disease_id": "3",
+        "gene": "BRAF",
+        "disease": "Colorectal Cancer",
+        "gene_id": 4,
+        "variant_id": 150
+      }
+    ],
+    "c.1397G>T (G466V)": [
+      {
+        "disease_id": "3",
+        "gene": "BRAF",
+        "disease": "Colorectal Cancer",
+        "gene_id": 4,
+        "variant_id": 70
+      },
+      {
+        "disease_id": "2",
+        "gene": "BRAF",
+        "disease": "Lung Cancer",
+        "gene_id": 4,
+        "variant_id": 70
+      }
+    ],
+    "c.1780G>A (D594N)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 298
+      }
+    ],
+    "c.1782T>G (D594E)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 302
+      }
+    ],
+    "c.1780G>C (D594H)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 300
+      }
+    ],
+    "c.1779_1780delTGinsGA (D594N)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 299
+      }
+    ],
+    "c.1789C>G (L597V)": [
+      {
+        "disease_id": "2",
+        "gene": "BRAF",
+        "disease": "Lung Cancer",
+        "gene_id": 4,
+        "variant_id": 73
+      },
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 73
+      }
+    ],
+    "c.1798_1799delGTinsAG (V600R)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 118
+      }
+    ],
+    "c.1782T>A (D594E)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 301
+      }
+    ],
+    "Fusions": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 334
+      }
+    ],
+    "c.1798_1799delGTinsAA (V600K)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 116
+      }
+    ],
+    "c.1790T>A (L597Q)": [
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 188
+      }
+    ],
+    "c.1781A>T (D594V)": [
+      {
+        "disease_id": "3",
+        "gene": "BRAF",
+        "disease": "Colorectal Cancer",
+        "gene_id": 4,
+        "variant_id": 149
+      },
+      {
+        "disease_id": "5",
+        "gene": "BRAF",
+        "disease": "Melanoma",
+        "gene_id": 4,
+        "variant_id": 149
+      }
+    ],
+    "c.1406G>A (G469E)": [
+      {
+        "disease_id": "3",
+        "gene": "BRAF",
+        "disease": "Colorectal Cancer",
+        "gene_id": 4,
+        "variant_id": 146
+      }
+    ]
+  },
+  "GNA11": {
+    "c.547C>T (R183C)": [
+      {
+        "disease_id": "5",
+        "gene": "GNA11",
+        "disease": "Melanoma",
+        "gene_id": 16,
+        "variant_id": 336
+      }
+    ],
+    "c.626A>C (Q209P)": [
+      {
+        "disease_id": "5",
+        "gene": "GNA11",
+        "disease": "Melanoma",
+        "gene_id": 16,
+        "variant_id": 101
+      }
+    ],
+    "c.626A>T (Q209L)": [
+      {
+        "disease_id": "5",
+        "gene": "GNA11",
+        "disease": "Melanoma",
+        "gene_id": 16,
+        "variant_id": 99
+      }
+    ],
+    "c.546_547delCCinsTT (R183C)": [
+      {
+        "disease_id": "5",
+        "gene": "GNA11",
+        "disease": "Melanoma",
+        "gene_id": 16,
+        "variant_id": 335
+      }
+    ]
+  },
+  "EGFR": {
+    "c.2303G>T (S768I)": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 348
+      }
+    ],
+    "c.2155G>A (G719S)": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 3
+      }
+    ],
+    "Exon 19 Deletion": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 21
+      }
+    ],
+    "c.2582T>A (L861Q)": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 6
+      }
+    ],
+    "c.2573T>G (L858R)": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 5
+      }
+    ],
+    "Kinase Domain Duplication": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 339
+      }
+    ],
+    "Exon 19 Insertion": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 135
+      }
+    ],
+    "Status Unknown": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 313
+      }
+    ],
+    "c.2369C>T (T790M)": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 4
+      }
+    ],
+    "Exon 20 Insertion": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 64
+      }
+    ],
+    "No Mutation Detected": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 79
+      }
+    ],
+    "c.2155G>T (G719C)": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 2
+      }
+    ],
+    "c.2290_2291ins (A763_Y764insFQEA)": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 312
+      }
+    ],
+    "c.2156G>C (G719A)": [
+      {
+        "disease_id": "2",
+        "gene": "EGFR",
+        "disease": "Lung Cancer",
+        "gene_id": 8,
+        "variant_id": 1
+      }
+    ]
+  },
+  "MET": {
+    "Exon 14 Skipping Mutations": [
+      {
+        "disease_id": "2",
+        "gene": "MET",
+        "disease": "Lung Cancer",
+        "gene_id": 12,
+        "variant_id": 343
+      }
+    ],
+    "Amplification": [
+      {
+        "disease_id": "2",
+        "gene": "MET",
+        "disease": "Lung Cancer",
+        "gene_id": 12,
+        "variant_id": 59
+      }
+    ]
+  }
+}

@@ -71,6 +71,17 @@ class TestCOSMIC:
         assert not COSMIC.get_cosmic_url(123)
         assert COSMIC.get_cosmic_url(u'BRAF') == COSMIC.QUERY_ROUTE + 'BRAF'
 
+from source_my_cancer_genome import MyCancerGenome
+
+class TestMyCancerGenome:
+    def test_search_variant_local(self):
+        variant = GeneVariant('PTEN:c.697C>T')
+        res = MyCancerGenome.search_variant_local(variant)
+        assert res and res['variant_match'] == True and res['url'] == 'https://www.mycancergenome.org/content/gene/PTEN'
+
+    def test_search_gene_local(self):
+        gene = GeneReference('ENSG00000157764')
+        assert MyCancerGenome.search_gene_local(gene)
 
 from source_gnomad import GnomAD
 

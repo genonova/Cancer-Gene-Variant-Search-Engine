@@ -133,7 +133,7 @@ class GeneReference:
                 return GeneVariant.REF_TYPE_CHR
             elif target.startswith(GeneVariant.REF_TYPE_ENSG):
                 return GeneVariant.REF_TYPE_ENSG
-            elif all(x.isupper() or x.isdigit() for x in target):
+            elif all(x.isupper() or x.isdigit() or x == '-' for x in target):
                 return GeneVariant.REF_TYPE_GENE
         return None
 
@@ -173,7 +173,6 @@ class GeneReference:
                     return to_ref_seq
 
         return None
-
 
 
 class GeneVariant(GeneReference):
@@ -388,10 +387,14 @@ class GeneVariant(GeneReference):
         if ref_aa == alt_aa:
             return 0
         else:
-            if int(grantham_matrix[ref_aa][alt_aa]) != 0:
-                return int(grantham_matrix[ref_aa][alt_aa])
-            else:
-                return int(grantham_matrix[alt_aa][ref_aa])
+            try:
+                if int(grantham_matrix[ref_aa][alt_aa]) != 0:
+                    return int(grantham_matrix[ref_aa][alt_aa])
+                else:
+                    return int(grantham_matrix[alt_aa][ref_aa])
+            except Exception as e:
+                return -1
+
 
 class MyVariantUtil:
     SNP_ID_FIELDS = ['clinvar.rsid', 'dbnsfp.rsid', 'dbsnp.rsid', 'mutdb.rsid']
@@ -648,6 +651,3 @@ Glu	E	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	126	152	E	Glu
 Met	M	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	67	M	Met
 
 '''
-
-
-

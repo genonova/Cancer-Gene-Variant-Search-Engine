@@ -5,6 +5,7 @@ from source_hgnc import HGNC
 from source_gene_cards import GeneCards
 from source_gtex import GTEx
 from source_decipher import DECIPHER
+from source_my_cancer_genome import MyCancerGenome
 
 from util_variant import GeneVariant, GeneReference
 
@@ -16,7 +17,7 @@ TYPE_GENE = 0
 TYPE_VARIANT = 1
 TYPE_TRANSCRIPT = 2
 
-GENE_SOURCES = {COSMIC, GnomAD, CIViC, HGNC, GeneCards, GTEx, DECIPHER}
+GENE_SOURCES = {COSMIC, GnomAD, CIViC, HGNC, GeneCards, GTEx, DECIPHER, MyCancerGenome}
 MY_VARIANT = 'myvariant'
 IDS_KEY = 'ids'
 SOURCE_NAMES_KEY = 'source_names'
@@ -74,6 +75,7 @@ def search_sources(target_str, search_type):
 
     if search_type == TYPE_VARIANT:
         aa = target.get_aa()
+        print aa
         if aa[0] and aa[1]:
             # calculate grantham score
             def translate_grantham_score(score):
@@ -108,6 +110,10 @@ def prepare_source_report(res, search_type):
         GnomAD.__name__.lower(): {
             'allele_freq': 'match.Total_freq',
             'homozygotes_num': 'match.Total_hom_cnt'
+        },
+        MyCancerGenome.__name__.lower(): {
+            'mcg_variants': 'variants',
+            'mcg_match': 'variant_match'
         },
         MY_VARIANT: {
             # 'allele_origin': 'dbsnp.allele_origin',

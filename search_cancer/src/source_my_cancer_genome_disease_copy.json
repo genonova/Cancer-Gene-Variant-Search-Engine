@@ -1,0 +1,1078 @@
+{
+  "24": {
+    "disease": "Prostate Cancer",
+    "gene_dict": {
+      "AR": {
+        "variant_dict": {
+          "AR c.2226G>T (W742C)": 353,
+          "AR c.2623C>T (H875Y)": 352,
+          "AR Splice Variant 7 (AR-V7) Expression": 355,
+          "AR Amplification": 354,
+          "AR c.2631C>A (F877L)": 349,
+          "AR c.2632A>G (T878A)": 350,
+          "AR c.2105T>A (L702H)": 351
+        },
+        "gene_id": 42
+      }
+    }
+  },
+  "20": {
+    "disease": "Acute Myeloid Leukemia",
+    "gene_dict": {
+      "DNMT3A": {
+        "variant_dict": {
+          "DNMT3A c.2645G>C (R882P)": 294,
+          "DNMT3A c.2644C>G (R882G)": 295,
+          "DNMT3A c.2644C>T (R882C)": 291,
+          "DNMT3A c.2645G>T (R882L)": 296,
+          "DNMT3A c.2645G>A (R882H)": 293,
+          "DNMT3A c.2644C>A (R882S)": 292
+        },
+        "gene_id": 39
+      },
+      "PML-RARA": {
+        "variant_dict": {
+          "PML-RARA Fusion": 253
+        },
+        "gene_id": 31
+      },
+      "IDH2": {
+        "variant_dict": {
+          "IDH2 c.515G>A (R172K)": 270,
+          "IDH2 c.418C>T (R140W)": 267,
+          "IDH2 c.419G>A (R140Q)": 266,
+          "IDH2 c.418C>G (R140G)": 269,
+          "IDH2 c.516G>C (R172S)": 272,
+          "IDH2 c.419G>T (R140L)": 268,
+          "IDH2 c.515G>T (R172M)": 271
+        },
+        "gene_id": 37
+      },
+      "IDH1": {
+        "variant_dict": {
+          "IDH1 c.395G>C (R132P)": 265,
+          "IDH1 c.394C>A (R132S)": 262,
+          "IDH1 c.394C>T (R132C)": 260,
+          "IDH1 c.394C>G (R132G)": 261,
+          "IDH1 c.395G>A (R132H)": 263,
+          "IDH1 c.395G>T (R132L)": 264
+        },
+        "gene_id": 36
+      },
+      "RBM15-MKL1": {
+        "variant_dict": {
+          "RBM15-MKL1 Fusion": 257
+        },
+        "gene_id": 35
+      },
+      "FLT3": {
+        "variant_dict": {
+          "FLT3 c.2503G>C (D835H)": 278,
+          "FLT3 c.2506_2507delATinsCA (I836H)": 287,
+          "FLT3 c.2503G>A (D835N)": 279,
+          "FLT3 c.2506_2507delATinsGA (I836D)": 286,
+          "FLT3 c.2505T>G (D835E)": 283,
+          "FLT3 ITD": 277,
+          "FLT3 c.2505T>A (D835E)": 288,
+          "FLT3 c.2508C>G (I836M)": 290,
+          "FLT3 c.2504A>T (D835V)": 282,
+          "FLT3 c.2506A>T (I836F)": 289,
+          "FLT3 c.2506A>C (I836L)": 284,
+          "FLT3 c.2504A>C (D835A)": 281,
+          "FLT3 c.2506A>G (I836V)": 285,
+          "FLT3 c.2503G>T (D835Y)": 280
+        },
+        "gene_id": 38
+      },
+      "DEK-NUP214": {
+        "variant_dict": {
+          "DEK-NUP214 Fusion": 255
+        },
+        "gene_id": 33
+      },
+      "RPN1-EVI1": {
+        "variant_dict": {
+          "RPN1-EVI1 Translocation": 259,
+          "RPN1-EVI1 Inversion": 256
+        },
+        "gene_id": 34
+      },
+      "CBFB-MYH11": {
+        "variant_dict": {
+          "CBFB-MYH11 Inversion": 258,
+          "CBFB-MYH11 Translocation": 252
+        },
+        "gene_id": 30
+      },
+      "RUNX1-RUNX1T1": {
+        "variant_dict": {
+          "RUNX1-RUNX1T1 Fusion": 251
+        },
+        "gene_id": 29
+      },
+      "KIT": {
+        "variant_dict": {
+          "KIT c.2447A>T (D816V)": 275,
+          "KIT Exon 8 Mutation": 273,
+          "KIT c.2446G>T (D816Y)": 274,
+          "KIT c.2446G>C (D816H)": 84,
+          "KIT c.2446_2447delGAinsAT (D816I)": 276
+        },
+        "gene_id": 19
+      },
+      "MLL-MLLT3": {
+        "variant_dict": {
+          "MLL-MLLT3 Fusion": 254
+        },
+        "gene_id": 32
+      }
+    }
+  },
+  "21": {
+    "disease": "Glioma",
+    "gene_dict": {
+      "IDH2": {
+        "variant_dict": {
+          "IDH2 c.515G>A (R172K)": 270,
+          "IDH2 c.514A>G (R172G)": 317,
+          "IDH2 c.516G>T (R172S)": 319,
+          "IDH2 c.516G>C (R172S)": 272,
+          "IDH2 c.514A>T (R172W)": 318,
+          "IDH2 c.515G>T (R172M)": 271
+        },
+        "gene_id": 37
+      },
+      "IDH1": {
+        "variant_dict": {
+          "IDH1 c.395G>A (R132H)": 263,
+          "IDH1 c.394C>A (R132S)": 262,
+          "IDH1 c.394C>T (R132C)": 260,
+          "IDH1 c.394C>G (R132G)": 261,
+          "IDH1 c.395G>T (R132L)": 264
+        },
+        "gene_id": 36
+      },
+      "BRAF": {
+        "variant_dict": {
+          "BRAF c.1799T>A  (V600E)": 54
+        },
+        "gene_id": 4
+      }
+    }
+  },
+  "22": {
+    "disease": "Myelodysplastic Syndromes",
+    "gene_dict": {
+      "DNMT3A": {
+        "variant_dict": {
+          "DNMT3A Mutations": 322
+        },
+        "gene_id": 39
+      },
+      "STAG2": {
+        "variant_dict": {
+          "STAG2 Mutations": 329
+        },
+        "gene_id": 52
+      },
+      "TET2": {
+        "variant_dict": {
+          "TET2 Mutations": 330
+        },
+        "gene_id": 53
+      },
+      "SF3B1": {
+        "variant_dict": {
+          "SF3B1 Mutations": 327
+        },
+        "gene_id": 50
+      },
+      "EZH2": {
+        "variant_dict": {
+          "EZH2 Mutations": 324
+        },
+        "gene_id": 47
+      },
+      "BCOR": {
+        "variant_dict": {
+          "BCOR Mutations": 321
+        },
+        "gene_id": 45
+      },
+      "ZRSR2": {
+        "variant_dict": {
+          "ZRSR2 Mutations": 333
+        },
+        "gene_id": 56
+      },
+      "TP53": {
+        "variant_dict": {
+          "TP53 Mutations": 331
+        },
+        "gene_id": 54
+      },
+      "ETV6": {
+        "variant_dict": {
+          "ETV6 Mutations": 323
+        },
+        "gene_id": 46
+      },
+      "ASXL1": {
+        "variant_dict": {
+          "ASXL1 Mutations": 320
+        },
+        "gene_id": 44
+      },
+      "SRSF2": {
+        "variant_dict": {
+          "SRSF2 Mutations": 328
+        },
+        "gene_id": 51
+      },
+      "U2AF1": {
+        "variant_dict": {
+          "U2AF1 Mutations": 332
+        },
+        "gene_id": 55
+      },
+      "RUNX1": {
+        "variant_dict": {
+          "RUNX1 Mutations": 326
+        },
+        "gene_id": 49
+      },
+      "NF1": {
+        "variant_dict": {
+          "NF1 Mutations": 325
+        },
+        "gene_id": 48
+      }
+    }
+  },
+  "23": {
+    "disease": "Chronic Lymphocytic Leukemia",
+    "gene_dict": {
+      "BIRC3": {
+        "variant_dict": {
+          "BIRC3 Truncating Mutations": 342
+        },
+        "gene_id": 109
+      },
+      "NOTCH1": {
+        "variant_dict": {
+          "NOTCH1 c.7541_7542delCT (P2514fs)": 344,
+          "NOTCH1 Truncating Mutations": 345
+        },
+        "gene_id": 428
+      }
+    }
+  },
+  "1": {
+    "disease": "Breast Cancer",
+    "gene_dict": {
+      "ERBB2": {
+        "variant_dict": {
+          "HER2 c.2686C>T (R896C)": 245,
+          "HER2 c.2339_2340ins (G778_P780dup)": 243,
+          "HER2 c.2305G>T (D769Y)": 241,
+          "HER2 Overexpression": 238,
+          "HER2 Amplification": 119,
+          "HER2 c.2524G>A (V842I)": 244,
+          "HER2 c.2264T>C (L755S)": 246,
+          "HER2 c.2329G>T (V777L)": 247,
+          "HER2 c.2264_2278del (L755_T759del)": 242,
+          "HER2 c.926G>C (G309A)": 239,
+          "HER2 c.2305G>C (D769H)": 240
+        },
+        "gene_id": 9
+      },
+      "PTEN": {
+        "variant_dict": {
+          "PTEN c.800delA (K267fs*9)": 26,
+          "PTEN c.697C>T (R233*)": 25,
+          "PTEN c.477G>T (R159S)": 24
+        },
+        "gene_id": 3
+      },
+      "AR": {
+        "variant_dict": {
+          "AR Expression": 311
+        },
+        "gene_id": 42
+      },
+      "AKT1": {
+        "variant_dict": {
+          "AKT1 c.49G>A (E17K)": 23
+        },
+        "gene_id": 1
+      },
+      "ESR1": {
+        "variant_dict": {
+          "ESR1 Mutations Resistant to Antiestrogen Therapy": 314,
+          "ER Expression": 248
+        },
+        "gene_id": 27
+      },
+      "PIK3CA": {
+        "variant_dict": {
+          "PIK3CA c.1636C>G (Q546E)": 15,
+          "PIK3CA c.1636C>A (Q546K)": 16,
+          "PIK3CA c.3140A>T (H1047L)": 10,
+          "PIK3CA c.1634A>G (E545G)": 13,
+          "PIK3CA c.1637A>G (Q546R)": 19,
+          "PIK3CA c.1637A>T (Q546L)": 17,
+          "PIK3CA c.1633G>C (E545Q)": 9,
+          "PIK3CA c.1634A>T (E545V)": 14,
+          "PIK3CA c.1637A>C (Q546P)": 18,
+          "PIK3CA c.1633G>A (E545K)": 8,
+          "PIK3CA c.1645G>A (D549N)": 20,
+          "PIK3CA c.3140A>G (H1047R)": 11,
+          "PIK3CA c.1624G>A (E542K)": 7
+        },
+        "gene_id": 2
+      },
+      "PGR": {
+        "variant_dict": {
+          "PR Expression": 249
+        },
+        "gene_id": 28
+      },
+      "FGFR2": {
+        "variant_dict": {
+          "FGFR2 Amplification": 309
+        },
+        "gene_id": 41
+      },
+      "FGFR3": {
+        "variant_dict": {
+          "FGFR3 Amplification": 357,
+          "FGFR3 c.746C>G (S249C)": 356
+        },
+        "gene_id": 243
+      },
+      "FGFR1": {
+        "variant_dict": {
+          "FGFR1 Amplification": 58
+        },
+        "gene_id": 7
+      }
+    }
+  },
+  "3": {
+    "disease": "Colorectal Cancer",
+    "gene_dict": {
+      "PTEN": {
+        "variant_dict": {
+          "PTEN c.800delA (K267fs*9)": 26,
+          "PTEN c.697C>T (R233*)": 25,
+          "PTEN c.477G>T (R159S)": 24
+        },
+        "gene_id": 3
+      },
+      "SMAD4": {
+        "variant_dict": {
+          "SMAD4 c.989A>C (E330A)": 151,
+          "SMAD4 c.1081C>T (R361C)": 157,
+          "SMAD4 c.1065C>A (D355E)": 155,
+          "SMAD4 c.1609G>T (D537Y)": 153,
+          "SMAD4 c.1051G>C (D351H)": 152,
+          "SMAD4 c.1082G>A (R361H)": 158,
+          "SMAD4 c.1051G>A (D351N)": 154,
+          "SMAD4 c.1081C>A (R361S)": 156
+        },
+        "gene_id": 21
+      },
+      "PIK3CA": {
+        "variant_dict": {
+          "PIK3CA c.1636C>G (Q546E)": 15,
+          "PIK3CA c.1636C>A (Q546K)": 16,
+          "PIK3CA c.3140A>T (H1047L)": 10,
+          "PIK3CA c.1634A>G (E545G)": 13,
+          "PIK3CA c.1637A>G (Q546R)": 19,
+          "PIK3CA c.1637A>T (Q546L)": 17,
+          "PIK3CA c.1633G>C (E545Q)": 9,
+          "PIK3CA c.1634A>T (E545V)": 14,
+          "PIK3CA c.1637A>C (Q546P)": 18,
+          "PIK3CA c.1633G>A (E545K)": 8,
+          "PIK3CA c.1645G>A (D549N)": 20,
+          "PIK3CA c.3140A>G (H1047R)": 11,
+          "PIK3CA c.1624G>A (E542K)": 7
+        },
+        "gene_id": 2
+      },
+      "NRAS": {
+        "variant_dict": {
+          "NRAS No Mutation Detected": 316,
+          "NRAS c.35G>T (G12V)": 90,
+          "NRAS c.182A>G (Q61R)": 77,
+          "NRAS c.181C>A (Q61K)": 75,
+          "NRAS c.34G>T (G12C)": 86,
+          "NRAS c.35G>C (G12A)": 85,
+          "NRAS c.34G>A (G12S)": 89,
+          "NRAS c.35G>A (G12D)": 87
+        },
+        "gene_id": 13
+      },
+      "AKT1": {
+        "variant_dict": {
+          "AKT1 c.49G>A (E17K)": 23
+        },
+        "gene_id": 1
+      },
+      "BRAF": {
+        "variant_dict": {
+          "BRAF c.1786G>C (G596R)": 150,
+          "BRAF c.1781A>T (D594V)": 149,
+          "BRAF c.1397G>T (G466V)": 70,
+          "BRAF c.1781A>G (D594G)": 148,
+          "BRAF c.1406G>A (G469E)": 146,
+          "BRAF c.1406G>C (G469A)": 71,
+          "BRAF c.1799T>A  (V600E)": 54,
+          "BRAF c.1406G>T (G469V)": 147
+        },
+        "gene_id": 4
+      },
+      "KRAS": {
+        "variant_dict": {
+          "KRAS c.182A>G (Q61R)": 43,
+          "KRAS c.35G>T (G12V)": 37,
+          "KRAS c.34G>T (G12C)": 33,
+          "KRAS c.34G>A (G12S)": 36,
+          "KRAS c.182A>T (Q61L)": 42,
+          "KRAS c.37G>A (G13S)": 69,
+          "KRAS c.34G>C (G12R)": 35,
+          "KRAS c.35G>C (G12A)": 32,
+          "KRAS c.64C>A (Q22K)": 347,
+          "KRAS c.38G>C (G13A)": 68,
+          "KRAS c.182A>C (Q61P)": 308,
+          "KRAS c.437C>T (A146V)": 29,
+          "KRAS c.38G>A (G13D)": 39,
+          "KRAS c.37G>T (G13C)": 38,
+          "KRAS c.37G>C (G13R)": 40,
+          "KRAS c.351A>C (K117N)": 160,
+          "KRAS c.183A>T (Q61H)": 31,
+          "KRAS c.35G>A (G12D)": 34,
+          "KRAS c.38G>T (G13V)": 159,
+          "KRAS No Mutation Detected": 44,
+          "KRAS c.183A>C (Q61H)": 30,
+          "KRAS c.436G>C (A146P)": 27,
+          "KRAS c.436G>A (A146T)": 28,
+          "KRAS c.351A>T (K117N)": 161,
+          "KRAS c.181C>A (Q61K)": 41
+        },
+        "gene_id": 10
+      }
+    }
+  },
+  "2": {
+    "disease": "Lung Cancer",
+    "gene_dict": {
+      "ERBB2": {
+        "variant_dict": {
+          "HER2 Exon 20 Insertion": 65
+        },
+        "gene_id": 9
+      },
+      "ALK": {
+        "variant_dict": {
+          "ALK Fusions": 66,
+          "ALK Mutations Resistant to ALK TKI Therapy": 139
+        },
+        "gene_id": 5
+      },
+      "PTEN": {
+        "variant_dict": {
+          "PTEN c.697C>T (R233*)": 25
+        },
+        "gene_id": 3
+      },
+      "DDR2": {
+        "variant_dict": {
+          "DDR2 c.2304T>A (S768R)": 78
+        },
+        "gene_id": 6
+      },
+      "CD274": {
+        "variant_dict": {
+          "CD274 Expression": 359
+        },
+        "gene_id": 140
+      },
+      "FGFR1": {
+        "variant_dict": {
+          "FGFR1 Amplification": 58
+        },
+        "gene_id": 7
+      },
+      "NRAS": {
+        "variant_dict": {
+          "NRAS c.182A>T (Q61L)": 76,
+          "NRAS c.34G>C (G12R)": 88,
+          "NRAS c.182A>G (Q61R)": 77,
+          "NRAS c.181C>A (Q61K)": 75,
+          "NRAS c.183A>C (Q61H)": 80,
+          "NRAS c.34G>T (G12C)": 86,
+          "NRAS c.35G>C (G12A)": 85,
+          "NRAS c.183A>T (Q61H)": 81,
+          "NRAS c.34G>A (G12S)": 89,
+          "NRAS c.35G>A (G12D)": 87
+        },
+        "gene_id": 13
+      },
+      "NTRK1": {
+        "variant_dict": {
+          "NTRK1 (TRKA) Fusions": 315
+        },
+        "gene_id": 43
+      },
+      "RET": {
+        "variant_dict": {
+          "RET Fusions": 127
+        },
+        "gene_id": 20
+      },
+      "FGFR3": {
+        "variant_dict": {
+          "FGFR3 Fusions": 341
+        },
+        "gene_id": 243
+      },
+      "MET": {
+        "variant_dict": {
+          "MET Amplification": 59,
+          "MET Exon 14 Skipping Mutations": 343
+        },
+        "gene_id": 12
+      },
+      "MAP2K1": {
+        "variant_dict": {
+          "MEK1 c.171G>T (K57N)": 72,
+          "MEK1 c.199G>A (D67N)": 60,
+          "MEK1 c.167A>C (Q56P)": 74
+        },
+        "gene_id": 11
+      },
+      "AKT1": {
+        "variant_dict": {
+          "AKT1 c.49G>A (E17K)": 23
+        },
+        "gene_id": 1
+      },
+      "BRAF": {
+        "variant_dict": {
+          "BRAF c.1397G>T (G466V)": 70,
+          "BRAF c.1415A>G (Y472C)": 209,
+          "BRAF c.1405_1406delGGinsTT (G469L)": 310,
+          "BRAF c.1406G>C (G469A)": 71,
+          "BRAF c.1799T>A  (V600E)": 54,
+          "BRAF c.1789C>G (L597V)": 73
+        },
+        "gene_id": 4
+      },
+      "PIK3CA": {
+        "variant_dict": {
+          "PIK3CA c.1633G>A (E545K)": 8,
+          "PIK3CA c.1633G>C (E545Q)": 9,
+          "PIK3CA c.3140A>G (H1047R)": 11,
+          "PIK3CA c.1624G>A (E542K)": 7,
+          "PIK3CA c.3140A>T (H1047L)": 10
+        },
+        "gene_id": 2
+      },
+      "EGFR": {
+        "variant_dict": {
+          "EGFR No Mutation Detected": 79,
+          "EGFR c.2369C>T (T790M)": 4,
+          "EGFR c.2290_2291ins (A763_Y764insFQEA)": 312,
+          "EGFR Kinase Domain Duplication": 339,
+          "EGFR c.2303G>T (S768I)": 348,
+          "EGFR c.2156G>C (G719A)": 1,
+          "EGFR Exon 19 Insertion": 135,
+          "EGFR c.2155G>T (G719C)": 2,
+          "EGFR c.2573T>G (L858R)": 5,
+          "EGFR Exon 19 Deletion": 21,
+          "EGFR c.2582T>A (L861Q)": 6,
+          "EGFR Exon 20 Insertion": 64,
+          "EGFR c.2155G>A (G719S)": 3,
+          "EGFR Status Unknown": 313
+        },
+        "gene_id": 8
+      },
+      "RICTOR": {
+        "variant_dict": {
+          "RICTOR Amplification": 340
+        },
+        "gene_id": 528
+      },
+      "ROS1": {
+        "variant_dict": {
+          "ROS1 Fusions": 67,
+          "ROS1 Mutations Resistant to ROS1 TKI Therapy": 346
+        },
+        "gene_id": 14
+      },
+      "KRAS": {
+        "variant_dict": {
+          "KRAS c.182A>G (Q61R)": 43,
+          "KRAS c.35G>C (G12A)": 32,
+          "KRAS c.37G>T (G13C)": 38,
+          "KRAS c.37G>C (G13R)": 40,
+          "KRAS c.35G>T (G12V)": 37,
+          "KRAS c.182A>T (Q61L)": 42,
+          "KRAS c.34G>T (G12C)": 33,
+          "KRAS c.34G>A (G12S)": 36,
+          "KRAS c.183A>C (Q61H)": 30,
+          "KRAS c.35G>A (G12D)": 34,
+          "KRAS c.181C>A (Q61K)": 41,
+          "KRAS c.183A>T (Q61H)": 31,
+          "KRAS c.38G>A (G13D)": 39,
+          "KRAS c.38G>C (G13A)": 68,
+          "KRAS c.34G>C (G12R)": 35,
+          "KRAS c.37G>A (G13S)": 69
+        },
+        "gene_id": 10
+      }
+    }
+  },
+  "5": {
+    "disease": "Melanoma",
+    "gene_dict": {
+      "CTNNB1": {
+        "variant_dict": {
+          "CTNNB1 c.110C>A (S37Y)": 105,
+          "CTNNB1 c.134C>A (S45Y)": 108,
+          "CTNNB1 c.110C>T (S37F)": 104,
+          "CTNNB1 c.134C>T (S45F)": 106,
+          "CTNNB1 c.133T>C (S45P)": 107
+        },
+        "gene_id": 15
+      },
+      "MAP2K1": {
+        "variant_dict": {
+          "MEK1 c.607G>A (E203K)": 215,
+          "MEK1 c.362G>C (C121S)": 212,
+          "MEK1 c.332T>G (I111S)": 211,
+          "MEK1 c.157T>C (F53L)": 210,
+          "MEK1 c.1144A>C (N382H)": 217,
+          "MEK1 c.790C>T (P264S)": 216,
+          "MEK1 c.371C>T (P124L)": 213,
+          "MEK1 c.370C>T (P124S)": 214
+        },
+        "gene_id": 11
+      },
+      "GNAQ": {
+        "variant_dict": {
+          "GNAQ c.548G>A (R183Q)": 337,
+          "GNAQ c.626A>G (Q209R)": 103,
+          "GNAQ c.626A>T (Q209L)": 100,
+          "GNAQ c.626A>C (Q209P)": 102
+        },
+        "gene_id": 17
+      },
+      "NF1": {
+        "variant_dict": {
+          "NF1 Mutations": 325
+        },
+        "gene_id": 48
+      },
+      "GNA11": {
+        "variant_dict": {
+          "GNA11 c.547C>T (R183C)": 336,
+          "GNA11 c.626A>C (Q209P)": 101,
+          "GNA11 c.626A>T (Q209L)": 99,
+          "GNA11 c.546_547delCCinsTT (R183C)": 335
+        },
+        "gene_id": 16
+      },
+      "BRAF": {
+        "variant_dict": {
+          "BRAF c.1799_1800delTGinsAA (V600E)": 111,
+          "BRAF c.1799_1800delTGinsAT (V600D)": 114,
+          "BRAF c.1781A>G (D594G)": 148,
+          "BRAF c.1790T>A (L597Q)": 188,
+          "BRAF c.1781A>T (D594V)": 149,
+          "BRAF c.1801A>G (K601E)": 190,
+          "BRAF c.1780G>A (D594N)": 298,
+          "BRAF c.1798G>A (V600M)": 117,
+          "BRAF c.1780G>C (D594H)": 300,
+          "BRAF c.1789_1790delCTinsTC (L597S)": 189,
+          "BRAF c.1790T>G (L597R)": 138,
+          "BRAF c.1798_1799delGTinsAA (V600K)": 116,
+          "BRAF c.1799T>A  (V600E)": 54,
+          "BRAF c.1789C>G (L597V)": 73,
+          "BRAF c.1798_1799delGTinsAG (V600R)": 118,
+          "BRAF c.1782T>A (D594E)": 301,
+          "BRAF c.1779_1780delTGinsGA (D594N)": 299,
+          "BRAF c.1782T>G (D594E)": 302,
+          "BRAF Fusions": 334,
+          "BRAF c.1799T>G (V600G)": 115
+        },
+        "gene_id": 4
+      },
+      "NRAS": {
+        "variant_dict": {
+          "NRAS c.182A>T (Q61L)": 76,
+          "NRAS c.34G>C (G12R)": 88,
+          "NRAS c.182A>G (Q61R)": 77,
+          "NRAS c.37G>T (G13C)": 297,
+          "NRAS c.181C>G (Q61E)": 97,
+          "NRAS c.37G>C (G13R)": 93,
+          "NRAS c.181C>A (Q61K)": 75,
+          "NRAS c.35G>T (G12V)": 90,
+          "NRAS c.34G>T (G12C)": 86,
+          "NRAS c.183A>C (Q61H)": 80,
+          "NRAS c.35G>C (G12A)": 85,
+          "NRAS c.183A>T (Q61H)": 81,
+          "NRAS c.34G>A (G12S)": 89,
+          "NRAS c.182_183delAAinsTG (Q61L)": 83,
+          "NRAS c.182A>C (Q61P)": 98,
+          "NRAS c.38G>C (G13A)": 91,
+          "NRAS c.35G>A (G12D)": 87,
+          "NRAS c.182_183delAAinsGG (Q61R)": 82,
+          "NRAS c.38G>T (G13V)": 94,
+          "NRAS c.38G>A (G13D)": 92
+        },
+        "gene_id": 13
+      },
+      "KIT": {
+        "variant_dict": {
+          "KIT c.1669T>C (W557R)": 110,
+          "KIT c.1669T>A (W557R)": 109,
+          "KIT c.1676T>C (V559A)": 112,
+          "KIT c.1676T>A (V559D)": 113,
+          "KIT Amplification": 338,
+          "KIT c.2446G>C (D816H)": 84,
+          "KIT Other": 132,
+          "KIT c.1727T>C (L576P)": 96,
+          "KIT c.1924A>G (K642E)": 95
+        },
+        "gene_id": 19
+      }
+    }
+  },
+  "4": {
+    "disease": "GIST",
+    "gene_dict": {
+      "PDGFRA": {
+        "variant_dict": {
+          "PDGFRA Exon 12 Mutation": 48,
+          "PDGFRA Exon 18 Mutation (D842V)": 45,
+          "PDGFRA Exon 14 Mutation": 51,
+          "PDGFRA Exon 18 Mutation": 53,
+          "PDGFRA No Mutation Detected": 57
+        },
+        "gene_id": 18
+      },
+      "BRAF": {
+        "variant_dict": {
+          "BRAF c.1799T>A  (V600E)": 54,
+          "BRAF No Mutation Detected": 55
+        },
+        "gene_id": 4
+      },
+      "KIT": {
+        "variant_dict": {
+          "KIT Exon 11 Mutation": 47,
+          "KIT Exon 14 Mutation": 50,
+          "KIT Exon 9 Mutation": 46,
+          "KIT No Mutation Detected": 56,
+          "KIT Exon 17 Mutation": 52,
+          "KIT Exon 13 Mutation": 49
+        },
+        "gene_id": 19
+      }
+    }
+  },
+  "7": {
+    "disease": "Thyroid Cancer",
+    "gene_dict": {
+      "HRAS": {
+        "variant_dict": {
+          "HRAS c.35G>T (G12V)": 304,
+          "HRAS c.37G>T (G13C)": 305,
+          "HRAS c.34G>C (G12R)": 303,
+          "HRAS c.182A>G (Q61R)": 307,
+          "HRAS c.37G>C (G13R)": 306
+        },
+        "gene_id": 40
+      },
+      "NRAS": {
+        "variant_dict": {
+          "NRAS c.182A>G (Q61R)": 77,
+          "NRAS c.181C>A (Q61K)": 75
+        },
+        "gene_id": 13
+      },
+      "BRAF": {
+        "variant_dict": {
+          "AKAP-BRAF Translocation": 125,
+          "BRAF c.1799T>A  (V600E)": 54
+        },
+        "gene_id": 4
+      },
+      "RET": {
+        "variant_dict": {
+          "RET M918T": 128,
+          "RET Fusions": 127,
+          "RET C634 Mutations": 126
+        },
+        "gene_id": 20
+      },
+      "KRAS": {
+        "variant_dict": {
+          "KRAS c.182A>G (Q61R)": 43,
+          "KRAS c.35G>C (G12A)": 32,
+          "KRAS c.37G>C (G13R)": 40,
+          "KRAS c.35G>T (G12V)": 37,
+          "KRAS c.182A>T (Q61L)": 42,
+          "KRAS c.34G>T (G12C)": 33,
+          "KRAS c.34G>A (G12S)": 36,
+          "KRAS c.437C>T (A146V)": 29,
+          "KRAS c.35G>A (G12D)": 34,
+          "KRAS c.181C>A (Q61K)": 41,
+          "KRAS c.38G>A (G13D)": 39,
+          "KRAS c.34G>C (G12R)": 35,
+          "KRAS c.37G>A (G13S)": 69,
+          "KRAS c.182A>C (Q61P)": 308
+        },
+        "gene_id": 10
+      }
+    }
+  },
+  "6": {
+    "disease": "Thymic Carcinoma",
+    "gene_dict": {
+      "KIT": {
+        "variant_dict": {
+          "KIT c.1669T>C (W557R)": 110,
+          "KIT c.1676T>C (V559A)": 112,
+          "KIT c.1727T>C (L576P)": 96,
+          "KIT c.2460T>A (D820E)": 120,
+          "KIT c.1730_1738del (P577_D579del)": 122,
+          "KIT c.1679_1681del (V560del)": 123,
+          "KIT c.1468G>A (E490K)": 218,
+          "KIT c.2089C>T (H697Y)": 121,
+          "KIT c.1657T>A (Y553N)": 124
+        },
+        "gene_id": 19
+      }
+    }
+  },
+  "9": {
+    "disease": "Gastric Cancer",
+    "gene_dict": {
+      "ERBB2": {
+        "variant_dict": {
+          "HER2 Amplification": 119
+        },
+        "gene_id": 9
+      }
+    }
+  },
+  "11": {
+    "disease": "Basal Cell Carcinoma",
+    "gene_dict": {
+      "SMO": {
+        "variant_dict": {
+          "SMO c.1685G>A (R562Q)": 170,
+          "SMO c.595C>T (R199W)": 165,
+          "SMO c.1955C>T (A652V)": 171,
+          "SMO c.203_204delCCinsTT (A68V)": 164,
+          "SMO c.1046_1047delCCinsTT (T349I)": 166,
+          "SMO c.1542_1543delCCinsTT (L515F)": 168,
+          "SMO c.1417G>C (D473H)": 163,
+          "SMO c.1604G>T (W535L)": 169,
+          "SMO c.2263_2264delCCinsTT (P755F)": 172,
+          "SMO c.1452_1453delCCinsTT (R485W)": 167
+        },
+        "gene_id": 22
+      }
+    }
+  },
+  "10": {
+    "disease": "Ovarian Cancer",
+    "gene_dict": {
+      "PTEN": {
+        "variant_dict": {
+          "PTEN c.388C>T (R130*)": 137,
+          "PTEN c.741dupA (P248fs*5)": 142,
+          "PTEN c.388C>G (R130G)": 145,
+          "PTEN c.389G>A (R130Q)": 144,
+          "PTEN c.968delA (N323fs*21)": 141,
+          "PTEN c.389delG (R130fs*4)": 143,
+          "PTEN c.968dupA (N323fs*2)": 140
+        },
+        "gene_id": 3
+      },
+      "KRAS": {
+        "variant_dict": {
+          "KRAS c.35G>C (G12A)": 32,
+          "KRAS c.35G>T (G12V)": 37,
+          "KRAS c.34G>T (G12C)": 33,
+          "KRAS c.35G>A (G12D)": 34,
+          "KRAS c.38G>A (G13D)": 39,
+          "KRAS c.34G>C (G12R)": 35
+        },
+        "gene_id": 10
+      },
+      "BRAF": {
+        "variant_dict": {
+          "BRAF c.1790T>G (L597R)": 138,
+          "BRAF c.1799T>A  (V600E)": 54
+        },
+        "gene_id": 4
+      },
+      "PIK3CA": {
+        "variant_dict": {
+          "PIK3CA c.1633G>A (E545K)": 8,
+          "PIK3CA c.1636C>A (Q546K)": 16,
+          "PIK3CA c.3140A>G (H1047R)": 11,
+          "PIK3CA c.1624G>A (E542K)": 7,
+          "PIK3CA c.3140A>T (H1047L)": 10
+        },
+        "gene_id": 2
+      }
+    }
+  },
+  "13": {
+    "disease": "Neuroblastoma",
+    "gene_dict": {
+      "ALK": {
+        "variant_dict": {
+          "ALK c.3520T>G (F1174V)": 179,
+          "ALK c.3735C>G (F1245L)": 181,
+          "ALK c.3833A>C (Y1278S)": 184,
+          "ALK c.3824G>A (R1275Q)": 183,
+          "ALK c.3520T>A (F1174I)": 177,
+          "ALK c.3512T>A (I1171N)": 175,
+          "ALK c.3522C>A (F1174L)": 178,
+          "ALK c.3271G>A (D1091N)": 173,
+          "ALK c.3733T>G (F1245V)": 182,
+          "ALK c.3452C>T (T1151M)": 174,
+          "ALK c.3734T>G (F1245C)": 180,
+          "ALK c.3521T>G (F1174C)": 176
+        },
+        "gene_id": 5
+      }
+    }
+  },
+  "12": {
+    "disease": "Medulloblastoma",
+    "gene_dict": {
+      "SMO": {
+        "variant_dict": {
+          "SMO c.1417G>C (D473H)": 163
+        },
+        "gene_id": 22
+      }
+    }
+  },
+  "15": {
+    "disease": "Anaplastic Large Cell Lymphoma",
+    "gene_dict": {
+      "ALK": {
+        "variant_dict": {
+          "ALK Fusions": 66
+        },
+        "gene_id": 5
+      }
+    }
+  },
+  "14": {
+    "disease": "Rhabdomyosarcoma",
+    "gene_dict": {
+      "ALK": {
+        "variant_dict": {
+          "ALK c.3673G>A (D1225N)": 187,
+          "ALK Exon Deletion": 186
+        },
+        "gene_id": 5
+      }
+    }
+  },
+  "17": {
+    "disease": "Inflammatory Myofibroblastic Tumor",
+    "gene_dict": {
+      "ALK": {
+        "variant_dict": {
+          "ALK Fusions": 66
+        },
+        "gene_id": 5
+      }
+    }
+  },
+  "16": {
+    "disease": "Acute Lymphoblastic Leukemia",
+    "gene_dict": {
+      "CRLF2": {
+        "variant_dict": {
+          "CRLF2 c.695T>G (F232C)": 199,
+          "CRLF2 Fusions": 208
+        },
+        "gene_id": 23
+      },
+      "JAK2": {
+        "variant_dict": {
+          "JAK2 c.2048G>C (R683T)": 203,
+          "JAK2 c.2049A>T (R683S)": 201,
+          "JAK2 c.2047A>G (R683G)": 200,
+          "JAK2 c.2049A>C (R683S)": 202
+        },
+        "gene_id": 24
+      }
+    }
+  },
+  "19": {
+    "disease": "Bladder Cancer",
+    "gene_dict": {
+      "FGFR3": {
+        "variant_dict": {
+          "FGFR3 c.1954A>G (K652Q)": 363,
+          "FGFR3 c.1955A>T (K652M)": 362,
+          "FGFR3 c.1124A>G (Y375C)": 366,
+          "FGFR3 c.742C>T (R248C)": 365,
+          "FGFR3 c.746C>G (S249C)": 356,
+          "FGFR3 c.1114G>T (G372C)": 360,
+          "FGFR3 c.1955A>C (K652T)": 364,
+          "FGFR3 c.1954A>C (K652E)": 361,
+          "FGFR3 Fusions": 341
+        },
+        "gene_id": 243
+      },
+      "TSC1": {
+        "variant_dict": {
+          "TSC1 c.1907_1908del (E636fs)": 237
+        },
+        "gene_id": 26
+      }
+    }
+  },
+  "18": {
+    "disease": "Chronic Myeloid Leukemia",
+    "gene_dict": {
+      "BCR-ABL1": {
+        "variant_dict": {
+          "BCR-ABL1 c.1076T>G (F359C)": 223,
+          "BCR-ABL1 c.951C>A (F317L)": 228,
+          "BCR-ABL1 c.949T>C (F317L)": 227,
+          "BCR-ABL1 c.764A>T (E255V)": 224,
+          "BCR-ABL1 c.943A>G (T315A)": 232,
+          "BCR-ABL1 c.949T>G (F317V)": 225,
+          "BCR-ABL1 c.757T>C (Y253H)": 236,
+          "BCR-ABL1 c.1075T>G (F359V)": 221,
+          "BCR-ABL1 c.763G>A (E255K)": 235,
+          "BCR-ABL1 c.895G>T (V299L)": 233,
+          "BCR-ABL1 c.950T>G (F317C)": 230,
+          "BCR-ABL1 c.944C>T (T315I)": 231,
+          "BCR-ABL1 c.951C>G (F317L)": 226,
+          "BCR-ABL1 c.949T>A (F317I)": 229,
+          "BCR-ABL1 c.1075T>A (F359I)": 222,
+          "BCR-ABL1 c.895G>C (V299L)": 234,
+          "BCR-ABL1 Fusions": 219,
+          "BCR-ABL1 Other": 220
+        },
+        "gene_id": 25
+      }
+    }
+  }
+}

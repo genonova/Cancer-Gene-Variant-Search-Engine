@@ -18,3 +18,7 @@ class GeneSource:
     def search_transcript(transcript):
         GeneSource.logger.warning('Call to unimplemented search_transcript method \n %s' % traceback.format_stack())
         return {}
+
+    @staticmethod
+    def update_source():
+        return False
