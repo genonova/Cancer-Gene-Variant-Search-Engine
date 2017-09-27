@@ -24,12 +24,12 @@ class GeneCards(GeneSource):
             return {
                 'url': url
             }
-        return None
+        return {}
 
     @staticmethod
     def search_variant(variant):
-        return None
+        return {}
 
     @staticmethod
     def search_transcript(transcript):
-        return None
+        return {}

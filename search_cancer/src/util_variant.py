@@ -40,16 +40,22 @@ for key in aa_map_1to3:
 
 def map_aa_3to1(aa):
     temp = aa
-    for key in aa_map_3to1:
-        temp = temp.replace(key, aa_map_3to1[key])
+    try:
+        for key in aa_map_3to1:
+            temp = temp.replace(key, aa_map_3to1[key])
+    except Exception as e:
+        return None
     return temp
 
 
 def map_aa_1to3(aa):
-    # first 3 to 1 to make sure it's in 1 format
-    temp = map_aa_3to1(aa)
-    for key in aa_map_1to3:
-        temp = temp.replace(key, aa_map_1to3[key])
+    try:
+        # first 3 to 1 to make sure it's in 1 format
+        temp = map_aa_3to1(aa)
+        for key in aa_map_1to3:
+            temp = temp.replace(key, aa_map_1to3[key])
+    except Exception as e:
+        return None
     return temp
 
 
@@ -169,6 +175,7 @@ class GeneReference:
         return None
 
 
+
 class GeneVariant(GeneReference):
     INFO_TYPE_C = 'c.'
     INFO_TYPE_P = 'p.'
@@ -236,7 +243,8 @@ class GeneVariant(GeneReference):
                 return GeneVariant.INFO_TYPE_G
         return None
 
-    TRANSFORM_CHR_POS_REF_ALT = 'chr_pos_ref_alt'
+    TRANSFORM_CHR_POS_REF_ALT = 0  # 1-123123-G-A
+    TRANSFORM_CHR_POS = 1  # 1:123123
 
     def transform_variant(self, to_ref_type=None, to_info_type=None):
         if to_ref_type == GeneVariant.TRANSFORM_CHR_POS_REF_ALT:  # special case
@@ -245,6 +253,46 @@ class GeneVariant(GeneReference):
                 return MyVariantUtil.extract(mv_res, MyVariantUtil.MYVARIANT_CHR_POS_REF_ALT)
             else:
                 return []
+        if to_ref_type == GeneVariant.TRANSFORM_CHR_POS:
+            mv_res = self.get_myvariant_res()
+            # if mv_res:
+            #     chr_pos_ref_alt = MyVariantUtil.extract(mv_res, MyVariantUtil.MYVARIANT_CHR_POS_REF_ALT)
+            #     if chr_pos_ref_alt:
+            #         return chr_pos_ref_alt[:2]
+            # fall back to manual extract
+            chr_name = self.transform_ref_seq(GeneReference.REF_TYPE_CHR)
+            if not chr_name:
+                nc_seq = self.transform_ref_seq(GeneReference.REF_TYPE_NC)
+                if nc_seq:
+                    chr_num = 0
+                    s = None
+                    for i, c in enumerate(nc_seq):
+                        if c.isdigit():
+                            if not s:
+                                s = i
+                            chr_num = chr_num * 10 + int(c)
+                        elif s:
+                            break
+                else:
+                    return []
+            else:
+                chr_num = chr_name[3:]
+            info_arr = self.transform_variant(self.ref_type, GeneVariant.INFO_TYPE_G)
+            if not info_arr:
+                return []
+            s = None
+            g_info = info_arr[1]
+            e = len(g_info)
+            for i, c in enumerate(g_info):
+                if c.isdigit():
+                    if not s:
+                        s = i
+                elif s:
+                    e = i
+                    break
+            pos = g_info[s:e]
+            return [chr_num, pos]
+
         to_var_info = None
         to_ref_seq = None
         if to_ref_type == self.ref_type:
@@ -260,31 +308,117 @@ class GeneVariant(GeneReference):
                 to_var_info = MyVariantUtil.extract(mv_res, to_info_type)
         return [to_ref_seq, to_var_info]
 
-
-class MyVariantUtil:
-    MYVARIANT_CHR_POS_REF_ALT = 'chr_pos_ref_alt'
-    REDIS_MV = redis.StrictRedis(host='localhost', port=6379, db=0)
+    def get_aa(self):
+        p_info = self.transform_variant(self.ref_type, GeneVariant.INFO_TYPE_P)[1]
+        print p_info
+        if p_info:
+            p_info = map_aa_3to1(p_info[2:])
+            ref_aa = p_info[0]
+            alt_aa = p_info[-1]
+            return [ref_aa, alt_aa]
+        return [None, None]
 
     @staticmethod
-    def extract(mv_res, type):
+    def calculate_grantham_score(ref_aa=None, alt_aa=None, variant=None):
+        grantham_matrix = {
+            'S': {'R': 110, 'L': 145, 'P': 74, 'T': 58, 'A': 99, 'V': 124, 'G': 56, 'I': 142, 'F': 155, 'Y': 144,
+                  'C': 112,
+                  'H': 89, 'Q': 68, 'N': 46, 'K': 121, 'D': 65, 'E': 80, 'M': 135, 'W': 177},
+            'R': {'R': 0, 'L': 102, 'P': 103, 'T': 71, 'A': 112, 'V': 96, 'G': 125, 'I': 97, 'F': 97, 'Y': 77, 'C': 180,
+                  'H': 29, 'Q': 43, 'N': 86, 'K': 26, 'D': 96, 'E': 54, 'M': 91, 'W': 101, 'S': 0},
+            'L': {'R': 0, 'L': 0, 'P': 98, 'T': 92, 'A': 96, 'V': 32, 'G': 138, 'I': 5, 'F': 22, 'Y': 36, 'C': 198,
+                  'H': 99,
+                  'Q': 113, 'N': 153, 'K': 107, 'D': 172, 'E': 138, 'M': 15, 'W': 61, 'S': 0},
+            'P': {'R': 0, 'L': 0, 'P': 0, 'T': 38, 'A': 27, 'V': 68, 'G': 42, 'I': 95, 'F': 114, 'Y': 110, 'C': 169,
+                  'H': 77, 'Q': 76, 'N': 91, 'K': 103, 'D': 108, 'E': 93, 'M': 87, 'W': 147, 'S': 0},
+            'T': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 58, 'V': 69, 'G': 59, 'I': 89, 'F': 103, 'Y': 92, 'C': 149,
+                  'H': 47,
+                  'Q': 42, 'N': 65, 'K': 78, 'D': 85, 'E': 65, 'M': 81, 'W': 128, 'S': 0},
+            'A': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 64, 'G': 60, 'I': 94, 'F': 113, 'Y': 112, 'C': 195,
+                  'H': 86,
+                  'Q': 91, 'N': 111, 'K': 106, 'D': 126, 'E': 107, 'M': 84, 'W': 148, 'S': 0},
+            'V': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 109, 'I': 29, 'F': 50, 'Y': 55, 'C': 192,
+                  'H': 84,
+                  'Q': 96, 'N': 133, 'K': 97, 'D': 152, 'E': 121, 'M': 21, 'W': 88, 'S': 0},
+            'G': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 0, 'I': 135, 'F': 153, 'Y': 147, 'C': 159,
+                  'H': 98,
+                  'Q': 87, 'N': 80, 'K': 127, 'D': 94, 'E': 98, 'M': 127, 'W': 184, 'S': 0},
+            'I': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 0, 'I': 0, 'F': 21, 'Y': 33, 'C': 198, 'H': 94,
+                  'Q': 109, 'N': 149, 'K': 102, 'D': 168, 'E': 134, 'M': 10, 'W': 61, 'S': 0},
+            'F': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 0, 'I': 0, 'F': 0, 'Y': 22, 'C': 205, 'H': 100,
+                  'Q': 116, 'N': 158, 'K': 102, 'D': 177, 'E': 140, 'M': 28, 'W': 40, 'S': 0},
+            'Y': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 0, 'I': 0, 'F': 0, 'Y': 0, 'C': 194, 'H': 83,
+                  'Q': 99, 'N': 143, 'K': 85, 'D': 160, 'E': 122, 'M': 36, 'W': 37, 'S': 0},
+            'C': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 0, 'I': 0, 'F': 0, 'Y': 0, 'C': 0, 'H': 174,
+                  'Q': 154, 'N': 139, 'K': 202, 'D': 154, 'E': 170, 'M': 196, 'W': 215, 'S': 0},
+            'H': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 0, 'I': 0, 'F': 0, 'Y': 0, 'C': 0, 'H': 0,
+                  'Q': 24,
+                  'N': 68, 'K': 32, 'D': 81, 'E': 40, 'M': 87, 'W': 115, 'S': 0},
+            'Q': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 0, 'I': 0, 'F': 0, 'Y': 0, 'C': 0, 'H': 0,
+                  'Q': 0,
+                  'N': 46, 'K': 53, 'D': 61, 'E': 29, 'M': 101, 'W': 130, 'S': 0},
+            'N': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 0, 'I': 0, 'F': 0, 'Y': 0, 'C': 0, 'H': 0,
+                  'Q': 0,
+                  'N': 0, 'K': 94, 'D': 23, 'E': 42, 'M': 142, 'W': 174, 'S': 0},
+            'K': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 0, 'I': 0, 'F': 0, 'Y': 0, 'C': 0, 'H': 0,
+                  'Q': 0,
+                  'N': 0, 'K': 0, 'D': 101, 'E': 56, 'M': 95, 'W': 110, 'S': 0},
+            'D': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 0, 'I': 0, 'F': 0, 'Y': 0, 'C': 0, 'H': 0,
+                  'Q': 0,
+                  'N': 0, 'K': 0, 'D': 0, 'E': 45, 'M': 160, 'W': 181, 'S': 0},
+            'E': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 0, 'I': 0, 'F': 0, 'Y': 0, 'C': 0, 'H': 0,
+                  'Q': 0,
+                  'N': 0, 'K': 0, 'D': 0, 'E': 0, 'M': 126, 'W': 152, 'S': 0},
+            'M': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 0, 'I': 0, 'F': 0, 'Y': 0, 'C': 0, 'H': 0,
+                  'Q': 0,
+                  'N': 0, 'K': 0, 'D': 0, 'E': 0, 'M': 0, 'W': 67, 'S': 0},
+            'W': {'R': 0, 'L': 0, 'P': 0, 'T': 0, 'A': 0, 'V': 0, 'G': 0, 'I': 0, 'F': 0, 'Y': 0, 'C': 0, 'H': 0,
+                  'Q': 0,
+                  'N': 0, 'K': 0, 'D': 0, 'E': 0, 'M': 0, 'W': 0, 'S': 0}}
+        if variant and isinstance(variant, GeneVariant):
+            aa = variant.get_aa()
+            ref_aa = aa[0]
+            alt_aa = aa[1]
+        if ref_aa and len(ref_aa) == 3:
+            ref_aa = map_aa_3to1(ref_aa)
+        if alt_aa and len(alt_aa) == 3:
+            alt_aa = map_aa_3to1(alt_aa)
+        if not ref_aa or not alt_aa or len(ref_aa) != 1 or len(alt_aa) != 1:
+            return -1
+        if ref_aa == alt_aa:
+            return 0
+        else:
+            if int(grantham_matrix[ref_aa][alt_aa]) != 0:
+                return int(grantham_matrix[ref_aa][alt_aa])
+            else:
+                return int(grantham_matrix[alt_aa][ref_aa])
+
+class MyVariantUtil:
+    SNP_ID_FIELDS = ['clinvar.rsid', 'dbnsfp.rsid', 'dbsnp.rsid', 'mutdb.rsid']
+    MYVARIANT_CHR_POS_REF_ALT = 'chr_pos_ref_alt'
+    REDIS_MV = redis.StrictRedis(host='localhost', port=6379, db=0)
+    REDIS_MV_NOT_EXIST = redis.StrictRedis(host='localhost', port=6379, db=1)
+
+    @staticmethod
+    def extract(mv_res, field):
         # reference type retrieval
         res = None
-        if type == MyVariantUtil.MYVARIANT_CHR_POS_REF_ALT:
+        if field == MyVariantUtil.MYVARIANT_CHR_POS_REF_ALT:
             try:
-                chr = mv_res['_id'].split(':')[0][3:]
+                chr_num = mv_res['_id'].split(':')[0][3:]
                 vcf = mv_res['vcf']
                 alt = vcf['alt']
-                pos = vcf['position']
+                pos = str(vcf['position'])
                 ref = vcf['ref']
-                return [chr, pos, ref, alt]
+                return [chr_num, pos, ref, alt]
             except Exception as e:
-                pass
+                return []
 
-        ref_type = GeneVariant.get_ref_type(type)
-        info_type = GeneVariant.get_info_type(type)
+        ref_type = GeneVariant.get_ref_type(field)
+        info_type = GeneVariant.get_info_type(field)
 
         if ref_type:
-            if type == GeneVariant.REF_TYPE_ENST:
+            if field == GeneVariant.REF_TYPE_ENST:
                 if not res:
                     try:
                         cadd_gene = mv_res['cadd']['gene']
@@ -301,7 +435,7 @@ class MyVariantUtil:
                 if res:
                     res = res.split('.')[0]
                 return res
-            elif type == GeneVariant.REF_TYPE_GENE:
+            elif field == GeneVariant.REF_TYPE_GENE:
                 if not res:
                     try:
                         ann = mv_res['snpeff']['ann']
@@ -315,13 +449,13 @@ class MyVariantUtil:
                         res = mv_res['dbsnp']['gene']['symbol']
                     except Exception as e:
                         pass
-            elif type == GeneVariant.REF_TYPE_CHR:
+            elif field == GeneVariant.REF_TYPE_CHR:
                 if not res:
                     try:
                         res = mv_res['_id'].split(':')[0]
                     except Exception as e:
                         pass
-            elif type == GeneVariant.REF_TYPE_NM:
+            elif field == GeneVariant.REF_TYPE_NM:
                 if not res:
                     try:
                         ann = mv_res['snpeff']['ann']
@@ -332,7 +466,7 @@ class MyVariantUtil:
                             res = None
                     except Exception as e:
                         pass
-            elif type == GeneVariant.REF_TYPE_ENSG:
+            elif field == GeneVariant.REF_TYPE_ENSG:
                 if not res:
                     try:
                         cadd_gene = mv_res['cadd']['gene']
@@ -348,7 +482,7 @@ class MyVariantUtil:
                         pass
         # var info type retrieval
         elif info_type:
-            if type == GeneVariant.INFO_TYPE_P:
+            if field == GeneVariant.INFO_TYPE_P:
                 if not res:
                     try:
                         ann = mv_res['snpeff']['ann']
@@ -357,7 +491,7 @@ class MyVariantUtil:
                         res = ann['hgvs_p']
                     except Exception as e:
                         pass
-            elif type == GeneVariant.INFO_TYPE_C:
+            elif field == GeneVariant.INFO_TYPE_C:
                 if not res:
                     try:
                         ann = mv_res['snpeff']['ann']
@@ -366,7 +500,7 @@ class MyVariantUtil:
                         res = ann['hgvs_c']
                     except Exception as e:
                         pass
-            elif type == GeneVariant.INFO_TYPE_G:
+            elif field == GeneVariant.INFO_TYPE_G:
                 if not res:
                     try:
                         res = mv_res['_id'].split(':')[1]
@@ -388,7 +522,7 @@ class MyVariantUtil:
                     pass
             # if it's custom field like snpeff.ann.genename
             else:
-                field_arr = type.split('.')
+                field_arr = field.split('.')
                 try:
                     res = mv_res
                     for field in field_arr:
@@ -412,6 +546,8 @@ class MyVariantUtil:
         cached_data = MyVariantUtil.REDIS_MV.get(target)
         if cached_data:
             return json.loads(cached_data)
+        if MyVariantUtil.REDIS_MV_NOT_EXIST.get(target):
+            return None
         query = None
         res = None
         mv = myvariant.MyVariantInfo()
@@ -474,6 +610,7 @@ class MyVariantUtil:
             MyVariantUtil.REDIS_MV.set(target, json.dumps(res), ex=60)  # TODO: change ex
             return res
         else:
+            MyVariantUtil.REDIS_MV_NOT_EXIST.set(target, 1, ex=60)  # TODO: change ex
             return []
 
 
@@ -485,3 +622,32 @@ class MyVariantUtil:
       "NC_000001.10:g.11856378G>A"
     ]
 '''
+
+'''
+Granthan score matrix 
+		Arg	Leu	Pro	Thr	Ala	Val	Gly	Ile	Phe	Tyr	Cys	His	Gln	Asn	Lys	Asp	Glu	Met	Trp		
+		R	L	P	T	A	V	G	I	F	Y	C	H	Q	N	K	D	E	M	W		
+Ser	S	110	145	74	58	99	124	56	142	155	144	112	89	68	46	121	65	80	135	177	S	Ser
+Arg	R	0	102	103	71	112	96	125	97	97	77	180	29	43	86	26	96	54	91	101	R	Arg
+Leu	L	0	0	98	92	96	32	138	5	22	36	198	99	113	153	107	172	138	15	61	L	Leu
+Pro	P	0	0	0	38	27	68	42	95	114	110	169	77	76	91	103	108	93	87	147	P	Pro
+Thr	T	0	0	0	0	58	69	59	89	103	92	149	47	42	65	78	85	65	81	128	T	Thr
+Ala	A	0	0	0	0	0	64	60	94	113	112	195	86	91	111	106	126	107	84	148	A	Ala
+Val	V	0	0	0	0	0	0	109	29	50	55	192	84	96	133	97	152	121	21	88	V	Val
+Gly	G	0	0	0	0	0	0	0	135	153	147	159	98	87	80	127	94	98	127	184	G	Gly
+Ile	I	0	0	0	0	0	0	0	0	21	33	198	94	109	149	102	168	134	10	61	I	Ile
+Phe	F	0	0	0	0	0	0	0	0	0	22	205	100	116	158	102	177	140	28	40	F	Phe
+Tyr	Y	0	0	0	0	0	0	0	0	0	0	194	83	99	143	85	160	122	36	37	Y	Tyr
+Cys	C	0	0	0	0	0	0	0	0	0	0	0	174	154	139	202	154	170	196	215	C	Cys
+His	H	0	0	0	0	0	0	0	0	0	0	0	0	24	68	32	81	40	87	115	H	His
+Gln	Q	0	0	0	0	0	0	0	0	0	0	0	0	0	46	53	61	29	101	130	Q	Gln
+Asn	N	0	0	0	0	0	0	0	0	0	0	0	0	0	0	94	23	42	142	174	N	Asn
+Lys	K	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	101	56	95	110	K	Lys
+Asp	D	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	45	160	181	D	Asp
+Glu	E	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	126	152	E	Glu
+Met	M	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	67	M	Met
+
+'''
+
+
+

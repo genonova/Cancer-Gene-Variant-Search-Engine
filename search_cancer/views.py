@@ -47,9 +47,16 @@ def search_view(request, query_type, query):
     return render(request, 'search_cancer/search_result.html',
                   context)
 
+''' To solve the problem that json.dump can't handle Promise'''
+from django.utils.functional import Promise
+from django.utils.encoding import force_text
+from django.core.serializers.json import DjangoJSONEncoder
 
-# class SearchEngineAPIView(generics.ListCreateAPIView):
-#
+class LazyEncoder(DjangoJSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Promise):
+            return force_text(obj)
+        return super(LazyEncoder, self).default(obj)
 
 def search_handler(query, query_type, result=None):
     search_result = {}
@@ -57,7 +64,7 @@ def search_handler(query, query_type, result=None):
     test_mode = False
     test_redis_key = 'BRAF_TEST'
     REDIS_TEST = None
-    if query == 'test':
+    if query == 'test' or (query == 'chr1:g.11856378G>A' and query_type == 'variant'):
         test_mode = True
         import redis
         REDIS_TEST = redis.StrictRedis(host='localhost', port=6379, db=10)
@@ -65,14 +72,15 @@ def search_handler(query, query_type, result=None):
         if search_result:
             search_result = json.loads(search_result)
         else:
-            query = 'BRAF'
+            query_type = 'variant'
+            query = 'chr1:g.11856378G>A'
     if not search_result:
         if query_type == 'transcript':
-            search_result = search.search_transcript(query)
+            search_result = search.search_sources(query, search.TYPE_TRANSCRIPT)
         elif query_type == 'gene':
-            search_result = search.search_gene(query)
+            search_result = search.search_sources(query, search.TYPE_GENE)
         elif query_type == 'variant':
-            search_result = search.search_variant(query)
+            search_result = search.search_sources(query, search.TYPE_VARIANT)
 
     if not result:
         result = {}
@@ -84,9 +92,9 @@ def search_handler(query, query_type, result=None):
     # for test
     result['source_jsons'] = {}
     for key in search_result:
-        result['source_jsons'][key] = json.dumps(search_result[key], indent=4)
+        result['source_jsons'][key] = json.dumps(search_result[key], indent=4, cls=LazyEncoder)
     if test_mode and REDIS_TEST:
-        REDIS_TEST.set(test_redis_key, json.dumps(search_result))  # TODO: change ex
+        REDIS_TEST.set(test_redis_key, json.dumps(search_result, cls=LazyEncoder))  # TODO: change ex
     return result
 
 

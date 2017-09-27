@@ -4,32 +4,42 @@ from source_civic import CIViC
 
 
 class TestCIViC:
-    def setup_method(self):
-        pass
-
     def test_search_gene(self):
         gene = GeneReference('BRAF')
         assert CIViC.search_gene(gene)
         gene = GeneReference('ENSG00000157764')
-
-        # from util_variant import MyVariantUtil
-        # print MyVariantUtil.query(gene.ref_seq)
-        print gene.transform_ref_seq(GeneReference.REF_TYPE_GENE)
-
         assert CIViC.search_gene(gene)
 
     def test_search_variant(self):
         variant = GeneVariant('chr1:g.11856378G>A')
         assert CIViC.search_variant(variant)
 
+from source_gtex import GTEx
+
+class TestGTex:
+    def test_search_gene(self):
+        gene = GeneReference('ENSG00000157764')
+        assert GTEx.get_gene_url(gene) == GTEx.GENE_ROUTE + 'BRAF'
+
+    def test_search_variant(self):
+        variant = GeneVariant('chr1:g.11856378G>A')
+        assert GTEx.get_variant_url(variant) == GTEx.VARIANT_ROUTE + 'rs1801133'
 
 from source_cosmic import COSMIC
 
+from source_decipher import DECIPHER
+
+class TestDECIPHER:
+    def test_search_gene(self):
+        gene = GeneReference('ENSG00000157764')
+        assert DECIPHER.get_gene_url(gene) == 'https://decipher.sanger.ac.uk/search?q=BRAF#consented-patients/results'
+
+    def test_search_variant(self):
+        variant = GeneVariant('chr1:g.11856378G>A')
+        assert DECIPHER.get_variant_url(variant) == 'https://decipher.sanger.ac.uk/search?q=1%3A11856378#consented-patients/results'
+
 
 class TestCOSMIC:
-    def setup_method(self):
-        pass
-
     def test_search_variants(self):
         variant = GeneVariant("chr1:g.114716127G>A")
         assert COSMIC.search_variant_db(variant=variant, only_count=True) > 0
@@ -66,9 +76,6 @@ from source_gnomad import GnomAD
 
 
 class TestGnomAD:
-    def setup_method(self):
-        pass
-
     def test_get_variant_url(self):
         variant = GeneVariant('chr1:g.11856378G>A')
         assert GnomAD.get_variant_url(variant) == GnomAD.VARIANT_ROUTE + '1-11856378-G-A'
@@ -84,9 +91,6 @@ class TestGnomAD:
 from source_gene_cards import GeneCards
 
 class TestGeneCards:
-    def setup_method(self):
-        pass
-
     def test_get_gene_url(self):
         gene = GeneReference('ENSG00000157764')
         assert GeneCards.get_gene_url(gene) == GeneCards.GENE_ROUTE + 'BRAF'
@@ -95,9 +99,6 @@ from source_hgnc import HGNC
 
 
 class TestHGNC:
-    def setup_method(self):
-        pass
-
     def test_search_gene(self):
         gene = GeneReference('BRAF')
         assert HGNC.search_gene(gene)

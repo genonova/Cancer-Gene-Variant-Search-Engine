@@ -1,12 +1,13 @@
-from util_variant import GeneVariant, MyVariantUtil
 import pytest
 
+from util_variant import GeneVariant
 
-class TestVariantUtil:
+
+class TestGeneVariant:
     def setup_method(self):
         pass
 
-    def test_variant_init(self):
+    def test_init(self):
         with pytest.raises(ValueError) as excinfo:
             GeneVariant()
         with pytest.raises(ValueError) as excinfo:
@@ -20,7 +21,7 @@ class TestVariantUtil:
         GeneVariant(ref_seq='NM_005957.4', var_info='c.665C>T')
         GeneVariant(expr='NM_005957.4:c.665C>T')
 
-    def test_variant_type(self):
+    def test_type(self):
         variant = GeneVariant(expr='NM_005957.4:c.665C>T')
         assert variant.ref_type == GeneVariant.REF_TYPE_NM
         variant = GeneVariant(expr='ENST_005957.4:c.665C>T')
@@ -32,14 +33,14 @@ class TestVariantUtil:
         variant = GeneVariant(expr='chr1:g.11856378G>A')
         assert variant.ref_type == GeneVariant.REF_TYPE_CHR
 
-    def test_variant_transform_type_ENST(self):
+    def test_transform_ref_seq_ENST(self):
         variant = GeneVariant(expr='NM_005957.4:c.665C>T')
         assert variant.transform_ref_seq(GeneVariant.REF_TYPE_ENST)
 
         variant = GeneVariant(expr='ENST00000376590:c.665C>T')
         assert variant.transform_ref_seq(GeneVariant.REF_TYPE_NM)
 
-    def test_variant_transform_type_else(self):
+    def test_transform_ref_seq_else(self):
         variant = GeneVariant(expr='chr1:g.11856378G>A')
         assert variant.transform_ref_seq(GeneVariant.REF_TYPE_NM)
         variant = GeneVariant(expr='chr1:g.11856378G>A')
@@ -54,7 +55,16 @@ class TestVariantUtil:
         variant = GeneVariant(expr='NC_000001.10:g.11856378G>A')
         assert variant.transform_ref_seq(GeneVariant.REF_TYPE_CHR)
 
-    def test_myvariant_query_transcript(self):
+    def test_transform_variant(self):
+        variant = GeneVariant(expr='NC_000001.10:g.11856378G>A')
+        assert variant.transform_variant(GeneVariant.TRANSFORM_CHR_POS_REF_ALT) == ['1', '11856378', 'G', 'A']
+        assert variant.transform_variant(GeneVariant.TRANSFORM_CHR_POS) == ['1', '11856378']
+
+from util_variant import MyVariantUtil
+
+
+class TestMyVariantUtil:
+    def test_query_transcript(self):
         assert len(MyVariantUtil.query('ENST00000376592')) >= 1
         assert len(MyVariantUtil.query('NP_005948.3')) >= 1
         assert len(MyVariantUtil.query('NM_005957')) >= 1
@@ -78,11 +88,11 @@ class TestVariantUtil:
         assert len(MyVariantUtil.query('NC_000001.10:g.11856378G>A')) == 1
         assert len(MyVariantUtil.query('chr1:g.11856378G>A')) == 1
 
-    def test_myvariant_query_gene(self):
+    def test_query_gene(self):
         assert len(MyVariantUtil.query('MTHFR')) >= 1
         assert len(MyVariantUtil.query('MTHFR:c.665G>A')) >= 1
 
-    def test_myvariant_extract(self):
+    def test_extract(self):
         data = MyVariantUtil.query('chr1:g.11856378G>A')[0]
         assert MyVariantUtil.extract(data, GeneVariant.REF_TYPE_GENE) == 'MTHFR'
         assert MyVariantUtil.extract(data, GeneVariant.REF_TYPE_CHR) == 'chr1'
@@ -96,7 +106,9 @@ class TestVariantUtil:
         assert MyVariantUtil.extract(data, GeneVariant.INFO_TYPE_C) == 'c.665C>T'
         assert MyVariantUtil.extract(data, GeneVariant.INFO_TYPE_P) == 'p.Ala222Val'
 
+
 import util_query
+
 
 class TestQueryUtil:
     def setup_method(self):

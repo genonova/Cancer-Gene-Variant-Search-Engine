@@ -47,11 +47,11 @@ class HGNC(GeneSource):
 
     @staticmethod
     def search_transcript(transcript):
-        return None
+        return {}
 
     @staticmethod
     def search_variant(variant):
-        return None
+        return {}
 
 # search_url = 'http://rest.genenames.org/fetch/symbol/BRAF'
 # r = requests.get(search_url,
