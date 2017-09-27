@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-import json
+import json,logging
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -74,14 +74,18 @@ def search_handler(query, query_type, result=None):
         else:
             query_type = 'variant'
             query = 'chr1:g.11856378G>A'
-    if not search_result:
-        if query_type == 'transcript':
-            search_result = search.search_sources(query, search.TYPE_TRANSCRIPT)
-        elif query_type == 'gene':
-            search_result = search.search_sources(query, search.TYPE_GENE)
-        elif query_type == 'variant':
-            search_result = search.search_sources(query, search.TYPE_VARIANT)
-
+    try:
+        if not search_result:
+            if query_type == 'transcript':
+                search_result = search.search_sources(query, search.TYPE_TRANSCRIPT)
+            elif query_type == 'gene':
+                search_result = search.search_sources(query, search.TYPE_GENE)
+            elif query_type == 'variant':
+                search_result = search.search_sources(query, search.TYPE_VARIANT)
+    except Exception as e:
+        logger = logging.getLogger('search_cancer')
+        logger.error('error', exc_info=True)
+        search_result = {}
     if not result:
         result = {}
     result['user_input'] = {}

@@ -26,6 +26,7 @@ GRANTHAM_INFO_KEY = 'grantham_info'
 REF_AA_KEY = 'ref_aa'
 ALT_AA_KEY = 'alt_aa'
 SOURCE_URLS_KEY = 'source_urls'
+
 def search_sources(target_str, search_type):
     if search_type == TYPE_GENE or search_type == TYPE_TRANSCRIPT:
         target = GeneReference(target_str)
@@ -96,8 +97,6 @@ def search_sources(target_str, search_type):
 '''
     Extract out field data from sources (func: extract_field) and merge them to one dictionary marked by REPORT_KEY
 '''
-
-
 def prepare_source_report(res, search_type):
     if REPORT_KEY not in res:
         res[REPORT_KEY] = {}

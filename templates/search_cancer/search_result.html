@@ -302,6 +302,7 @@
                         </form>
                         <!-- /input-group -->
                     </li>
+                    <li><a href="#report"><i class="fa fa-file fa-fw"></i> {% trans 'Report' %}</a></li>
                     <li>
                         <a href="#data-sources"><i class="fa fa-database fa-fw"></i> {% trans 'Data Sources' %}</a>
                     </li>
@@ -384,517 +385,496 @@
     </nav>
 
     <div id="page-wrapper">
-        <div class="row" id="data-sources">
-            <div class="col-lg-12">
-                <h3 class="page-header">{% trans 'Data Sources' %}</h3>
+        {% if not result %}
+            <div class="alert alert-danger">
+                {% trans 'Search fail, it may due to malformed values in your search type or query' %}
             </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-10">
-                <div class="panel panel-green">
-                    <div class="panel-heading">
-                        {% trans 'Report' %}
-                    </div>
-                    <div class="panel-body">
-                        {% if result.report.effect %}
-                            <h4>{% trans 'Coding Effect' %}</h4>
-                            <p>{{ result.report.effect }}</p>
-                        {% endif %}
-                        {% if result.report.mutation_description %}
-                            <h4>
-                                {% if result.report.source_urls.COSMIC %}
-                                    <a href="{{ result.report.source_urls.COSMIC }}">COSMIC</a>
-                                {% else %}COSMIC{% endif %}
-                            </h4>
-                            <table class="table table-bordered table-hover" style="table-layout: fixed;">
-                                <tr>
-                                    <td>{% trans 'Mutation Description' %}</td>
-                                    <td>{{ result.report.mutation_description }}</td>
-                                </tr>
-                            </table>
-                        {% endif %}
-                        {% if result.report.allele_freq %}
-                            <h4>
-                                {% if result.report.source_urls.GnomAD %}
-                                    <a href="{{ result.report.source_urls.GnomAD }}">GnomAD</a>
-                                {% else %}GnomAD{% endif %}
-                            </h4>
-                            <table class="table table-bordered table-hover" style="table-layout: fixed;">
-                                <tr>
-                                    <td>{% trans 'Allele Frequency' %}</td>
-                                    <td>{{ result.report.allele_freq }}</td>
-                                </tr>
-                                <tr>
-                                    <td>{% trans 'Number of Homozygotes' %}</td>
-                                    <td>{{ result.report.homozygotes_num }}</td>
-                                </tr>
-                            </table>
-                        {% endif %}
-                        {% if result.report.ref_aa and result.report.alt_aa %}
-                            <h4>{% trans 'Atomic Acid' %}</h4>
-                            <table class="table table-bordered table-hover" style="table-layout: fixed;">
-                                <tr>
-                                    <td>
-                                        <p class="text-center">{% trans 'Reference' %} {% trans 'Amino Acid' %}</p>
-                                        <img class="center-block"
-                                             src="{% static  'aa/img/'|add:result.report.ref_aa|add:'.png' %}">
-                                    </td>
-                                    <td>
-                                        <p class="text-center">{% trans 'Alterate' %} {% trans 'Amino Acid' %}</p>
-                                        <img class="center-block"
-                                             src="{% static  'aa/img/'|add:result.report.alt_aa|add:'.png' %}">
-                                    </td>
-                                </tr>
-                                {% if result.report.grantham_score %}
-                                    <tr>
-                                        <td><p class="text-center">{% trans 'Granthm' %} {% trans 'Score' %}</p></td>
-                                        <td><p class="text-center">{{ result.report.grantham_score }}</p></td>
-                                    </tr>
-                                    <tr>
-                                        <td><p class="text-center">{% trans 'Granthm' %} {% trans 'Prediction' %}</p>
-                                        </td>
-                                        <td><p class="text-center">{{ result.report.grantham_info }}</p></td>
-                                    </tr>
-                                {% endif %}
-                            </table>
-
-                        {% endif %}
-                        {% if result.report.ids %}
-                            <h4>{% trans 'Aliases' %}</h4>
-                            <table class="table table-bordered table-hover" style="table-layout: fixed;">
-                                <tr>
-                                    <td>{% trans 'Reference Sequence' %}</td>
-                                    {% for rs in result.report.ids.ref_seq %}
-                                        <td>{{ rs }}</td>
-                                    {% endfor %}
-                                </tr>
-                                <tr>
-                                    <td>{% trans 'Variant Position' %}</td>
-                                    {% for vi in result.report.ids.var_info %}
-                                        <td>{{ vi }}</td>
-                                    {% endfor %}
-                                </tr>
-                            </table>
-                        {% endif %}
-                        {% if result.report.pred_rank_score %}
-                            <h4>{% trans 'Deleterious Prediction' %}</h4>
-                            <table class="table table-bordered table-hover table-striped">
-                                <thead>
-                                <tr>
-                                    <th>{% trans 'Model' %}</th>
-                                    <th>{% trans 'Prediction' %}</th>
-                                    <th>{% trans 'Score' %}</th>
-                                    <th>{% trans 'Range' %}</th>
-                                    <th>{% trans 'Relationship' %}</th>
-                                    <th>{% trans 'Description' %}</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {% for pred_model, pred_info in result.report.pred_rank_score.items %}
-                                    <tr>
-                                        <td>{{ pred_model }}</td>
-                                        <td>
-                                            <ol>
-                                                {% for pred in pred_info.pred %}
-                                                    <li>{{ pred }}</li>
-                                                {% endfor %}
-                                            </ol>
-                                        </td>
-                                        <td>
-                                            <ol>
-                                                {% for score in pred_info.score %}
-                                                    <li>{{ score }}</li>
-                                                {% endfor %}
-                                            </ol>
-                                        </td>
-                                        <td>{{ pred_info.score_range }}</td>
-                                        <td>{% if pred_info.score_relation %}
-                                            {% trans 'Positive: Higher more deleterious' %}{% else %}
-                                            {% trans 'Negative: Higher more tolerated' %}{% endif %}</td>
-                                        <td>{% for line in pred_info.description %}
-                                            <p>{{ line }}</p>
-                                        {% endfor %}</td>
-                                    </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
-                        {% endif %}
-                    </div>
-                    <div class="panel-footer"></div>
-                </div>
-            </div>
-            <!-- /.col-lg-10 -->
-            <div class="col-lg-2">
-                <div class="panel panel-purple">
-                    <div class="panel-heading">
-                        {% trans 'Related links' %}
-                    </div>
-                    <div class="panel-body">
-                        {% if result.report.source_urls %}
-                            <ul>
-                                {% for source, url in result.report.source_urls.items %}
-                                    {% if url %}
-                                        <li><a href="{{ url }}">{{ source }}</a></li>
-                                    {% else %}
-                                        <li>{{ source }}</li>
-                                    {% endif %}
-
-                                {% endfor %}
-                            </ul>
-
-                        {% endif %}
-                    </div>
-                    <div class="panel-footer"></div>
-                </div>
-            </div>
-            <!-- /.col-lg-2 -->
-        </div>
-
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="panel {% if result.cosmic %}panel-primary{% else %}panel-default{% endif %}">
-                    <div class="panel-heading">
-                        COSMIC
-                    </div>
-                    {% if result.cosmic %}
-                        <div class="panel-body">
-                            <p style="color:red">
-                                {% if result.cosmic.downgrade %}
-                                    * {% trans 'Downgrade search to ' %} : {% trans result.cosmic.downgrade %}
-                                {% endif %}
-                            </p>
-                            <p>
-
-                                {% if user_input.query_type == 'variant' %}
-                                    COSMIC {% trans 'sample' %}:
-                                {% else %}
-                                    COSMIC {% trans 'records' %}:
-                                {% endif %}
-                                {{ result.cosmic.count }}
-                            </p>
+        {% else %}
+            <h3 class="page-header" id="report">{% trans 'Report' %}</h3>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            {% trans 'Report' %}
                         </div>
-                        <div class="panel-footer">
-                            {% if result.cosmic.url %}
-                                <a href="{{ result.cosmic.url }}">{% trans 'Link to' %} COSMIC</a>
+                        <div class="panel-body">
+                            {% if result.report.effect %}
+                                <h4>{% trans 'Coding Effect' %}</h4>
+                                <p>{{ result.report.effect }}</p>
+                            {% endif %}
+                            {% if result.report.mutation_description %}
+                                <h4>
+                                    {% if result.report.source_urls.COSMIC %}
+                                        <a href="{{ result.report.source_urls.COSMIC }}">COSMIC</a>
+                                    {% else %}COSMIC{% endif %}
+                                </h4>
+                                <table class="table table-bordered table-hover" style="table-layout: fixed;">
+                                    <tr>
+                                        <td>{% trans 'Mutation Description' %}</td>
+                                        <td>{{ result.report.mutation_description }}</td>
+                                    </tr>
+                                </table>
+                            {% endif %}
+                            {% if result.report.allele_freq %}
+                                <h4>
+                                    {% if result.report.source_urls.GnomAD %}
+                                        <a href="{{ result.report.source_urls.GnomAD }}">GnomAD</a>
+                                    {% else %}GnomAD{% endif %}
+                                </h4>
+                                <table class="table table-bordered table-hover" style="table-layout: fixed;">
+                                    <tr>
+                                        <td>{% trans 'Allele Frequency' %}</td>
+                                        <td>{{ result.report.allele_freq }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{% trans 'Number of Homozygotes' %}</td>
+                                        <td>{{ result.report.homozygotes_num }}</td>
+                                    </tr>
+                                </table>
+                            {% endif %}
+                            {% if result.report.ref_aa and result.report.alt_aa %}
+                                <h4>{% trans 'Atomic Acid' %}</h4>
+                                <table class="table table-bordered table-hover" style="table-layout: fixed;">
+                                    <tr>
+                                        <td>
+                                            <p class="text-center">{% trans 'Reference' %} {% trans 'Amino Acid' %}</p>
+                                            <img class="center-block"
+                                                 src="{% static  'aa/img/'|add:result.report.ref_aa|add:'.png' %}">
+                                        </td>
+                                        <td>
+                                            <p class="text-center">{% trans 'Alterate' %} {% trans 'Amino Acid' %}</p>
+                                            <img class="center-block"
+                                                 src="{% static  'aa/img/'|add:result.report.alt_aa|add:'.png' %}">
+                                        </td>
+                                    </tr>
+                                    {% if result.report.grantham_score %}
+                                        <tr>
+                                            <td><p class="text-center">{% trans 'Granthm' %} {% trans 'Score' %}</p>
+                                            </td>
+                                            <td><p class="text-center">{{ result.report.grantham_score }}</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="text-center">{% trans 'Granthm' %} {% trans 'Prediction' %}</p>
+                                            </td>
+                                            <td><p class="text-center">{{ result.report.grantham_info }}</p></td>
+                                        </tr>
+                                    {% endif %}
+                                </table>
+
+                            {% endif %}
+                            {% if result.report.ids %}
+                                <h4>{% trans 'Aliases' %}</h4>
+                                <table class="table table-bordered table-hover" style="table-layout: fixed;">
+                                    <tr>
+                                        <td>{% trans 'Reference Sequence' %}</td>
+                                        {% for rs in result.report.ids.ref_seq %}
+                                            <td>{{ rs }}</td>
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        <td>{% trans 'Variant Position' %}</td>
+                                        {% for vi in result.report.ids.var_info %}
+                                            <td>{{ vi }}</td>
+                                        {% endfor %}
+                                    </tr>
+                                </table>
+                            {% endif %}
+                            {% if result.report.pred_rank_score %}
+                                <h4>{% trans 'Deleterious Prediction' %}</h4>
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>{% trans 'Model' %}</th>
+                                        <th>{% trans 'Prediction' %}</th>
+                                        <th>{% trans 'Score' %}</th>
+                                        <th>{% trans 'Range' %}</th>
+                                        <th>{% trans 'Relationship' %}</th>
+                                        <th>{% trans 'Description' %}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for pred_model, pred_info in result.report.pred_rank_score.items %}
+                                        <tr>
+                                            <td>{{ pred_model }}</td>
+                                            <td>
+                                                <ol>
+                                                    {% for pred in pred_info.pred %}
+                                                        <li>{{ pred }}</li>
+                                                    {% endfor %}
+                                                </ol>
+                                            </td>
+                                            <td>
+                                                <ol>
+                                                    {% for score in pred_info.score %}
+                                                        <li>{{ score }}</li>
+                                                    {% endfor %}
+                                                </ol>
+                                            </td>
+                                            <td>{{ pred_info.score_range }}</td>
+                                            <td>{% if pred_info.score_relation %}
+                                                {% trans 'Positive: Higher more deleterious' %}{% else %}
+                                                {% trans 'Negative: Higher more tolerated' %}{% endif %}</td>
+                                            <td>{% for line in pred_info.description %}
+                                                <p>{{ line }}</p>
+                                            {% endfor %}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
                             {% endif %}
                         </div>
-                    {% endif %}
-                </div>
-            </div>
-            <!-- /.col-lg-6 -->
-
-            <div class="col-lg-6">
-                <div class="panel {% if result.hgnc %}panel-yellow{% else %}panel-default{% endif %}">
-                    <div class="panel-heading">
-                        HGNC
+                        <div class="panel-footer"></div>
                     </div>
-                    {% if result.hgnc %}
-                        {% with hgnc=result.hgnc %}
+                </div>
+                <!-- /.col-lg-10 -->
+                <div class="col-lg-2">
+                    <div class="panel panel-purple">
+                        <div class="panel-heading">
+                            {% trans 'Related links' %}
+                        </div>
+                        <div class="panel-body">
+                            {% if result.report.source_urls %}
+                                <ul>
+                                    {% for source, url in result.report.source_urls.items %}
+                                        {% if url %}
+                                            <li><a href="{{ url }}">{{ source }}</a></li>
+                                        {% else %}
+                                            <li>{{ source }}</li>
+                                        {% endif %}
+
+                                    {% endfor %}
+                                </ul>
+
+                            {% endif %}
+                        </div>
+                        <div class="panel-footer"></div>
+                    </div>
+                </div>
+                <!-- /.col-lg-2 -->
+            </div>
+            <h3 class="page-header" id="data-sources">{% trans 'Data Sources' %}</h3>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel {% if result.cosmic %}panel-primary{% else %}panel-default{% endif %}">
+                        <div class="panel-heading">
+                            COSMIC
+                        </div>
+                        {% if result.cosmic %}
                             <div class="panel-body">
                                 <p style="color:red">
-                                    {% if hgnc.downgrade %}
-                                        * {% trans 'Downgrade search to ' %} : {% trans hgnc.downgrade %}
-                                    {% endif %}
-                                </p>
-                                {% trans 'Status' %}: {{ hgnc.status }}
-                                {% if hgnc.gene_family %}
-                                    <h5>{% trans 'Gene Family' %}</h5>
-                                    <ol>
-                                        {% for family in hgnc.gene_family %}
-                                            <li>
-                                                {{ family }}
-                                            </li>
-                                        {% endfor %}
-                                    </ol>
-                                {% endif %}
-
-                                {% if hgnc.alias_symbol %}
-                                    <h5>{% trans 'Alias Symbol' %}</h5>
-                                    <ul>
-                                        {% for symbol in hgnc.alias_symbol %}
-                                            <li>
-                                                {{ symbol }}
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </div>
-                            <div class="panel-footer">
-                                {% if hgnc.url %}
-                                    <a href="{{ hgnc.url }}">{% trans 'Link to' %} HGNC</a>
-                                {% endif %}
-                            </div>
-                        {% endwith %}
-                    {% endif %}
-                </div>
-            </div>
-            <!-- /.col-lg-6 -->
-        </div>
-        <!-- /.row -->
-
-        <div class="row">
-            {#CIVic#}
-            <div class="col-lg-6">
-                <div class="panel {% if result.civic %}panel-purple{% else %}panel-default{% endif %}">
-                    <div class="panel-heading">
-                        CIViC
-                    </div>
-                    {% if result.civic %}
-                        {% with civic=result.civic %}
-                            <div class="panel-body">
-                                <p style="color:red">
-                                    {% if result.civic.downgrade %}
-                                        * {% trans 'Downgrade search to ' %} : {% trans result.civic.downgrade %}
+                                    {% if result.cosmic.downgrade %}
+                                        * {% trans 'Downgrade search to ' %} : {% trans result.cosmic.downgrade %}
                                     {% endif %}
                                 </p>
                                 <p>
-                                    {% if civic.type == 'gene' %}
-                                        {% trans 'variants' %}: {{ civic.variants|length }}
-                                        {% trans 'sources' %}: {{ civic.sources|length }}
-                                    {% endif %}
-                                </p>
-                                {% if civic.sources %}
-                                    <h5>{% trans 'Sources' %}</h5>
-                                    <ol>
-                                        {% for source in civic.sources %}
-                                            <li>
-                                                <a href="{{ source.source_url }}">{{ source.name }}</a>
-                                                <p>
-                                                    {% trans 'Publication date' %}: {{ source.publication_date.year }}
-                                                    / {{ source.publication_date.month }}
-                                                </p>
-                                                <p>
-                                                    {% trans 'Citation' %}: {{ source.citation }}
-                                                </p>
-                                            </li>
-                                        {% endfor %}
-                                    </ol>
-                                {% endif %}
 
-                                {% if civic.hgvs_expressions %}
-                                    <h5>{% trans 'Expressions' %}</h5>
-                                    <ul>
-                                        {% for expr in civic.hgvs_expressions %}
-                                            <li>
-                                                {{ expr }}
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </div>
-                            <div class="panel-footer">
-                                {% if civic.url %}
-                                    <a href="{{ civic.url }}">{% trans 'Link to' %} CIViC</a>
-                                {% endif %}
-                            </div>
-                        {% endwith %}
-                    {% endif %}
-                </div>
-            </div>
-            <!-- /.col-lg-6 -->
-            {#MyVariant#}
-            <div class="col-lg-6">
-                <div class="panel {% if result.myvariant %}panel-purple{% else %}panel-default{% endif %}">
-                    <div class="panel-heading">
-                        MyVariant
-                    </div>
-                    {% if result.myvariant %}
-                        {% with myvariant=result.myvariant %}
-                            <div class="panel-body">
-                                <p style="color:red">
-                                    {% if result.myvariant.downgrade %}
-                                        * {% trans 'Downgrade search to ' %} : {% trans result.myvariant.downgrade %}
+                                    {% if user_input.query_type == 'variant' %}
+                                        COSMIC {% trans 'sample' %}:
+                                    {% else %}
+                                        COSMIC {% trans 'records' %}:
                                     {% endif %}
-                                </p>
-
-                            </div>
-                            <div class="panel-footer">
-                                {% if civic.url %}
-                                    <a href="{{ civic.url }}">{% trans 'Link to' %} CIViC</a>
-                                {% endif %}
-                            </div>
-                        {% endwith %}
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <div class="row">
-            {#Gene Cards#}
-            <div class="col-lg-6">
-                <div class="panel {% if result.genecards %}panel-yellow{% else %}panel-default{% endif %}">
-                    <div class="panel-heading">
-                        Gene Cards
-                    </div>
-                    {% if result.genecards %}
-                        {% with genecards=result.genecards %}
-                            <div class="panel-body">
-                                <p style="color:red">
-                                    {% if genecards.downgrade %}
-                                        * {% trans 'Downgrade search to ' %} : {% trans genecards.downgrade %}
-                                    {% endif %}
+                                    {{ result.cosmic.count }}
                                 </p>
                             </div>
                             <div class="panel-footer">
-                                {% if genecards.url %}
-                                    <a href="{{ genecards.url }}">{% trans 'Link to' %} Gene Cards</a>
+                                {% if result.cosmic.url %}
+                                    <a href="{{ result.cosmic.url }}">{% trans 'Link to' %} COSMIC</a>
                                 {% endif %}
                             </div>
-                        {% endwith %}
-                    {% endif %}
-                </div>
-            </div>
-            <!-- /.col-lg-6 -->
-            {#GnomAD#}
-            <div class="col-lg-6">
-                <div class="panel {% if result.gnomad %}panel-black{% else %}panel-default{% endif %}">
-                    <div class="panel-heading">
-                        GnomAD
-                    </div>
-                    {% if result.gnomad %}
-                        <div class="panel-body">
-                            <p style="color:red">
-                                {% if result.gnomad.downgrade %}
-                                    * {% trans 'Downgrade search to ' %} : {% trans result.gnomad.downgrade %}
-                                {% endif %}
-                            </p>
-                        </div>
-                        <div class="panel-footer">
-                            {% if result.gnomad.url %}
-                                <a href="{{ result.gnomad.url }}">{% trans 'Link to' %} GnomAD
-                                    ({% trans 'May not exist' %})</a>
-                            {% endif %}
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
-            <!-- /.col-lg-6 -->
-        </div>
-
-
-        <div class="row">
-            {#GTEx#}
-            <div class="col-lg-6">
-                <div class="panel {% if result.gtex %}panel-black{% else %}panel-default{% endif %}">
-                    <div class="panel-heading">
-                        GTEx
-                    </div>
-                    {% if result.gtex %}
-                        <div class="panel-body">
-                            <p style="color:red">
-                                {% if result.gtex.downgrade %}
-                                    * {% trans 'Downgrade search to ' %} : {% trans result.gtex.downgrade %}
-                                {% endif %}
-                            </p>
-                        </div>
-                        <div class="panel-footer">
-                            {% if result.gtex.url %}
-                                <a href="{{ result.gtex.url }}">{% trans 'Link to' %} GTEx</a>
-                            {% endif %}
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
-            <!-- /.col-lg-6 -->
-            {#DECIPHER#}
-            <div class="col-lg-6">
-                <div class="panel {% if result.decipher %}panel-black{% else %}panel-default{% endif %}">
-                    <div class="panel-heading">
-                        DECIPHER
-                    </div>
-                    {% if result.decipher %}
-                        <div class="panel-body">
-                            <p style="color:red">
-                                {% if result.decipher.downgrade %}
-                                    * {% trans 'Downgrade search to ' %} : {% trans result.decipher.downgrade %}
-                                {% endif %}
-                            </p>
-                        </div>
-                        <div class="panel-footer">
-                            {% if result.decipher.url %}
-                                <a href="{{ result.decipher.url }}">{% trans 'Link to' %} DECIPHER
-                                    ({% trans 'May not exist' %})</a>
-                            {% endif %}
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
-            <!-- /.col-lg-6 -->
-        </div>
-
-        {#IDS#}
-        <div class="row" id="id-formats">
-            <div class="col-lg-12">
-                <h3 class="page-header">{% trans 'Aliases' %}</h3>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="panel {% if result.report.ids.ref_seq %}panel-success{% else %}panel-default{% endif %}">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" href="#raw_data">{% trans 'Reference Sequence' %}</a>
-                        </h4>
-                    </div>
-                    <div class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            <ul>
-                                {% for rs in result.report.ids.ref_seq %}
-                                    <li>{{ rs }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="panel-footer">
-
-                        </div>
+                        {% endif %}
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="panel {% if result.report.ids.var_info %}panel-info{% else %}panel-default{% endif %}">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse"
-                               href="#raw_data">{% trans 'Variant Position' %}</a>
-                        </h4>
-                    </div>
-                    <div class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            <ul>
-                                {% for vi in result.report.ids.var_info %}
-                                    <li>{{ vi }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="panel-footer">
+                <!-- /.col-lg-6 -->
 
+                <div class="col-lg-6">
+                    <div class="panel {% if result.hgnc %}panel-yellow{% else %}panel-default{% endif %}">
+                        <div class="panel-heading">
+                            HGNC
                         </div>
+                        {% if result.hgnc %}
+                            {% with hgnc=result.hgnc %}
+                                <div class="panel-body">
+                                    <p style="color:red">
+                                        {% if hgnc.downgrade %}
+                                            * {% trans 'Downgrade search to ' %} : {% trans hgnc.downgrade %}
+                                        {% endif %}
+                                    </p>
+                                    {% trans 'Status' %}: {{ hgnc.status }}
+                                    {% if hgnc.gene_family %}
+                                        <h5>{% trans 'Gene Family' %}</h5>
+                                        <ol>
+                                            {% for family in hgnc.gene_family %}
+                                                <li>
+                                                    {{ family }}
+                                                </li>
+                                            {% endfor %}
+                                        </ol>
+                                    {% endif %}
+
+                                    {% if hgnc.alias_symbol %}
+                                        <h5>{% trans 'Alias Symbol' %}</h5>
+                                        <ul>
+                                            {% for symbol in hgnc.alias_symbol %}
+                                                <li>
+                                                    {{ symbol }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                                <div class="panel-footer">
+                                    {% if hgnc.url %}
+                                        <a href="{{ hgnc.url }}">{% trans 'Link to' %} HGNC</a>
+                                    {% endif %}
+                                </div>
+                            {% endwith %}
+                        {% endif %}
                     </div>
                 </div>
+                <!-- /.col-lg-6 -->
             </div>
-        </div>
+            <!-- /.row -->
 
-        {#TODO: Remove this test#}
-        {% for source, source_json in source_jsons.items %}
             <div class="row">
+                {#CIVic#}
+                <div class="col-lg-6">
+                    <div class="panel {% if result.civic %}panel-purple{% else %}panel-default{% endif %}">
+                        <div class="panel-heading">
+                            CIViC
+                        </div>
+                        {% if result.civic %}
+                            {% with civic=result.civic %}
+                                <div class="panel-body">
+                                    <p style="color:red">
+                                        {% if result.civic.downgrade %}
+                                            * {% trans 'Downgrade search to ' %} : {% trans result.civic.downgrade %}
+                                        {% endif %}
+                                    </p>
+                                    <p>
+                                        {% if civic.type == 'gene' %}
+                                            {% trans 'variants' %}: {{ civic.variants|length }}
+                                            {% trans 'sources' %}: {{ civic.sources|length }}
+                                        {% endif %}
+                                    </p>
+                                    {% if civic.sources %}
+                                        <h5>{% trans 'Sources' %}</h5>
+                                        <ol>
+                                            {% for source in civic.sources %}
+                                                <li>
+                                                    <a href="{{ source.source_url }}">{{ source.name }}</a>
+                                                    <p>
+                                                        {% trans 'Publication date' %}: {{ source.publication_date.year }}
+                                                        / {{ source.publication_date.month }}
+                                                    </p>
+                                                    <p>
+                                                        {% trans 'Citation' %}: {{ source.citation }}
+                                                    </p>
+                                                </li>
+                                            {% endfor %}
+                                        </ol>
+                                    {% endif %}
+
+                                    {% if civic.hgvs_expressions %}
+                                        <h5>{% trans 'Expressions' %}</h5>
+                                        <ul>
+                                            {% for expr in civic.hgvs_expressions %}
+                                                <li>
+                                                    {{ expr }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                                <div class="panel-footer">
+                                    {% if civic.url %}
+                                        <a href="{{ civic.url }}">{% trans 'Link to' %} CIViC</a>
+                                    {% endif %}
+                                </div>
+                            {% endwith %}
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- /.col-lg-6 -->
+                {#MyVariant#}
+                <div class="col-lg-6">
+                    <div class="panel {% if result.myvariant %}panel-purple{% else %}panel-default{% endif %}">
+                        <div class="panel-heading">
+                            MyVariant
+                        </div>
+                        {% if result.myvariant %}
+                            {% with myvariant=result.myvariant %}
+                                <div class="panel-body">
+                                    <p style="color:red">
+                                        {% if result.myvariant.downgrade %}
+                                            * {% trans 'Downgrade search to ' %} :
+                                            {% trans result.myvariant.downgrade %}
+                                        {% endif %}
+                                    </p>
+
+                                </div>
+                                <div class="panel-footer">
+                                    {% if civic.url %}
+                                        <a href="{{ civic.url }}">{% trans 'Link to' %} CIViC</a>
+                                    {% endif %}
+                                </div>
+                            {% endwith %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <div class="row">
+                {#Gene Cards#}
+                <div class="col-lg-6">
+                    <div class="panel {% if result.genecards %}panel-yellow{% else %}panel-default{% endif %}">
+                        <div class="panel-heading">
+                            Gene Cards
+                        </div>
+                        {% if result.genecards %}
+                            {% with genecards=result.genecards %}
+                                <div class="panel-body">
+                                    <p style="color:red">
+                                        {% if genecards.downgrade %}
+                                            * {% trans 'Downgrade search to ' %} : {% trans genecards.downgrade %}
+                                        {% endif %}
+                                    </p>
+                                </div>
+                                <div class="panel-footer">
+                                    {% if genecards.url %}
+                                        <a href="{{ genecards.url }}">{% trans 'Link to' %} Gene Cards</a>
+                                    {% endif %}
+                                </div>
+                            {% endwith %}
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- /.col-lg-6 -->
+                {#GnomAD#}
+                <div class="col-lg-6">
+                    <div class="panel {% if result.gnomad %}panel-black{% else %}panel-default{% endif %}">
+                        <div class="panel-heading">
+                            GnomAD
+                        </div>
+                        {% if result.gnomad %}
+                            <div class="panel-body">
+                                <p style="color:red">
+                                    {% if result.gnomad.downgrade %}
+                                        * {% trans 'Downgrade search to ' %} : {% trans result.gnomad.downgrade %}
+                                    {% endif %}
+                                </p>
+                            </div>
+                            <div class="panel-footer">
+                                {% if result.gnomad.url %}
+                                    <a href="{{ result.gnomad.url }}">{% trans 'Link to' %} GnomAD
+                                        ({% trans 'May not exist' %})</a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+
+
+            <div class="row">
+                {#GTEx#}
+                <div class="col-lg-6">
+                    <div class="panel {% if result.gtex %}panel-black{% else %}panel-default{% endif %}">
+                        <div class="panel-heading">
+                            GTEx
+                        </div>
+                        {% if result.gtex %}
+                            <div class="panel-body">
+                                <p style="color:red">
+                                    {% if result.gtex.downgrade %}
+                                        * {% trans 'Downgrade search to ' %} : {% trans result.gtex.downgrade %}
+                                    {% endif %}
+                                </p>
+                            </div>
+                            <div class="panel-footer">
+                                {% if result.gtex.url %}
+                                    <a href="{{ result.gtex.url }}">{% trans 'Link to' %} GTEx</a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- /.col-lg-6 -->
+                {#DECIPHER#}
+                <div class="col-lg-6">
+                    <div class="panel {% if result.decipher %}panel-black{% else %}panel-default{% endif %}">
+                        <div class="panel-heading">
+                            DECIPHER
+                        </div>
+                        {% if result.decipher %}
+                            <div class="panel-body">
+                                <p style="color:red">
+                                    {% if result.decipher.downgrade %}
+                                        * {% trans 'Downgrade search to ' %} : {% trans result.decipher.downgrade %}
+                                    {% endif %}
+                                </p>
+                            </div>
+                            <div class="panel-footer">
+                                {% if result.decipher.url %}
+                                    <a href="{{ result.decipher.url }}">{% trans 'Link to' %} DECIPHER
+                                        ({% trans 'May not exist' %})</a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+
+            {#IDS#}
+            <div class="row" id="id-formats">
                 <div class="col-lg-12">
-                    <div class="panel panel-red">
+                    <h3 class="page-header">{% trans 'Aliases' %}</h3>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel {% if result.report.ids.ref_seq %}panel-success{% else %}panel-default{% endif %}">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#raw_data">{% trans 'Reference Sequence' %}</a>
+                            </h4>
+                        </div>
+                        <div class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <ul>
+                                    {% for rs in result.report.ids.ref_seq %}
+                                        <li>{{ rs }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="panel-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel {% if result.report.ids.var_info %}panel-info{% else %}panel-default{% endif %}">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse"
-                                   href="#raw_data_{{ source }}">{% trans 'RAW Data' %} {{ source | upper }}</a>
+                                   href="#raw_data">{% trans 'Variant Position' %}</a>
                             </h4>
-
                         </div>
-                        <div id="raw_data_{{ source }}" class="panel-collapse collapse">
+                        <div class="panel-collapse collapse in">
                             <div class="panel-body">
-                                <pre>{{ source_json }}</pre>
+                                <ul>
+                                    {% for vi in result.report.ids.var_info %}
+                                        <li>{{ vi }}</li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                             <div class="panel-footer">
 
@@ -903,7 +883,32 @@
                     </div>
                 </div>
             </div>
-        {% endfor %}
+
+            {#TODO: Remove this test#}
+            {% for source, source_json in source_jsons.items %}
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse"
+                                       href="#raw_data_{{ source }}">{% trans 'RAW Data' %} {{ source | upper }}</a>
+                                </h4>
+
+                            </div>
+                            <div id="raw_data_{{ source }}" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <pre>{{ source_json }}</pre>
+                                </div>
+                                <div class="panel-footer">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
 
         {#NEW#}
         <!-- Page Content -->
@@ -2114,7 +2119,8 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" style="table-layout: fixed;">
+                                <table class="table table-striped table-bordered table-hover"
+                                       style="table-layout: fixed;">
                                     <thead>
                                     <tr>
                                         <th>#</th>
