@@ -1,11 +1,19 @@
 /backend_doc/
 *.pyc
+
 .idea
-config/
+local.*
 /local_data/
+
+config/
+
 vendor/
 bower_components/
 *.log
 .cache
 settings/settings_production.py
 settings/settings_test.py
+
+# Run time set up
+gunicorn_start
+run/

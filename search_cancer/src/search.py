@@ -11,7 +11,7 @@ from util_variant import GeneVariant, GeneReference
 
 from django.utils.translation import ugettext_lazy as _
 
-import time
+import time, redis, json
 
 TYPE_GENE = 0
 TYPE_VARIANT = 1
@@ -37,14 +37,29 @@ REF_AA_KEY = 'ref_aa'
 ALT_AA_KEY = 'alt_aa'
 SOURCE_URLS_KEY = 'source_urls'
 
+REDIS_SEARCH = redis.StrictRedis(host='localhost', port=6379, db=6)
+
 
 def search_sources(target_str, search_type):
+    redis_key = None
     if search_type == TYPE_GENE or search_type == TYPE_TRANSCRIPT:
         target = GeneReference(target_str)
+        redis_gene_name = target.transform_ref_seq(GeneReference.REF_TYPE_GENE)
+        if redis_gene_name:
+            redis_key = redis_gene_name
     elif search_type == TYPE_VARIANT:
         target = GeneVariant(target_str)
+        redis_gene_name = target.transform_ref_seq(GeneReference.REF_TYPE_GENE)
+        c_info = target.transform_variant(target.ref_type, GeneVariant.INFO_TYPE_C)[1]
+        if redis_gene_name and c_info:
+            redis_key = redis_gene_name + ':' + c_info
     else:
         raise ValueError("Invalid search type")
+    if redis_key:
+        search_result = REDIS_SEARCH.get(redis_key)
+        if search_result:
+            print 'READ FROM REDIS CACHE'
+            return json.loads(search_result)
 
     mv_res = target.get_myvariant_res()
     res = {
@@ -105,6 +120,10 @@ def search_sources(target_str, search_type):
             # add in aa info
             report[REF_AA_KEY] = aa[0]
             report[ALT_AA_KEY] = aa[1]
+
+    # save to redis
+    if redis_key:
+        REDIS_SEARCH.set(redis_key, json.dumps(res), ex=3600)
     return res
 
 
