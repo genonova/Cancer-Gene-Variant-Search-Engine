@@ -611,10 +611,10 @@ class MyVariantUtil:
             query = field + ':' + target + '*'  # e.g. 'cosmic.cosmic_id:COSM426644'
             res = mv.query(query)['hits']
         if res:
-            MyVariantUtil.REDIS_MV.set(target, json.dumps(res), ex=60)  # TODO: change ex
+            MyVariantUtil.REDIS_MV.set(target, json.dumps(res), ex=2073600)  # TODO: change ex current: 1 day!
             return res
         else:
-            MyVariantUtil.REDIS_MV_NOT_EXIST.set(target, 1, ex=60)  # TODO: change ex
+            MyVariantUtil.REDIS_MV_NOT_EXIST.set(target, 1, ex=2073600)  # TODO: change ex current: 1 day!
             return []
 
 

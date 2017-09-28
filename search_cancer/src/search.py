@@ -123,7 +123,7 @@ def search_sources(target_str, search_type):
 
     # save to redis
     if redis_key:
-        REDIS_SEARCH.set(redis_key, json.dumps(res), ex=3600)
+        REDIS_SEARCH.set(redis_key, json.dumps(res), ex=2073600)  # TODO: Current: 1day
     return res
 
 
