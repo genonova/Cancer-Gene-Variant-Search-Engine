@@ -103,17 +103,23 @@ def prepare_source_report(res, search_type):
     if REPORT_KEY not in res:
         res[REPORT_KEY] = {}
     report_res = res[REPORT_KEY]
+    report_gene_extract_dict = {
+        MyCancerGenome.__name__.lower(): {
+            'mcg_variants': 'variants',
+            'mcg_match': 'variant_match'
+        }
+    }
     report_variant_extract_dict = {
         COSMIC.__name__.lower(): {
             'mutation_description': 'example.Mutation_Description'
         },
-        GnomAD.__name__.lower(): {
-            'allele_freq': 'match.Total_freq',
-            'homozygotes_num': 'match.Total_hom_cnt'
-        },
         MyCancerGenome.__name__.lower(): {
             'mcg_variants': 'variants',
             'mcg_match': 'variant_match'
+        },
+        GnomAD.__name__.lower(): {
+            'allele_freq': 'match.Total_freq',
+            'homozygotes_num': 'match.Total_hom_cnt'
         },
         MY_VARIANT: {
             # 'allele_origin': 'dbsnp.allele_origin',
@@ -271,3 +277,11 @@ def prepare_source_report(res, search_type):
                             update_dict(report_res, report_key, [score])
         for key in pred_info_dict:
             update_dict(report_res, key, pred_info_dict[key])
+
+    # extract out specific fields - gene or transcript
+    if search_type == TYPE_GENE or search_type == TYPE_TRANSCRIPT:
+        for source in report_gene_extract_dict:
+            key_fields = report_gene_extract_dict[source]
+            for report_key in key_fields:
+                field = key_fields[report_key]
+                update_dict(report_res, report_key, extract_dict(res[source], field))
