@@ -6,7 +6,7 @@ from source_gene_cards import GeneCards
 from source_gtex import GTEx
 from source_decipher import DECIPHER
 from source_my_cancer_genome import MyCancerGenome
-
+from source_gdc import GDC
 from util_variant import GeneVariant, GeneReference
 
 from django.utils.translation import ugettext_lazy as _
@@ -17,7 +17,16 @@ TYPE_GENE = 0
 TYPE_VARIANT = 1
 TYPE_TRANSCRIPT = 2
 
-GENE_SOURCES = {COSMIC, GnomAD, CIViC, HGNC, GeneCards, GTEx, DECIPHER, MyCancerGenome}
+GENE_SOURCES = {
+    # Local data support
+    COSMIC, GnomAD,
+    # Only dumb search urls
+    GeneCards, GTEx, DECIPHER,
+    # HACKED but URL output
+    MyCancerGenome, GDC,
+    # API
+    CIViC, HGNC
+}
 MY_VARIANT = 'myvariant'
 IDS_KEY = 'ids'
 SOURCE_NAMES_KEY = 'source_names'
@@ -27,6 +36,7 @@ GRANTHAM_INFO_KEY = 'grantham_info'
 REF_AA_KEY = 'ref_aa'
 ALT_AA_KEY = 'alt_aa'
 SOURCE_URLS_KEY = 'source_urls'
+
 
 def search_sources(target_str, search_type):
     if search_type == TYPE_GENE or search_type == TYPE_TRANSCRIPT:
@@ -88,6 +98,7 @@ def search_sources(target_str, search_type):
                 elif score <= 50 and score >= 0:
                     return _("Conservative Substitution")
                 return 'N/A'
+
             grantham_score = GeneVariant.calculate_grantham_score(ref_aa=aa[0], alt_aa=aa[1])
             report[GRANTHAM_SCORE_KEY] = grantham_score
             report[GRANTHAM_INFO_KEY] = translate_grantham_score(grantham_score)
@@ -96,9 +107,12 @@ def search_sources(target_str, search_type):
             report[ALT_AA_KEY] = aa[1]
     return res
 
+
 '''
     Extract out field data from sources (func: extract_field) and merge them to one dictionary marked by REPORT_KEY
 '''
+
+
 def prepare_source_report(res, search_type):
     if REPORT_KEY not in res:
         res[REPORT_KEY] = {}
@@ -165,8 +179,10 @@ def prepare_source_report(res, search_type):
         'pred_rank_score.mutationtaster.description': [
             'MTori(' + unicode(_('score')) + ' ' + unicode(_('or')) + ' ' + unicode(_('probability')) + ') ' + unicode(
                 _('to')) + ' MTnew:',
-            unicode(_('Disease Causing Automatic')) + ' ' + unicode(_('or')) + ' ' + unicode(_('Disease Causing')) + ' MTnew=MTori',
-            unicode(_('Polymorphism')) + ' ' + unicode(_('or')) + ' ' + unicode(_('Polymorphism Automatic')) + ' MTnew=1-MTori',
+            unicode(_('Disease Causing Automatic')) + ' ' + unicode(_('or')) + ' ' + unicode(
+                _('Disease Causing')) + ' MTnew=MTori',
+            unicode(_('Polymorphism')) + ' ' + unicode(_('or')) + ' ' + unicode(
+                _('Polymorphism Automatic')) + ' MTnew=1-MTori',
             'MTnew < 0.5 : ' + unicode(_('Disease Causing')),
             'MTnew > 0.5 : ' + unicode(_('Polymorphism'))
         ],

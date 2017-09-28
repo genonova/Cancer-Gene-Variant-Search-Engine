@@ -14,7 +14,9 @@ class TestCIViC:
         variant = GeneVariant('chr1:g.11856378G>A')
         assert CIViC.search_variant(variant)
 
+
 from source_gtex import GTEx
+
 
 class TestGTex:
     def test_search_gene(self):
@@ -25,9 +27,11 @@ class TestGTex:
         variant = GeneVariant('chr1:g.11856378G>A')
         assert GTEx.get_variant_url(variant) == GTEx.VARIANT_ROUTE + 'rs1801133'
 
+
 from source_cosmic import COSMIC
 
 from source_decipher import DECIPHER
+
 
 class TestDECIPHER:
     def test_search_gene(self):
@@ -36,7 +40,8 @@ class TestDECIPHER:
 
     def test_search_variant(self):
         variant = GeneVariant('chr1:g.11856378G>A')
-        assert DECIPHER.get_variant_url(variant) == 'https://decipher.sanger.ac.uk/search?q=1%3A11856378#consented-patients/results'
+        assert DECIPHER.get_variant_url(
+            variant) == 'https://decipher.sanger.ac.uk/search?q=1%3A11856378#consented-patients/results'
 
 
 class TestCOSMIC:
@@ -71,7 +76,9 @@ class TestCOSMIC:
         assert not COSMIC.get_cosmic_url(123)
         assert COSMIC.get_cosmic_url(u'BRAF') == COSMIC.QUERY_ROUTE + 'BRAF'
 
+
 from source_my_cancer_genome import MyCancerGenome
+
 
 class TestMyCancerGenome:
     def test_search_variant_local(self):
@@ -82,6 +89,22 @@ class TestMyCancerGenome:
     def test_search_gene_local(self):
         gene = GeneReference('ENSG00000157764')
         assert MyCancerGenome.search_gene_local(gene)
+
+
+from source_gdc import GDC
+
+
+class TestGDC:
+    def test_search_variant(self):
+        variant = GeneVariant('chr7:g.140453134T>C')
+        res = GDC.search_variant(variant)
+        assert res and res['url'] == 'https://portal.gdc.cancer.gov/ssms/3d2daeb9-3ede-594a-8a84-c84e7fd453df'
+
+    def test_search_gene(self):
+        gene = GeneReference('ENSG00000157764')
+        res = GDC.search_gene(gene)
+        assert res and res['url'] == 'https://portal.gdc.cancer.gov/genes/ENSG00000157764'
+
 
 from source_gnomad import GnomAD
 
@@ -99,12 +122,15 @@ class TestGnomAD:
         gene = GeneReference('BRAF')
         assert GnomAD.get_gene_url(gene) == GnomAD.GENE_ROUTE + 'ENSG00000157764'
 
+
 from source_gene_cards import GeneCards
+
 
 class TestGeneCards:
     def test_get_gene_url(self):
         gene = GeneReference('ENSG00000157764')
         assert GeneCards.get_gene_url(gene) == GeneCards.GENE_ROUTE + 'BRAF'
+
 
 from source_hgnc import HGNC
 

@@ -44,6 +44,7 @@ def map_aa_3to1(aa):
         for key in aa_map_3to1:
             temp = temp.replace(key, aa_map_3to1[key])
     except Exception as e:
+        print e.message
         return None
     return temp
 
@@ -55,6 +56,7 @@ def map_aa_1to3(aa):
         for key in aa_map_1to3:
             temp = temp.replace(key, aa_map_1to3[key])
     except Exception as e:
+        print e.message
         return None
     return temp
 
@@ -309,7 +311,6 @@ class GeneVariant(GeneReference):
 
     def get_aa(self):
         p_info = self.transform_variant(self.ref_type, GeneVariant.INFO_TYPE_P)[1]
-        print p_info
         if p_info:
             p_info = map_aa_3to1(p_info[2:])
             ref_aa = p_info[0]
@@ -515,7 +516,6 @@ class MyVariantUtil:
                 # try civic expressions for ref_seq or var_info:
                 try:
                     exprs = mv_res['civic']['hgvs_expressions']
-                    print exprs
                     for expr in exprs:
                         arr = expr.split(':')
                         if ref_type and GeneVariant.get_ref_type(arr[0]) == ref_type:

@@ -722,29 +722,25 @@
                     </div>
                 </div>
                 <!-- /.col-lg-6 -->
-                {#MyVariant#}
+                {#GDC#}
                 <div class="col-lg-6">
-                    <div class="panel {% if result.myvariant %}panel-purple{% else %}panel-default{% endif %}">
+                    <div class="panel {% if result.gdc %}panel-black{% else %}panel-default{% endif %}">
                         <div class="panel-heading">
-                            MyVariant
+                            GDC
                         </div>
-                        {% if result.myvariant %}
-                            {% with myvariant=result.myvariant %}
-                                <div class="panel-body">
-                                    <p style="color:red">
-                                        {% if result.myvariant.downgrade %}
-                                            * {% trans 'Downgrade search to ' %} :
-                                            {% trans result.myvariant.downgrade %}
-                                        {% endif %}
-                                    </p>
-
-                                </div>
-                                <div class="panel-footer">
-                                    {% if civic.url %}
-                                        <a href="{{ civic.url }}">{% trans 'Link to' %} CIViC</a>
+                        {% if result.gdc %}
+                            <div class="panel-body">
+                                <p style="color:red">
+                                    {% if result.gdc.downgrade %}
+                                        * {% trans 'Downgrade search to ' %} : {% trans result.gdc.downgrade %}
                                     {% endif %}
-                                </div>
-                            {% endwith %}
+                                </p>
+                            </div>
+                            <div class="panel-footer">
+                                {% if result.gdc.url %}
+                                    <a href="{{ result.gdc.url }}">{% trans 'Link to' %} GDC </a>
+                                {% endif %}
+                            </div>
                         {% endif %}
                     </div>
                 </div>
