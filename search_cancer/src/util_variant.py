@@ -515,11 +515,12 @@ class MyVariantUtil:
                 # try civic expressions for ref_seq or var_info:
                 try:
                     exprs = mv_res['civic']['hgvs_expressions']
+                    print exprs
                     for expr in exprs:
                         arr = expr.split(':')
                         if ref_type and GeneVariant.get_ref_type(arr[0]) == ref_type:
                             res = arr[0]  # take the ref_seq part
-                        if info_type and GeneVariant.get_ref_type(arr[1]) == info_type:
+                        if info_type and GeneVariant.get_info_type(arr[1]) == info_type:
                             res = arr[1]  # take the var_info part
                 except Exception as e:
                     pass
