@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Cancer Gene Search Engine - Demo</title>
+    <title>Cancer Gene Search</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'demo/search_cancer/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -53,7 +53,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Cancer Gene Search Engine - Demo</a>
+            <a class="navbar-brand" href="index.html">Cancer Gene Search</a>
         </div>
 
         <!-- /.navbar-header -->
@@ -465,12 +465,12 @@
                                     <tr>
                                         <td>
                                             <p class="text-center">{% trans 'Reference' %} {% trans 'Amino Acid' %}</p>
-                                            <img class="center-block" style="width: 100%"
+                                            <img class="center-block" style="width: 80%"
                                                  src="{% static  'aa/img/'|add:result.report.ref_aa|add:'.png' %}">
                                         </td>
                                         <td>
                                             <p class="text-center">{% trans 'Alterate' %} {% trans 'Amino Acid' %}</p>
-                                            <img class="center-block" style="width: 100%"
+                                            <img class="center-block" style="width: 80%"
                                                  src="{% static  'aa/img/'|add:result.report.alt_aa|add:'.png' %}">
                                         </td>
                                     </tr>
@@ -524,8 +524,7 @@
                                     <thead>
                                     <tr>
                                         <th>{% trans 'Model' %}</th>
-                                        <th>{% trans 'Prediction' %}</th>
-                                        <th>{% trans 'Score' %}</th>
+                                        <th>{% trans 'Result' %}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -533,39 +532,42 @@
                                         <tr>
                                             <td>{{ pred_model }}</td>
                                             <td>
+                                                <h5>{% trans 'Prediction' %}
+                                                    <a data-container="body"
+                                                       data-toggle="popover" data-placement="bottom"
+                                                       data-html="true"
+                                                       data-trigger="hover"
+                                                       data-content="{% for line in pred_info.description %}
+                                                <p>{{ line }}</p>
+                                            {% endfor %}">
+                                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                                    </a>
+                                                </h5>
                                                 <ol>
                                                     {% for pred in pred_info.pred %}
                                                         <li>{{ pred }}</li>
                                                     {% endfor %}
-                                                    <button type="button" class="btn btn-default" data-container="body"
-                                                            data-toggle="popover" data-placement="bottom"
-                                                            data-html="true"
-                                                            data-trigger="hover"
-                                                            data-content="{% for line in pred_info.description %}
-                                                <p>{{ line }}</p>
-                                            {% endfor %}">
-                                                        {% trans 'Description' %}
-                                                    </button>
+
                                                 </ol>
-                                            </td>
-                                            <td>
+                                                <h5>{% trans 'Score' %}
+                                                    <a data-container="body"
+                                                       data-toggle="popover" data-placement="bottom"
+                                                       data-trigger="hover"
+                                                       data-html="true"
+                                                       data-content="
+                                                                   <p>{% trans 'Range' %}: {{ pred_info.score_range }}</p>
+                                                                   <p>{% trans 'Relationship' %}:
+
+                                                               {% if pred_info.score_relation %}{% trans 'Positive: Higher more deleterious' %}{% else %}{% trans 'Negative: Higher more tolerated' %}{% endif %}</p>">
+                                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                                    </a>
+                                                </h5>
                                                 <ol>
                                                     {% for score in pred_info.score %}
                                                         <li>{{ score }}</li>
                                                     {% endfor %}
-                                                    <button type="button" class="btn btn-default" data-container="body"
-                                                            data-toggle="popover" data-placement="bottom"
-                                                            data-trigger="hover"
-                                                            data-html="true"
-                                                            data-content="
-                                                                   <p>{% trans 'Range' %}: {{ pred_info.score_range }}</p>
-                                                                   <p>{% trans 'Relationship' %}:
 
-                                                                    {% if pred_info.score_relation %}{% trans 'Positive: Higher more deleterious' %}{% else %}{% trans 'Negative: Higher more tolerated' %}{% endif %}</p>">
-                                                        {% trans 'Description' %}
-                                                    </button>
                                                 </ol>
-
                                             </td>
                                         </tr>
                                     {% endfor %}
