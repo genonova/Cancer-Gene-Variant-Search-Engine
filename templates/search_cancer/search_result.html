@@ -465,13 +465,23 @@
                                     <tr>
                                         <td>
                                             <p class="text-center">{% trans 'Reference' %} {% trans 'Amino Acid' %}</p>
-                                            <img class="center-block" style="width: 80%"
-                                                 src="{% static  'aa/img/'|add:result.report.ref_aa|add:'.png' %}">
+                                            {% with src_url='aa/img/'|add:result.report.ref_aa|add:'.png' %}
+                                                <a href="{% static src_url %}">
+                                                    <img class="center-block"
+                                                         style="width: 80%"
+                                                         src="{% static src_url %}">
+                                                </a>
+                                            {% endwith %}
                                         </td>
                                         <td>
                                             <p class="text-center">{% trans 'Alterate' %} {% trans 'Amino Acid' %}</p>
-                                            <img class="center-block" style="width: 80%"
-                                                 src="{% static  'aa/img/'|add:result.report.alt_aa|add:'.png' %}">
+                                            {% with src_url='aa/img/'|add:result.report.alt_aa|add:'.png' %}
+                                                <a href="{% static src_url %}">
+                                                    <img class="center-block"
+                                                         style="width: 80%"
+                                                         src="{% static src_url %}">
+                                                </a>
+                                            {% endwith %}
                                         </td>
                                     </tr>
                                     {% if result.report.grantham_score %}
@@ -501,17 +511,17 @@
                                     </thead>
                                     <tr>
                                         <td>
-                                            <ul>
+                                            <ul class="list-group">
                                                 {% for rs in result.report.ids.ref_seq %}
-                                                    <li>{{ rs }}</li>
+                                                    <li class="list-group-item list-group-item-info">{{ rs }}</li>
                                                 {% endfor %}
                                             </ul>
 
                                         </td>
                                         <td>
-                                            <ul>
+                                            <ul class="list-group">
                                                 {% for vi in result.report.ids.var_info %}
-                                                    <li>{{ vi }}</li>
+                                                    <li class="list-group-item list-group-item-success">{{ vi }}</li>
                                                 {% endfor %}
                                             </ul>
                                         </td>
@@ -557,6 +567,9 @@
                                                        data-content="
                                                                    <p>{% trans 'Range' %}: {{ pred_info.score_range }}</p>
                                                                    <p>{% trans 'Relationship' %}:
+
+
+
 
                                                                {% if pred_info.score_relation %}{% trans 'Positive: Higher more deleterious' %}{% else %}{% trans 'Negative: Higher more tolerated' %}{% endif %}</p>">
                                                         <span class="glyphicon glyphicon-question-sign"></span>
