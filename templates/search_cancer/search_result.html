@@ -55,6 +55,7 @@
             </button>
             <a class="navbar-brand" href="index.html">Cancer Gene Search Engine - Demo</a>
         </div>
+
         <!-- /.navbar-header -->
 
         <ul class="nav navbar-top-links navbar-right">
@@ -393,7 +394,7 @@
             <h3 class="page-header" id="report">{% trans 'Report' %}</h3>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-10">
+                <div class="col-lg-12">
                     <div class="panel panel-green">
                         <div class="panel-heading">
                             {% trans 'Report' %}
@@ -409,7 +410,7 @@
                                         <a href="{{ result.report.source_urls.COSMIC }}">COSMIC</a>
                                     {% else %}COSMIC{% endif %}
                                 </h4>
-                                <table class="table table-bordered table-hover" style="table-layout: fixed;">
+                                <table class="table table-bordered table-hover">
                                     <tr>
                                         <td>{% trans 'Mutation Description' %}</td>
                                         <td>{{ result.report.mutation_description }}</td>
@@ -422,7 +423,7 @@
                                         <a href="{{ result.report.source_urls.GnomAD }}">GnomAD</a>
                                     {% else %}GnomAD{% endif %}
                                 </h4>
-                                <table class="table table-bordered table-hover" style="table-layout: fixed;">
+                                <table class="table table-bordered table-hover">
                                     <tr>
                                         <td>{% trans 'Allele Frequency' %}</td>
                                         <td>{{ result.report.allele_freq }}</td>
@@ -464,12 +465,12 @@
                                     <tr>
                                         <td>
                                             <p class="text-center">{% trans 'Reference' %} {% trans 'Amino Acid' %}</p>
-                                            <img class="center-block"
+                                            <img class="center-block" style="width: 100%"
                                                  src="{% static  'aa/img/'|add:result.report.ref_aa|add:'.png' %}">
                                         </td>
                                         <td>
                                             <p class="text-center">{% trans 'Alterate' %} {% trans 'Amino Acid' %}</p>
-                                            <img class="center-block"
+                                            <img class="center-block" style="width: 100%"
                                                  src="{% static  'aa/img/'|add:result.report.alt_aa|add:'.png' %}">
                                         </td>
                                     </tr>
@@ -491,18 +492,29 @@
                             {% endif %}
                             {% if result.report.ids %}
                                 <h4>{% trans 'Aliases' %}</h4>
-                                <table class="table table-bordered table-hover" style="table-layout: fixed;">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
                                     <tr>
-                                        <td>{% trans 'Reference Sequence' %}</td>
-                                        {% for rs in result.report.ids.ref_seq %}
-                                            <td>{{ rs }}</td>
-                                        {% endfor %}
+                                        <th>{% trans 'Reference Sequence' %}</th>
+                                        <th>{% trans 'Variant Position' %}</th>
                                     </tr>
+                                    </thead>
                                     <tr>
-                                        <td>{% trans 'Variant Position' %}</td>
-                                        {% for vi in result.report.ids.var_info %}
-                                            <td>{{ vi }}</td>
-                                        {% endfor %}
+                                        <td>
+                                            <ul>
+                                                {% for rs in result.report.ids.ref_seq %}
+                                                    <li>{{ rs }}</li>
+                                                {% endfor %}
+                                            </ul>
+
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                {% for vi in result.report.ids.var_info %}
+                                                    <li>{{ vi }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
                                     </tr>
                                 </table>
                             {% endif %}
@@ -514,9 +526,6 @@
                                         <th>{% trans 'Model' %}</th>
                                         <th>{% trans 'Prediction' %}</th>
                                         <th>{% trans 'Score' %}</th>
-                                        <th>{% trans 'Range' %}</th>
-                                        <th>{% trans 'Relationship' %}</th>
-                                        <th>{% trans 'Description' %}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -528,6 +537,15 @@
                                                     {% for pred in pred_info.pred %}
                                                         <li>{{ pred }}</li>
                                                     {% endfor %}
+                                                    <button type="button" class="btn btn-default" data-container="body"
+                                                            data-toggle="popover" data-placement="bottom"
+                                                            data-html="true"
+                                                            data-trigger="hover"
+                                                            data-content="{% for line in pred_info.description %}
+                                                <p>{{ line }}</p>
+                                            {% endfor %}">
+                                                        {% trans 'Description' %}
+                                                    </button>
                                                 </ol>
                                             </td>
                                             <td>
@@ -535,15 +553,20 @@
                                                     {% for score in pred_info.score %}
                                                         <li>{{ score }}</li>
                                                     {% endfor %}
+                                                    <button type="button" class="btn btn-default" data-container="body"
+                                                            data-toggle="popover" data-placement="bottom"
+                                                            data-trigger="hover"
+                                                            data-html="true"
+                                                            data-content="
+                                                                   <p>{% trans 'Range' %}: {{ pred_info.score_range }}</p>
+                                                                   <p>{% trans 'Relationship' %}:
+
+                                                                    {% if pred_info.score_relation %}{% trans 'Positive: Higher more deleterious' %}{% else %}{% trans 'Negative: Higher more tolerated' %}{% endif %}</p>">
+                                                        {% trans 'Description' %}
+                                                    </button>
                                                 </ol>
+
                                             </td>
-                                            <td>{{ pred_info.score_range }}</td>
-                                            <td>{% if pred_info.score_relation %}
-                                                {% trans 'Positive: Higher more deleterious' %}{% else %}
-                                                {% trans 'Negative: Higher more tolerated' %}{% endif %}</td>
-                                            <td>{% for line in pred_info.description %}
-                                                <p>{{ line }}</p>
-                                            {% endfor %}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
@@ -553,32 +576,35 @@
                         <div class="panel-footer"></div>
                     </div>
                 </div>
-                <!-- /.col-lg-10 -->
-                <div class="col-lg-2">
-                    <div class="panel panel-purple">
-                        <div class="panel-heading">
-                            {% trans 'Related links' %}
-                        </div>
-                        <div class="panel-body">
-                            {% if result.report.source_urls %}
-                                <ul>
-                                    {% for source, url in result.report.source_urls.items %}
-                                        {% if url %}
-                                            <li><a href="{{ url }}">{{ source }}</a></li>
-                                        {% else %}
-                                            <li>{{ source }}</li>
-                                        {% endif %}
+                <!-- /.col-lg-12 -->
 
-                                    {% endfor %}
-                                </ul>
-
-                            {% endif %}
-                        </div>
-                        <div class="panel-footer"></div>
-                    </div>
-                </div>
-                <!-- /.col-lg-2 -->
             </div>
+
+            {#            <div class="col-lg-2">#}
+            {#                    <div class="panel panel-purple">#}
+            {#                        <div class="panel-heading">#}
+            {#                            {% trans 'Related links' %}#}
+            {#                        </div>#}
+            {#                        <div class="panel-body">#}
+            {#                            {% if result.report.source_urls %}#}
+            {#                                <ul>#}
+            {#                                    {% for source, url in result.report.source_urls.items %}#}
+            {#                                        {% if url %}#}
+            {#                                            <li><a href="{{ url }}">{{ source }}</a></li>#}
+            {#                                        {% else %}#}
+            {#                                            <li>{{ source }}</li>#}
+            {#                                        {% endif %}#}
+            {##}
+            {#                                    {% endfor %}#}
+            {#                                </ul>#}
+            {##}
+            {#                            {% endif %}#}
+            {#                        </div>#}
+            {#                        <div class="panel-footer"></div>#}
+            {#                    </div>#}
+            {#                </div>#}
+            <!-- /.col-lg-2 -->
+
             <h3 class="page-header" id="data-sources">{% trans 'Data Sources' %}</h3>
             <div class="row">
                 <div class="col-lg-6">
@@ -848,6 +874,31 @@
                     </div>
                 </div>
                 <!-- /.col-lg-6 -->
+            </div>
+            <div class="row">
+                {#MyCancerGenome#}
+                <div class="col-lg-6">
+                    <div class="panel {% if result.mycancergenome %}panel-black{% else %}panel-default{% endif %}">
+                        <div class="panel-heading">
+                            MyCancerGenome
+                        </div>
+                        {% if result.mycancergenome %}
+                            <div class="panel-body">
+                                <p style="color:red">
+                                    {% if result.mycancergenome.downgrade %}
+                                        * {% trans 'Downgrade search to ' %} :
+                                        {% trans result.mycancergenome.downgrade %}
+                                    {% endif %}
+                                </p>
+                            </div>
+                            <div class="panel-footer">
+                                {% if result.mycancergenome.url %}
+                                    <a href="{{ result.mycancergenome.url }}">{% trans 'Link to' %} MyCancerGenome</a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
 
             {#IDS#}
@@ -3270,7 +3321,14 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{% static 'demo/search_cancer/dist/js/sb-admin-2.js' %}"></script>
-
+<script>
+    $('.tooltip-demo').tooltip({
+        selector: "[data-toggle=tooltip]",
+        container: "body"
+    });
+    $("[data-toggle=popover]")
+        .popover()
+</script>
 </body>
 
 </html>

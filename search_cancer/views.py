@@ -18,9 +18,9 @@ from django.http import HttpResponse
 
 context_default = {
     'search_types': {
-        'variant': _('Variant'),
-        'transcript': _('Transcript'),
-        'gene': _('Gene')
+        'variant': unicode(_('Variant')),
+        'transcript': unicode(_('Transcript')),
+        'gene': unicode(_('Gene'))
     },
     'user_input': {
         'query_type': 'gene',

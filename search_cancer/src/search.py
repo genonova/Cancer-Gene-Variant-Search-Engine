@@ -105,13 +105,13 @@ def search_sources(target_str, search_type):
             # calculate grantham score
             def translate_grantham_score(score):
                 if score > 150:
-                    return _("Radical Substitution")
+                    return unicode(_("Radical Substitution"))
                 elif score <= 150 and score > 100:
-                    return _("Moderately Radical Substitution")
+                    return unicode(_("Moderately Radical Substitution"))
                 elif score <= 100 and score > 50:
-                    return _("Moderately Conservative Substitution")
+                    return unicode(_("Moderately Conservative Substitution"))
                 elif score <= 50 and score >= 0:
-                    return _("Conservative Substitution")
+                    return unicode(_("Conservative Substitution"))
                 return 'N/A'
 
             grantham_score = GeneVariant.calculate_grantham_score(ref_aa=aa[0], alt_aa=aa[1])
@@ -197,11 +197,11 @@ def prepare_source_report(res, search_type):
         # http://www.mutationtaster.org/info/documentation.html#bayes
         'pred_rank_score.mutationtaster.description': [
             'MTori(' + unicode(_('score')) + ' ' + unicode(_('or')) + ' ' + unicode(_('probability')) + ') ' + unicode(
-                _('to')) + ' MTnew:',
+                unicode(_('to'))) + ' MTnew:',
             unicode(_('Disease Causing Automatic')) + ' ' + unicode(_('or')) + ' ' + unicode(
-                _('Disease Causing')) + ' MTnew=MTori',
+                unicode(_('Disease Causing'))) + ' MTnew=MTori',
             unicode(_('Polymorphism')) + ' ' + unicode(_('or')) + ' ' + unicode(
-                _('Polymorphism Automatic')) + ' MTnew=1-MTori',
+                unicode(_('Polymorphism Automatic'))) + ' MTnew=1-MTori',
             'MTnew < 0.5 : ' + unicode(_('Disease Causing')),
             'MTnew > 0.5 : ' + unicode(_('Polymorphism'))
         ],
@@ -255,30 +255,30 @@ def prepare_source_report(res, search_type):
     def map_pred_abbr(key, abbr):
         if key == 'sift' or key == 'fathmm':
             if abbr == 'D':
-                return _('Damaging')
+                return unicode(_('Damaging'))
             elif abbr == 'T':
-                return _('Tolerated')
+                return unicode(_('Tolerated'))
             elif abbr == 'N':
-                return _('Neutral')
+                return unicode(_('Neutral'))
 
         elif key.startswith('polyphen2'):
             if abbr == 'P':
-                return _('Possibly Damaging')
+                return unicode(_('Possibly Damaging'))
             elif abbr == 'D':
-                return _('Probably Damaging')
+                return unicode(_('Probably Damaging'))
             elif abbr == 'B':
-                return _('Benign')
+                return unicode(_('Benign'))
         elif key == 'mutationtaster':
             if abbr == 'A':
                 # Translators: http://www.mutationtaster.org/info/documentation.html
-                return _('Disease Causing Automatic')
+                return unicode(_('Disease Causing Automatic'))
             elif abbr == 'D':
-                return _('Disease Causing')
+                return unicode(_('Disease Causing'))
             elif abbr == 'N':
-                return _('Polymorphism')
+                return unicode(_('Polymorphism'))
             elif abbr == 'P':
-                return _('Polymorphism Automatic')
-        return _('Unknown')
+                return unicode(_('Polymorphism Automatic'))
+        return unicode(_('Unknown'))
 
     # extract out source url - applies to all search type
     report_res[SOURCE_URLS_KEY] = {}
