@@ -240,4 +240,4 @@ class MyCancerGenome(GeneSource):
     def search_transcript(transcript):
         return None
 
-# MyCancerGenome.update_source()
+

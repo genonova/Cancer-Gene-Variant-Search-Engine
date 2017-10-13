@@ -28,4 +28,5 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     url(r'^cancer/', include('search_cancer.urls')),
+    url(r'^mirna/', include('search_mirna.urls')),
 )

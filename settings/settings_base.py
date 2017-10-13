@@ -40,13 +40,14 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    'search_cancer.apps.SearchCancerConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'search_cancer.apps.SearchCancerConfig',
+    'search_mirna.apps.SearchMiRNAConfig',
     'rest_framework'
 ]
 
@@ -94,7 +95,7 @@ WSGI_APPLICATION = 'search_engine.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    #TODO: Reload this in your settings file
+    # TODO: Reload this in your settings file
 }
 
 # Password validation
@@ -161,11 +162,26 @@ LOGGING = {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
             'filename': os.path.join(BASE_DIR, 'logs/search_cancer/search_cancer_error.log')
+        },
+        'search_mirna_file_debug': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs/search_mirna/search_mirna_debug.log')
+        },
+        'search_mirna_file_error': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs/search_mirna/search_mirna_error.log')
         }
     },
     'loggers': {
         'search_cancer': {
             'handlers': ['search_cancer_file_debug', 'search_cancer_file_error'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'search_mirna': {
+            'handlers': ['search_mirna_file_debug', 'search_mirna_file_error'],
             'level': 'DEBUG',
             'propagate': True,
         },
