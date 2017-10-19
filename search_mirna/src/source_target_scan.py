@@ -1,6 +1,6 @@
 from source_mirna_source import MiRNASource
 from util_species import Species
-import requests
+import requests,re
 
 
 # hsa-miR-28-3p
@@ -32,24 +32,34 @@ class TargetScan(MiRNASource):
 
             tds = soup.find_all('td')
             i = 0
+            start = False
+            next_is_score = False
+            record = {}
             while i < len(tds):
                 if count == 0:
                     break
                 td = tds[i]
                 a = td.find('a')
-                if a and a['href'].startswith(TargetScan.GENE_TD_FLAG):
-                    record = {
-                        'symbol': '',
-                        'score_1': ''
-                    }
-                    try:
-                        record['symbol'] = tds[i].get_text()
-                        record['score_1'] = float(tds[i + 15].get_text())
-                    except Exception as e:
-                        pass
-                    if record['symbol']:
-                        res.append(record)
-                        count -= 1
+                if next_is_score:
+                    record['score_1'] = float(td.get_text())
+                    next_is_score = False
+                    count -= 1
+                else:
+                    if a and a['href'].startswith(TargetScan.GENE_TD_FLAG):
+                        record = {
+                            'symbol': '',
+                            'score_1': ''
+                        }
+                        try:
+                            record['symbol'] = tds[i].get_text()
+                        except Exception as e:
+                            pass
+                        if record['symbol']:
+                            res.append(record)
+                        start = True
+                    elif start and re.search(r'\w+-\w+-', td.get_text()):
+                        next_is_score = True
+                        start = False
                 i += 1
         return res
 
