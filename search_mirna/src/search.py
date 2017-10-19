@@ -3,8 +3,9 @@ from source_target_scan import TargetScan
 
 from functools import partial
 
-import redis, json, time, multiprocessing.pool, multiprocessing
+import redis, json, time, multiprocessing.pool, multiprocessing, mygene
 
+MG = mygene.MyGeneInfo()
 REDIS_SEARCH = redis.StrictRedis(host='localhost', port=6379, db=7)
 MIRNA_SOURCES = [MicroRNA, TargetScan]
 
@@ -49,13 +50,15 @@ def search_mirna(res, mirna):
 def search_mirna_source(mirna, search_result, source):
     result = {
         'meta': source.META,
-        'result': '',
+        'result': [],
         'down_grade': False,
         'down_grade_mirna': ''
     }
     source_name = source.__name__.lower()
     mirna_no_dash = mirna.split('_')[0]
     mirna_array = mirna_no_dash.split('-')
+    source_key = ''
+    found_in_cache =False
     for i in range(len(mirna_array) - 1, 1, -1):
         mirna_fixed = '-'.join(mirna_array[0:i + 1])
         source_key = source_name + mirna_fixed
@@ -65,6 +68,7 @@ def search_mirna_source(mirna, search_result, source):
             arr = json.loads(cached_source)
             if arr:
                 result['result'] = json.loads(cached_source)
+                found_in_cache = True
                 break
             else:
                 continue
@@ -81,4 +85,11 @@ def search_mirna_source(mirna, search_result, source):
         else:
             REDIS_SEARCH.set(source_key, '[]')
         time.sleep(3)
+    if not found_in_cache:
+        for target_gene in result['result']:
+            try:
+                target_gene['entrez'] = MG.query('symbol:' + target_gene['symbol'], size=1, fields='_id,symbol')['hits'][0]['_id']
+            except:
+                target_gene['entrez'] = False
+        REDIS_SEARCH.set(source_key, json.dumps(result['result']))
     search_result[source_name] = result

@@ -7,3 +7,4 @@ redis==2.10.6
 beautifulsoup4==4.6.0
 gunicorn==19.7.1
 celery==4.1.0
+mygene-3.0.0

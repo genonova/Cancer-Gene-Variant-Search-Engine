@@ -4,6 +4,7 @@
 .idea
 local.*
 /local_data/
+static/rest_framework/
 
 config/
 

@@ -39,15 +39,15 @@ class TargetScan(MiRNASource):
                 a = td.find('a')
                 if a and a['href'].startswith(TargetScan.GENE_TD_FLAG):
                     record = {
-                        'target_gene': '',
+                        'symbol': '',
                         'score_1': ''
                     }
                     try:
-                        record['target_gene'] = tds[i].get_text()
+                        record['symbol'] = tds[i].get_text()
                         record['score_1'] = float(tds[i + 15].get_text())
                     except Exception as e:
                         pass
-                    if record['target_gene']:
+                    if record['symbol']:
                         res.append(record)
                         count -= 1
                 i += 1

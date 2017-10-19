@@ -33,16 +33,15 @@ class MicroRNA(MiRNASource):
                 if count == 0:
                     break
                 record = {
-                    'target_gene': '',
+                    'symbol': '',
                     'score_1': ''
                 }
                 try:
                     # Find gene name
                     tds = div.find('table').find_all('td')
-                    record['target_gene'] = tds[1].get_text().split('\n')[0]
+                    record['symbol'] = tds[1].get_text().split('\n')[0]
                 except Exception as e:
                     continue
-
                 # Find prediction score
                 min_score = 0
                 for right_div in div.find_all(
