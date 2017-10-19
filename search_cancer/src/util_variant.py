@@ -4,7 +4,7 @@ import json
 
 import redis
 
-redis.StrictRedis(host='localhost', port=6379, db=0).flushall()
+# redis.StrictRedis(host='localhost', port=6379, db=0).flushall()
 # Amino Acid Map
 aa_map_1to3 = {'A': 'Ala',
                'B': 'Asx',

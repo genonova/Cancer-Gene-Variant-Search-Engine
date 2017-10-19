@@ -1,5 +1,4 @@
-import logging
-import traceback
+import logging, traceback
 
 class GeneSource:
     logger = logging.getLogger('search_cancer')

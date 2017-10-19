@@ -1,0 +1,506 @@
+[
+  [
+    "Hsa",
+    "Human",
+    "Homo sapiens",
+    "9606"
+  ],
+  [
+    "Ptr",
+    "Chimp",
+    "Pan troglodytes",
+    "9598"
+  ],
+  [
+    "Ggo",
+    "Gorilla",
+    "Gorilla gorilla gorilla",
+    "9595"
+  ],
+  [
+    "Pab",
+    "Orangutan",
+    "Pongo pygmaeus abelii",
+    "9601"
+  ],
+  [
+    "Nle",
+    "Gibbon",
+    "Nomascus leucogenys",
+    "61853"
+  ],
+  [
+    "Mml",
+    "Rhesus",
+    "Macaca mulatta",
+    "9544"
+  ],
+  [
+    "Mfa",
+    "Crab-eating macaque",
+    "Macaca fascicularis",
+    "9541"
+  ],
+  [
+    "Pha",
+    "Baboon",
+    "Papio hamadryas",
+    "9557"
+  ],
+  [
+    "Csa",
+    "Green monkey",
+    "Chlorocebus sabaeus",
+    "60711"
+  ],
+  [
+    "Cja",
+    "Marmoset",
+    "Callithrix jacchus",
+    "9483"
+  ],
+  [
+    "Sbo",
+    "Squirrel monkey",
+    "Saimiri boliviensis",
+    "27679"
+  ],
+  [
+    "Oga",
+    "Bushbaby",
+    "Otolemur garnettii",
+    "30611"
+  ],
+  [
+    "Tch",
+    "Chinese tree shrew",
+    "Tupaia chinensis",
+    "246437"
+  ],
+  [
+    "Str",
+    "Squirrel",
+    "Spermophilus tridecemlineatus",
+    "43179"
+  ],
+  [
+    "Jja",
+    "Lesser Egyptian jerboa",
+    "Jaculus jaculus",
+    "51337"
+  ],
+  [
+    "Moc",
+    "Prairie vole",
+    "Microtus ochrogaster",
+    "79684"
+  ],
+  [
+    "Cgr",
+    "Chinese hamster",
+    "Cricetulus griseus",
+    "10029"
+  ],
+  [
+    "Mau",
+    "Golden hamster",
+    "Mesocricetus auratus",
+    "10036"
+  ],
+  [
+    "Mmu",
+    "Mouse",
+    "Mus musculus",
+    "10090"
+  ],
+  [
+    "Rno",
+    "Rat",
+    "Rattus norvegicus",
+    "10116"
+  ],
+  [
+    "Hgl",
+    "Naked mole-rat",
+    "Heterocephalus glaber",
+    "10181"
+  ],
+  [
+    "Cpo",
+    "Guinea pig",
+    "Cavia porcellus",
+    "10141"
+  ],
+  [
+    "Cla",
+    "Chinchilla",
+    "Chinchilla lanigera",
+    "34839"
+  ],
+  [
+    "Ode",
+    "Brush-tailed rat",
+    "Octodon degus",
+    "10160"
+  ],
+  [
+    "Ocu",
+    "Rabbit",
+    "Oryctolagus cuniculus",
+    "9986"
+  ],
+  [
+    "Opr",
+    "Pika",
+    "Ochotona princeps",
+    "9978"
+  ],
+  [
+    "Ssc",
+    "Pig",
+    "Sus scrofa",
+    "9823"
+  ],
+  [
+    "Vpa",
+    "Alpaca",
+    "Vicugna pacos",
+    "30538"
+  ],
+  [
+    "Cfe",
+    "Bactrian camel",
+    "Camelus ferus",
+    "419612"
+  ],
+  [
+    "Ttr",
+    "Dolphin",
+    "Tursiops truncatus",
+    "9739"
+  ],
+  [
+    "Oor",
+    "Killer whale",
+    "Orcinus orca",
+    "9733"
+  ],
+  [
+    "Pho",
+    "Tibetan antelope",
+    "Pantholops hodgsonii",
+    "59538"
+  ],
+  [
+    "Bta",
+    "Cow",
+    "Bos taurus",
+    "9913"
+  ],
+  [
+    "Oar",
+    "Sheep",
+    "Ovis aries",
+    "9940"
+  ],
+  [
+    "Chi",
+    "Domestic goat",
+    "Capra hircus",
+    "9925"
+  ],
+  [
+    "Eca",
+    "Horse",
+    "Equus caballus",
+    "9796"
+  ],
+  [
+    "Csi",
+    "White rhinoceros",
+    "Ceratotherium simum",
+    "9807"
+  ],
+  [
+    "Fca",
+    "Cat",
+    "Felis catus",
+    "9685"
+  ],
+  [
+    "Cfa",
+    "Dog",
+    "Canis lupus familiaris",
+    "9615"
+  ],
+  [
+    "Mfu",
+    "Ferret ",
+    "Mustela putorius furo",
+    "9669"
+  ],
+  [
+    "Ame",
+    "Panda",
+    "Ailuropoda melanoleuca",
+    "9646"
+  ],
+  [
+    "Oro",
+    "Pacific walrus",
+    "Odobenus rosmarus divergens",
+    "9708"
+  ],
+  [
+    "Lwe",
+    "Weddell seal",
+    "Leptonychotes weddellii",
+    "9713"
+  ],
+  [
+    "Pal",
+    "Black flying-fox",
+    "Pteropus alecto",
+    "9402"
+  ],
+  [
+    "Pva",
+    "Megabat",
+    "Pteropus vampyrus",
+    "132908"
+  ],
+  [
+    "Mda",
+    "David's myotis bat",
+    "Myotis davidii",
+    "225400"
+  ],
+  [
+    "Mlu",
+    "Microbat",
+    "Myotis lucifugus",
+    "59463"
+  ],
+  [
+    "Efu",
+    "Big brown bat",
+    "Eptesicus fuscus",
+    "29078"
+  ],
+  [
+    "Eeu",
+    "Hedgehog",
+    "Erinaceus europaeus",
+    "9365"
+  ],
+  [
+    "Sar",
+    "Shrew",
+    "Sorex araneus",
+    "42254"
+  ],
+  [
+    "Ccr",
+    "Star-nosed mole",
+    "Condylura cristata",
+    "143302"
+  ],
+  [
+    "Laf",
+    "Elephant",
+    "Loxodonta africana",
+    "9785"
+  ],
+  [
+    "Eed",
+    "Cape elephant shrew",
+    "Elephantulus edwardii",
+    "28737"
+  ],
+  [
+    "Tma",
+    "Manatee",
+    "Trichechus manatus latirostris",
+    "127582"
+  ],
+  [
+    "Cas",
+    "Cape golden mole",
+    "Chrysochloris asiatica",
+    "185453"
+  ],
+  [
+    "Ete",
+    "Tenrec",
+    "Echinops telfairi",
+    "9371"
+  ],
+  [
+    "Oaf",
+    "Aardvark",
+    "Orycteropus afer afer",
+    "1230840"
+  ],
+  [
+    "Dno",
+    "Armadillo",
+    "Dasypus novemcinctus",
+    "9361"
+  ],
+  [
+    "Mdo",
+    "Opossum",
+    "Monodelphis domestica",
+    "13616"
+  ],
+  [
+    "Sha",
+    "Tasmanian devil",
+    "Sarcophilus harrisii",
+    "9305"
+  ],
+  [
+    "Meu",
+    "Wallaby",
+    "Macropus eugenii",
+    "9315"
+  ],
+  [
+    "Oan",
+    "Platypus",
+    "Ornithorhynchus anatinus",
+    "9258"
+  ],
+  [
+    "Fch",
+    "Saker falcon",
+    "Falco cherrug",
+    "345164"
+  ],
+  [
+    "Fpe",
+    "Peregrine falcon",
+    "Falco peregrinus",
+    "8954"
+  ],
+  [
+    "Fal",
+    "Collared flycatcher",
+    "Ficedula albicollis",
+    "59894"
+  ],
+  [
+    "Zal",
+    "White-throated sparrow",
+    "Zonotrichia albicollis",
+    "44394"
+  ],
+  [
+    "Gfo",
+    "Medium ground finch",
+    "Geospiza fortis",
+    "48883"
+  ],
+  [
+    "Tgu",
+    "Zebra finch",
+    "Taeniopygia guttata",
+    "59729"
+  ],
+  [
+    "Phu",
+    "Tibetan ground jay",
+    "Pseudopodoces humilis",
+    "181119"
+  ],
+  [
+    "Mun",
+    "Budgerigar",
+    "Melopsittacus undulatus",
+    "13146"
+  ],
+  [
+    "Avi",
+    "Parrot",
+    "Amazona vittata",
+    "241585"
+  ],
+  [
+    "Ama",
+    "Scarlet macaw",
+    "Ara macao",
+    "176014"
+  ],
+  [
+    "Cli",
+    "Rock pigeon",
+    "Columba livia",
+    "8932"
+  ],
+  [
+    "Apl",
+    "Mallard duck",
+    "Anas platyrhynchos",
+    "8839"
+  ],
+  [
+    "Gga",
+    "Chicken",
+    "Gallus gallus",
+    "9031"
+  ],
+  [
+    "Mga",
+    "Turkey",
+    "Meleagris gallopavo",
+    "9103"
+  ],
+  [
+    "Ami",
+    "American alligator",
+    "Alligator mississippiensis",
+    "8496"
+  ],
+  [
+    "Cmy",
+    "Green seaturtle",
+    "Chelonia mydas",
+    "8469"
+  ],
+  [
+    "Cpi",
+    "Painted turtle",
+    "Chrysemys picta bellii",
+    "8478"
+  ],
+  [
+    "Psi",
+    "Chinese softshell turtle",
+    "Pelodiscus sinensis",
+    "13735"
+  ],
+  [
+    "Asp",
+    "Spiny softshell turtle",
+    "Apalone spinifera",
+    "55534"
+  ],
+  [
+    "Aca",
+    "Lizard",
+    "Anolis carolinensis",
+    "28377"
+  ],
+  [
+    "Xtr",
+    "X. tropicalis",
+    "Xenopus tropicalis",
+    "8364"
+  ],
+  [
+    "Lch",
+    "Coelacanth",
+    "Latimeria chalumnae",
+    "7897"
+  ]
+]
