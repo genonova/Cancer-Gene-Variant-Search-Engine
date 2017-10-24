@@ -11,7 +11,7 @@ class MicroRNA(MiRNASource):
     META = {'score_1_descr': 'mirSVR score'}
 
     @staticmethod
-    def search_mirna(mirna, count=20):
+    def search_mirna(mirna, count=200):
         from bs4 import BeautifulSoup
         species_id = Species.transform_species_format(mirna.split('-')[0], Species.SPECIES_ID_KEY)
         res = []

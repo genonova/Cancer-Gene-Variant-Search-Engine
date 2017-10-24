@@ -23,7 +23,7 @@ class Pool(multiprocessing.pool.Pool):
     Process = NoDaemonProcess
 
 def search_mirnas(mirnas):
-    p = Pool(3)
+    p = Pool(5)
     res = multiprocessing.Manager().dict()
     search_partial = partial(search_mirna, res)
     p.map(search_partial, mirnas)

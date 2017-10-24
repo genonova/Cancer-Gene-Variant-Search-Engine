@@ -11,7 +11,7 @@ class TargetScan(MiRNASource):
     META = {'score_1_descr': 'Cumulative weighted context++ score'}
 
     @staticmethod
-    def search_mirna(mirna, count=20):
+    def search_mirna(mirna, count=200):
         from bs4 import BeautifulSoup
         species_common_name = Species.transform_species_format(mirna.split('-')[0], Species.COMMON_NAME_KEY)
         res = []
