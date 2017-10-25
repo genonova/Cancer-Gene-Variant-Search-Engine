@@ -25,7 +25,7 @@ class TargetScan(MiRNASource):
             # with open('local.target_scan_sample.html', 'w') as f:
             #     f.write(r_text)
             # with open('local.target_scan_sample.html', 'r') as f:
-            #     r_text = f.read()
+            #     r_text = f.read()float(
             # /TEST ONLY
 
             soup = BeautifulSoup(r_text, 'html.parser')
@@ -41,7 +41,10 @@ class TargetScan(MiRNASource):
                 td = tds[i]
                 a = td.find('a')
                 if next_is_score:
-                    record['score_1'] = float(td.get_text())
+                    try:
+                        record['score_1'] = float(td.get_text())
+                    except:
+                        record['score_1'] = 100
                     next_is_score = False
                     count -= 1
                 else:
