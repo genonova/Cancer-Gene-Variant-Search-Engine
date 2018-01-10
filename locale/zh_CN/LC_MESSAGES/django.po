@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-26 23:18-0400\n"
+"POT-Creation-Date: 2017-11-08 17:23-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,88 +17,88 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: search_cancer/src/search.py:80
+#: search_cancer/src/search.py:108
 msgid "Radical Substitution"
 msgstr "根本替换"
 
-#: search_cancer/src/search.py:82
+#: search_cancer/src/search.py:110
 msgid "Moderately Radical Substitution"
 msgstr "中等根本替换"
 
-#: search_cancer/src/search.py:84
+#: search_cancer/src/search.py:112
 msgid "Moderately Conservative Substitution"
 msgstr "中等保守替换"
 
-#: search_cancer/src/search.py:86
+#: search_cancer/src/search.py:114
 msgid "Conservative Substitution"
 msgstr "保守替换"
 
-#: search_cancer/src/search.py:154 search_cancer/src/search.py:162
-#: search_cancer/src/search.py:240
+#: search_cancer/src/search.py:181 search_cancer/src/search.py:189
+#: search_cancer/src/search.py:268
 msgid "Probably Damaging"
 msgstr "极可能是有害突变"
 
-#: search_cancer/src/search.py:155 search_cancer/src/search.py:163
-#: search_cancer/src/search.py:238
+#: search_cancer/src/search.py:182 search_cancer/src/search.py:190
+#: search_cancer/src/search.py:266
 msgid "Possibly Damaging"
 msgstr "可能是有害突变"
 
-#: search_cancer/src/search.py:156 search_cancer/src/search.py:164
-#: search_cancer/src/search.py:242
+#: search_cancer/src/search.py:183 search_cancer/src/search.py:191
+#: search_cancer/src/search.py:270
 msgid "Benign"
 msgstr "无害突变"
 
-#: search_cancer/src/search.py:172
+#: search_cancer/src/search.py:199
 msgid "score"
 msgstr "分数"
 
-#: search_cancer/src/search.py:172 search_cancer/src/search.py:174
-#: search_cancer/src/search.py:175
+#: search_cancer/src/search.py:199 search_cancer/src/search.py:201
+#: search_cancer/src/search.py:203
 msgid "or"
 msgstr "或者"
 
-#: search_cancer/src/search.py:172
+#: search_cancer/src/search.py:199
 msgid "probability"
 msgstr "概率"
 
-#: search_cancer/src/search.py:173
+#: search_cancer/src/search.py:200
 msgid "to"
 msgstr "到"
 
 #. Translators: http://www.mutationtaster.org/info/documentation.html
-#: search_cancer/src/search.py:174 search_cancer/src/search.py:246
+#: search_cancer/src/search.py:201 search_cancer/src/search.py:274
 msgid "Disease Causing Automatic"
 msgstr "已知致病"
 
-#: search_cancer/src/search.py:174 search_cancer/src/search.py:176
-#: search_cancer/src/search.py:248
+#: search_cancer/src/search.py:202 search_cancer/src/search.py:205
+#: search_cancer/src/search.py:276
 msgid "Disease Causing"
 msgstr "可能致病"
 
-#: search_cancer/src/search.py:175 search_cancer/src/search.py:177
-#: search_cancer/src/search.py:250
+#: search_cancer/src/search.py:203 search_cancer/src/search.py:206
+#: search_cancer/src/search.py:278
 msgid "Polymorphism"
 msgstr "可能无害"
 
-#: search_cancer/src/search.py:175 search_cancer/src/search.py:252
+#: search_cancer/src/search.py:204 search_cancer/src/search.py:280
 msgid "Polymorphism Automatic"
 msgstr "已知无害"
 
-#: search_cancer/src/search.py:184 search_cancer/src/search.py:191
-#: search_cancer/src/search.py:230
+#: search_cancer/src/search.py:213 search_cancer/src/search.py:220
+#: search_cancer/src/search.py:258
 msgid "Damaging"
 msgstr "有害突变"
 
-#: search_cancer/src/search.py:185 search_cancer/src/search.py:192
-#: search_cancer/src/search.py:232
+#: search_cancer/src/search.py:214 search_cancer/src/search.py:221
+#: search_cancer/src/search.py:260
 msgid "Tolerated"
 msgstr "无害突变"
 
-#: search_cancer/src/search.py:234
+#: search_cancer/src/search.py:262
 msgid "Neutral"
 msgstr "中性突变"
 
-#: search_cancer/src/search.py:253
+#: search_cancer/src/search.py:281
 msgid "Unknown"
 msgstr "无相应结果"
 
@@ -114,11 +114,11 @@ msgstr "转录本"
 msgid "Gene"
 msgstr "基因"
 
-#: settings/settings_base.py:126
+#: settings/settings_base.py:127
 msgid "English"
 msgstr "英语"
 
-#: settings/settings_base.py:127
+#: settings/settings_base.py:128
 msgid "简体中文"
 msgstr "简体中文"
 
@@ -127,199 +127,210 @@ msgid "Welcome to cancer search engine!"
 msgstr "欢迎使用癌症搜索引擎！"
 
 #: templates/search_cancer/index.html:50 templates/search_cancer/index.html:51
-#: templates/search_cancer/search_result.html:281
 #: templates/search_cancer/search_result.html:282
+#: templates/search_cancer/search_result.html:283
 msgid "Select Search Type"
 msgstr "选择搜索类型"
 
 #: templates/search_cancer/index.html:63
-#: templates/search_cancer/search_result.html:294
+#: templates/search_cancer/search_result.html:295
 msgid "Search..."
 msgstr "搜索..."
 
 #: templates/search_cancer/search_result.html:306
-#: templates/search_cancer/search_result.html:389
-msgid "Data Sources"
-msgstr "数据源"
-
-#: templates/search_cancer/search_result.html:309
-#: templates/search_cancer/search_result.html:458
-#: templates/search_cancer/search_result.html:824
-msgid "Aliases"
-msgstr "别名"
-
-#: templates/search_cancer/search_result.html:312
-msgid "Dashboard"
-msgstr "仪表盘"
-
-#: templates/search_cancer/search_result.html:398
+#: templates/search_cancer/search_result.html:394
+#: templates/search_cancer/search_result.html:400
 msgid "Report"
 msgstr "报告"
 
-#: templates/search_cancer/search_result.html:402
+#: templates/search_cancer/search_result.html:308
+#: templates/search_cancer/search_result.html:623
+msgid "Data Sources"
+msgstr "数据源"
+
+#: templates/search_cancer/search_result.html:311
+#: templates/search_cancer/search_result.html:504
+#: templates/search_cancer/search_result.html:922
+msgid "Aliases"
+msgstr "别名"
+
+#: templates/search_cancer/search_result.html:314
+msgid "Dashboard"
+msgstr "仪表盘"
+
+#: templates/search_cancer/search_result.html:391
+msgid ""
+"Search fail, it may due to malformed values in your search type or query"
+msgstr ""
+
+#: templates/search_cancer/search_result.html:404
 msgid "Coding Effect"
 msgstr "编码作用"
 
-#: templates/search_cancer/search_result.html:406
+#: templates/search_cancer/search_result.html:415
 msgid "Mutation Description"
 msgstr "变异说明"
 
-#: templates/search_cancer/search_result.html:419
+#: templates/search_cancer/search_result.html:428
 msgid "Allele Frequency"
 msgstr "等位基因频率"
 
-#: templates/search_cancer/search_result.html:423
+#: templates/search_cancer/search_result.html:432
 msgid "Number of Homozygotes"
 msgstr "纯合子数量"
 
-#: templates/search_cancer/search_result.html:429
+#: templates/search_cancer/search_result.html:463
 msgid "Atomic Acid"
 msgstr "氨基酸"
 
-#: templates/search_cancer/search_result.html:433
+#: templates/search_cancer/search_result.html:467
 msgid "Reference"
 msgstr "参考"
 
-#: templates/search_cancer/search_result.html:433
-#: templates/search_cancer/search_result.html:438
+#: templates/search_cancer/search_result.html:467
+#: templates/search_cancer/search_result.html:477
 msgid "Amino Acid"
 msgstr "氨基酸"
 
-#: templates/search_cancer/search_result.html:438
+#: templates/search_cancer/search_result.html:477
 msgid "Alterate"
 msgstr "替代"
 
-#: templates/search_cancer/search_result.html:445
-#: templates/search_cancer/search_result.html:449
+#: templates/search_cancer/search_result.html:489
+#: templates/search_cancer/search_result.html:495
 msgid "Granthm"
 msgstr "格兰瑟姆"
 
-#: templates/search_cancer/search_result.html:445
-#: templates/search_cancer/search_result.html:481
+#: templates/search_cancer/search_result.html:489
+#: templates/search_cancer/search_result.html:562
 msgid "Score"
 msgstr "分数"
 
-#: templates/search_cancer/search_result.html:449
-#: templates/search_cancer/search_result.html:480
+#: templates/search_cancer/search_result.html:495
+#: templates/search_cancer/search_result.html:545
 msgid "Prediction"
 msgstr "预测"
 
-#: templates/search_cancer/search_result.html:461
-#: templates/search_cancer/search_result.html:835
+#: templates/search_cancer/search_result.html:508
+#: templates/search_cancer/search_result.html:933
 msgid "Reference Sequence"
 msgstr "参考序列"
 
-#: templates/search_cancer/search_result.html:467
-#: templates/search_cancer/search_result.html:857
+#: templates/search_cancer/search_result.html:509
+#: templates/search_cancer/search_result.html:955
 msgid "Variant Position"
 msgstr "变异位点"
 
-#: templates/search_cancer/search_result.html:475
+#: templates/search_cancer/search_result.html:532
 msgid "Deleterious Prediction"
 msgstr "有害性预测"
 
-#: templates/search_cancer/search_result.html:479
+#: templates/search_cancer/search_result.html:536
 msgid "Model"
 msgstr "模型"
 
-#: templates/search_cancer/search_result.html:482
+#: templates/search_cancer/search_result.html:537
+msgid "Result"
+msgstr ""
+
+#: templates/search_cancer/search_result.html:568
 msgid "Range"
 msgstr "范围"
 
-#: templates/search_cancer/search_result.html:483
+#: templates/search_cancer/search_result.html:569
 msgid "Relationship"
 msgstr "关系"
 
-#: templates/search_cancer/search_result.html:484
-msgid "Description"
-msgstr "说明"
-
-#: templates/search_cancer/search_result.html:507
+#: templates/search_cancer/search_result.html:574
 msgid "Positive: Higher more deleterious"
 msgstr "正相关: 分数越高有害性可能越高"
 
-#: templates/search_cancer/search_result.html:508
+#: templates/search_cancer/search_result.html:574
 msgid "Negative: Higher more tolerated"
 msgstr "负相关: 分数越高无害性越高"
 
-#: templates/search_cancer/search_result.html:525
-msgid "Related links"
-msgstr "相关链接"
-
-#: templates/search_cancer/search_result.html:558
-#: templates/search_cancer/search_result.html:591
-#: templates/search_cancer/search_result.html:642
-#: templates/search_cancer/search_result.html:701
-#: templates/search_cancer/search_result.html:730
-#: templates/search_cancer/search_result.html:754
-#: templates/search_cancer/search_result.html:782
-#: templates/search_cancer/search_result.html:805
+#: templates/search_cancer/search_result.html:634
+#: templates/search_cancer/search_result.html:667
+#: templates/search_cancer/search_result.html:718
+#: templates/search_cancer/search_result.html:776
+#: templates/search_cancer/search_result.html:803
+#: templates/search_cancer/search_result.html:827
+#: templates/search_cancer/search_result.html:855
+#: templates/search_cancer/search_result.html:878
+#: templates/search_cancer/search_result.html:904
 msgid "Downgrade search to "
 msgstr "降级为搜索"
 
-#: templates/search_cancer/search_result.html:564
+#: templates/search_cancer/search_result.html:640
 msgid "sample"
 msgstr "样本数"
 
-#: templates/search_cancer/search_result.html:566
+#: templates/search_cancer/search_result.html:642
 msgid "records"
 msgstr "记录数"
 
-#: templates/search_cancer/search_result.html:573
-#: templates/search_cancer/search_result.html:619
-#: templates/search_cancer/search_result.html:682
-#: templates/search_cancer/search_result.html:708
-#: templates/search_cancer/search_result.html:736
-#: templates/search_cancer/search_result.html:760
-#: templates/search_cancer/search_result.html:788
-#: templates/search_cancer/search_result.html:811
+#: templates/search_cancer/search_result.html:649
+#: templates/search_cancer/search_result.html:695
+#: templates/search_cancer/search_result.html:758
+#: templates/search_cancer/search_result.html:782
+#: templates/search_cancer/search_result.html:809
+#: templates/search_cancer/search_result.html:833
+#: templates/search_cancer/search_result.html:861
+#: templates/search_cancer/search_result.html:884
+#: templates/search_cancer/search_result.html:911
 msgid "Link to"
 msgstr "链接至: "
 
-#: templates/search_cancer/search_result.html:594
+#: templates/search_cancer/search_result.html:670
 msgid "Status"
 msgstr "状态"
 
-#: templates/search_cancer/search_result.html:596
+#: templates/search_cancer/search_result.html:672
 msgid "Gene Family"
 msgstr "基因家族"
 
-#: templates/search_cancer/search_result.html:607
+#: templates/search_cancer/search_result.html:683
 msgid "Alias Symbol"
 msgstr "别名"
 
-#: templates/search_cancer/search_result.html:647
+#: templates/search_cancer/search_result.html:723
 msgid "variants"
 msgstr "变异点"
 
-#: templates/search_cancer/search_result.html:648
+#: templates/search_cancer/search_result.html:724
 msgid "sources"
 msgstr "数据源"
 
-#: templates/search_cancer/search_result.html:652
+#: templates/search_cancer/search_result.html:728
 msgid "Sources"
 msgstr "数据源"
 
-#: templates/search_cancer/search_result.html:658
+#: templates/search_cancer/search_result.html:734
 msgid "Publication date"
 msgstr "发布时间"
 
-#: templates/search_cancer/search_result.html:662
+#: templates/search_cancer/search_result.html:738
 msgid "Citation"
 msgstr "引文"
 
-#: templates/search_cancer/search_result.html:670
+#: templates/search_cancer/search_result.html:746
 msgid "Expressions"
 msgstr "表达式"
 
-#: templates/search_cancer/search_result.html:761
-#: templates/search_cancer/search_result.html:812
+#: templates/search_cancer/search_result.html:834
+#: templates/search_cancer/search_result.html:885
 msgid "May not exist"
 msgstr "可能不存在"
 
-#: templates/search_cancer/search_result.html:884
+#: templates/search_cancer/search_result.html:982
 msgid "RAW Data"
 msgstr "原始数据"
+
+#~ msgid "Description"
+#~ msgstr "说明"
+
+#~ msgid "Related links"
+#~ msgstr "相关链接"
 
 #~ msgid "Radical"
 #~ msgstr "根本"

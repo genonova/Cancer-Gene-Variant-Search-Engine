@@ -1,4 +1,4 @@
-# Command:
+__# Command:
 * In settings it must be lower case: 'zn-cn' with dashes
 * Here:
     * Make - once per language :
